@@ -6,3 +6,6 @@ coverage
 twine
 wheel
 pytest-cov
+black
+isort
+flake8
