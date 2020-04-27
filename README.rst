@@ -6,7 +6,7 @@ Crispy-Tailwind
     :target: https://github.com/psf/black
 
 
-A Tailwind_ template pack for wonderful django-crispy-forms_.
+A Tailwind_ template pack for the wonderful django-crispy-forms_.
 
 How to install
 --------------
