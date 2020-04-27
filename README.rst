@@ -16,18 +16,20 @@ Install via PIP::
     pip install crispy-tailwind
 
 You will need to update your project's settings file to add  crispy_forms
-and crispy_tailwind to your projects `INSTALLED_APPS`, and to set `tailwind`
-as the default template pack for your project::
+and crispy_tailwind to your projects `INSTALLED_APPS`. Also set `tailwind`
+as and allowed template pack and as the default template pack for your project::
 
     INSTALLED_APPS = (
         ...
-        'crispy_forms',
-        'crispy_forms_materialize',
+        "crispy_forms",
+        "crispy_tailwind",
         ...
     )
 
-    # Default template pack to use with "crispy_forms"
-    CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
+    CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+    CRISPY_TEMPLATE_PACK = "tailwind"
+
 
 
 How to use
