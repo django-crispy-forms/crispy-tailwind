@@ -26,8 +26,16 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install django==${{ matrix.django-version }} django-crispy-forms==${{ matrix.crispy-version }} pytest pytest-django
+        pip install django==${{ matrix.django-version }} django-crispy-forms==${{ matrix.crispy-version }} pytest pytest-django coverage django-coverage-plugin
         pip install -q -e .
     - name: Run Tests
       run: |
-        pytest --ds=tests.test_settings
+        coverage run -m pytest --ds=tests.test_settings
+        coverage report
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
