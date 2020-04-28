@@ -33,6 +33,7 @@ jobs:
         coverage run -m pytest --ds=tests.test_settings
         coverage report
         coverage xml
+        ls -R
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
