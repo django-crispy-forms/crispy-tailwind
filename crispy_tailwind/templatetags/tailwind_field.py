@@ -1,7 +1,3 @@
-# todo may also need to over ride the original crispy filter (try and find css class in helper, otherwise use
-#  default values)
-
-
 # This file is currently copied directly from django-crispy-forms
 # Changes to core form are highlighted. These are to add additional input classes
 # to meet requirements of Tailwind
@@ -127,24 +123,6 @@ class CrispyTailwindFieldNode(template.Node):
                     css_class += " %s" % class_name
             else:
                 css_class = class_name
-
-            if (
-                template_pack == "bootstrap3"
-                and not is_checkbox(field)
-                and not is_file(field)
-                and not is_multivalue(field)
-            ):
-                css_class += " form-control"
-                if field.errors:
-                    css_class += " form-control-danger"
-
-            if template_pack == "bootstrap4" and not is_multivalue(field):
-                if not is_checkbox(field):
-                    css_class += " form-control"
-                    if is_file(field):
-                        css_class += "-file"
-                if field.errors:
-                    css_class += " is-invalid"
 
             # Added additional code for Tailwind
 
