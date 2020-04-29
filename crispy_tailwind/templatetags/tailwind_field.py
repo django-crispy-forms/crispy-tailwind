@@ -8,6 +8,7 @@ from django.conf import settings
 from django.template import Context, loader
 
 from crispy_forms.utils import TEMPLATE_PACK, get_template_pack
+from crispy_tailwind.tailwind import CSSContainer
 
 register = template.Library()
 
@@ -75,6 +76,11 @@ def pairwise(iterable):
 
 
 class CrispyTailwindFieldNode(template.Node):
+
+    default_styles = {"text": "tailwind-text", "radioselect": " tailwind-radio"}
+
+    default_container = CSSContainer(default_styles)
+
     def __init__(self, field, attrs):
         self.field = field
         self.attrs = attrs
@@ -127,7 +133,7 @@ class CrispyTailwindFieldNode(template.Node):
             # Added additional code for Tailwind
 
             if template_pack == "tailwind":
-                css_container = context.get("css_container")
+                css_container = context.get("css_container", self.default_container)
                 if css_container:
                     css = " " + css_container.get_input_class(field)
                     css_class += css
