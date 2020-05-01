@@ -13,20 +13,24 @@
     {% endif %}
 
     {# if field has a special template then use this #}
-    {% if field|is_radioselect %}
+    {% if field|is_select %}
+        <div class="{% if field_class %} {{ field_class }}{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+
+        {% include 'tailwind/layout/select.html' %}
+    {% elif field|is_radioselect %}
         <div class="{% if field_class %} {{ field_class }}{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
         {% include 'tailwind/layout/radioselect.html' %}
     {% elif field|is_checkboxselectmultiple %}
 
         <div class="{% if field_class %} {{ field_class }}{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-            {% include 'tailwind/layout/checkboxselectmultiple.html' %}
-            {% else %}
+        {% include 'tailwind/layout/checkboxselectmultiple.html' %}
+    {% else %}
 
-            {# otherwise use django rendering with additional classes added #}
-            {% tailwind_field field %}
+        {# otherwise use django rendering with additional classes added #}
+        {% tailwind_field field %}
 
-            {% include 'tailwind/layout/help_text_and_errors.html' %}
+        {% include 'tailwind/layout/help_text_and_errors.html' %}
 
         </{% if tag %}{{ tag }}{% else %}div{% endif %}>
     {% endif %}
