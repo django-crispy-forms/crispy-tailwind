@@ -29,9 +29,11 @@
 
         {# otherwise use django rendering with additional classes added #}
         {% tailwind_field field %}
-
-        {% include 'tailwind/layout/help_text_and_errors.html' %}
-
-        </{% if tag %}{{ tag }}{% else %}div{% endif %}>
     {% endif %}
+
+    {% include 'tailwind/layout/help_text_and_errors.html' %}
+
+    </{% if tag %}{{ tag }}{% else %}div{% endif %}>
+    
+
 {% endif %}
