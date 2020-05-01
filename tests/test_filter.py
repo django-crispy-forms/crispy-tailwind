@@ -68,8 +68,7 @@ class CrispyFilterTests(SimpleTestCase):
             terms of service<span class="asteriskField">*</span> </label>
             <div class=" mb-3">
             <div class="relative">
-            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8
-            rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="tos_accepted">
+            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="tos_accepted">
             <option value="accepted">Accepted</option>
             <option value="not_accepted">Not accepted</option>
             </select><div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
