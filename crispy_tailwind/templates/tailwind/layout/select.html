@@ -2,7 +2,7 @@
 {% load l10n %}
 
 <div class="relative">
-<select class="{% if field.errors %}border border-red-500{% endif %} block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="{{ field.name }}" {{ field.field.widget.attrs|flatatt }}>
+<select class="{% if field.errors %}border border-red-500 {% endif %}block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="{{ field.name }}" {{ field.field.widget.attrs|flatatt }}>
     {% for value, label in field.field.choices %}
         {% include "tailwind/layout/select_option.html" with value=value label=label %}
     {% endfor %}
