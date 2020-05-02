@@ -11,6 +11,11 @@ class SampleForm(forms.Form):
     first_name = forms.CharField(label="first name", max_length=5, required=True, widget=forms.TextInput())
     last_name = forms.CharField(label="last name", max_length=5, required=True, widget=forms.TextInput())
     datetime_field = forms.SplitDateTimeField(label="date time", widget=forms.SplitDateTimeWidget())
+    tos_accepted = forms.ChoiceField(
+        label="terms of service",
+        widget=forms.Select(),
+        choices=(("accepted", "Accepted"), ("not_accepted", "Not accepted")),
+    )
 
     def clean(self):
         super().clean()
