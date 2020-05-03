@@ -1,5 +1,8 @@
+# dependencies
 Django~=3.0.5
 django-crispy-forms~=1.9.0
+
+# dev
 pytest
 pytest-django
 coverage
@@ -9,3 +12,7 @@ pytest-cov
 black
 isort
 flake8
+
+# docs
+sphinx
+sphinx-rtd-theme

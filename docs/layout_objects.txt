@@ -1,0 +1,37 @@
+==============
+Layout Objects
+==============
+
+This template pack renders Django widgets with the Tailwind CSS framework. This
+page shows examples of how these widgets look when rendered with the default
+styling. For these objects we have given an opinion on how they should look.
+
+Default Style
+=============
+
+Image here
+
+Text Input
+----------
+
+Image here
+
+Text Area
+---------
+
+Image here
+
+Select
+------
+
+Image here
+
+Radio
+-----
+
+Image here
+
+Checkbox
+--------
+
+Image here
