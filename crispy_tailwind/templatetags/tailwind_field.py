@@ -77,7 +77,38 @@ def pairwise(iterable):
 
 class CrispyTailwindFieldNode(template.Node):
 
-    default_styles = {"text": "tailwind-text", "radioselect": " tailwind-radio"}
+    base_input = (
+        "bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full "
+        "appearance-none leading-normal text-gray-700"
+    )
+
+    default_styles = {
+        "text": base_input,
+        "number": base_input,
+        "radioselect": "",
+        "email": base_input,
+        "url": base_input,
+        "password": base_input,
+        "hidden": "",
+        "multiplehidden": "",
+        "file": "",
+        "clearablefile": "",
+        "textarea": base_input,
+        "date": base_input,
+        "datetime": base_input,
+        "time": base_input,
+        "checkbox": "",
+        "select": "",
+        "nullbooleanselect": "",
+        "selectmultiple": "",
+        "radioselect": "",
+        "checkboxselectmultiple": "",
+        "multi": "",
+        "splitdatetime": "text-gray-700 bg-white focus:outline border border-gray-300 leading-normal px-4 "
+        "appearance-none rounded-lg py-2 focus:outline-none mr-2",
+        "splithiddendatetime": "",
+        "selectdate": "",
+    }
 
     default_container = CSSContainer(default_styles)
 
@@ -113,11 +144,7 @@ class CrispyTailwindFieldNode(template.Node):
         if isinstance(attrs, dict):
             attrs = [attrs] * len(widgets)
 
-        converters = {
-            "textinput": "textinput textInput",
-            "fileinput": "fileinput fileUpload",
-            "passwordinput": "textinput textInput",
-        }
+        converters = {}
         converters.update(getattr(settings, "CRISPY_CLASS_CONVERTERS", {}))
 
         for widget, attr in zip(widgets, attrs):
@@ -131,7 +158,6 @@ class CrispyTailwindFieldNode(template.Node):
                 css_class = class_name
 
             # Added additional code for Tailwind
-
             if template_pack == "tailwind":
                 css_container = context.get("css_container", self.default_container)
                 if css_container:

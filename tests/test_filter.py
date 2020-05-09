@@ -27,48 +27,64 @@ class CrispyFilterTests(SimpleTestCase):
             <div id="div_id_email" class=" mb-3">
             <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2">email<span class="asteriskField">
             *</span> </label>
-            <input type="text" name="email" maxlength="30" class="textinput textInput inputtext tailwind-text"
+            <input type="text" name="email" maxlength="30" class="textinput textInput inputtext w-full rounded-lg """
+            """border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 block """
+            """leading-normal"
             required id="id_email">
             <small id="hint_id_email" class="text-gray-600">Insert your email</small> </div>
 
             <div id="div_id_password1" class=" mb-3">
-            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2">password
-            <span class="asteriskField">*</span>
+            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2">password<span 
+            class="asteriskField">*</span>
             </label>
-            <input type="password" name="password1" maxlength="30" class="textinput textInput "
-            required id="id_password1"> </div>
+            <input type="password" name="password1" maxlength="30" 
+            class="passwordinput w-full rounded-lg """
+            """border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 block """
+            """leading-normal" required id="id_password1"> 
+            </div>
 
             <div id="div_id_password2" class=" mb-3">
             <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2">
             re-enter password<span class="asteriskField">*</span> </label>
-            <input type="password" name="password2" maxlength="30" class="textinput textInput "
+            <input type="password" name="password2" maxlength="30" 
+            class="passwordinput w-full rounded-lg """
+            """border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 block """
+            """leading-normal"
             required id="id_password2"> </div>
 
             <div id="div_id_first_name" class=" mb-3">
             <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2">
             first name<span class="asteriskField">*</span> </label>
-            <input type="text" name="first_name" maxlength="5" class="textinput textInput inputtext tailwind-text"
-            required id="id_first_name"> </div>
+            <input type="text" name="first_name" maxlength="5" class="textinput textInput inputtext w-full """
+            """rounded-lg border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none """
+            'px-4 block leading-normal"'
+            """required id="id_first_name"> </div>
 
             <div id="div_id_last_name" class=" mb-3">
             <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2">
             last name<span class="asteriskField">*</span> </label>
-            <input type="text" name="last_name" maxlength="5" class="textinput textInput inputtext tailwind-text"
-            required id="id_last_name"> </div>
+            <input type="text" name="last_name" maxlength="5"
+            class="textinput textInput inputtext w-full rounded-lg border appearance-none py-2 border-gray-300 """
+            """bg-white text-gray-700 focus:outline-none px-4 block leading-normal" required id="id_last_name"> """
+            """</div>
 
             <div id="div_id_datetime_field" class=" mb-3">
             <label for="id_datetime_field_0" class="block text-gray-700 text-sm font-bold mb-2">
             date time<span class="asteriskField">*</span> </label>
-            <input type="text" name="datetime_field_0" class="dateinput " required id="id_datetime_field_0">
-            <input type="text" name="datetime_field_1" class="timeinput " required id="id_datetime_field_1">
-            </div>
+            <input type="text" name="datetime_field_0" 
+            class="dateinput rounded-lg focus:outline border appearance-none py-2 mr-2 border-gray-300 bg-white """
+            """text-gray-700 focus:outline-none px-4 leading-normal" required id="id_datetime_field_0">
+            <input type="text" name="datetime_field_1" class="timeinput rounded-lg focus:outline border """
+            """appearance-none py-2 mr-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 """
+            """leading-normal" required id="id_datetime_field_1"> </div>
 
             <div id="div_id_tos_accepted" class=" mb-3">
             <label for="id_tos_accepted" class="block text-gray-700 text-sm font-bold mb-2">
             terms of service<span class="asteriskField">*</span> </label>
             <div class=" mb-3">
             <div class="relative">
-            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="tos_accepted">
+            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 """
+            """pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="tos_accepted">
             <option value="accepted">Accepted</option>
             <option value="not_accepted">Not accepted</option>
             </select><div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
