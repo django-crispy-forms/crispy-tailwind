@@ -9,7 +9,7 @@
             {{ choice.1|unlocalize }}
         </label>
         {% if field.errors and forloop.last and not inline_class %}
-            {% include 'tailwind/layout/field_errors_block.html' %}
+            {# include 'tailwind/layout/field_errors_block.html' <-- bs4 template adds this here. Currently this pack adds it in field.html #}
         {% endif %}
     </div>
 {% endfor %}
