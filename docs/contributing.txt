@@ -1,0 +1,28 @@
+============
+Contributing
+============
+
+Contributions to ``crispy-tailwind`` are very welcome!
+
+Here are some notes on how to get setup with a development environment.
+
+1. Clone the ``crispy-tailwind`` repo from GitHub.
+2. Create a new virtual environment and install the development requirements
+   from ``requirements.txt``.
+3. Install ``crispy-tailwind`` as well. ::
+
+    pip install -e .
+
+
+4. Make sure you can run the test suite locally. ::
+
+    pytest --ds=tests.test_settings
+
+5. You may find the ``crispy-test-project`` helpful to see the rendered output
+   of the package.
+
+  - Clone the `tailwind` branch of that project.
+  - Install the dependencies.
+  - Install ``crispy-tailwind``. ::
+
+      pip install -e path/to/crispy-tailwind
