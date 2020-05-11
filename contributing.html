@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; crispy-tailwind 0.1 documentation</title>
+  <title>Contributing &mdash; crispy-tailwind 0.1 documentation</title>
   
 
   
@@ -34,8 +33,9 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Layout Objects" href="layout_objects.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,10 +80,10 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="layout_objects.html">Layout Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a></li>
 </ul>
 
             
@@ -129,12 +129,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Contributing</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/contributing.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -146,11 +148,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<p>Contributions to <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code> are very welcome!</p>
+<p>Here are some notes on how to get setup with a development environment.</p>
+<ol class="arabic">
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code> repo from GitHub.</p></li>
+<li><p>Create a new virtual environment and install the development requirements
+from <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code> as well.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make sure you can run the test suite locally.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">ds</span><span class="o">=</span><span class="n">tests</span><span class="o">.</span><span class="n">test_settings</span>
+</pre></div>
+</div>
+</li>
+<li><p>You may find the <code class="docutils literal notranslate"><span class="pre">crispy-test-project</span></code> helpful to see the rendered output
+of the package.</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Clone the <cite>tailwind</cite> branch of that project.</p></li>
+<li><p>Install the dependencies.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">crispy</span><span class="o">-</span><span class="n">tailwind</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
 </div>
 
 
@@ -158,6 +187,13 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="layout_objects.html" class="btn btn-neutral float-left" title="Layout Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
