@@ -5,20 +5,59 @@ Getting Started
 Installation
 ============
 
-TO DO
+Install via pip. ::
 
+    pip install crispy-tailwind
+
+You will need to update your project's settings file to add ``crispy_forms``
+and ``crispy_tailwind`` to your project's ``INSTALLED_APPS``. Also set
+``tailwind`` as and allowed template pack and as the default template pack for
+your project::
+
+    INSTALLED_APPS = (
+        ...
+        "crispy_forms",
+        "crispy_tailwind",
+        ...
+    )
+
+    CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+    CRISPY_TEMPLATE_PACK = "tailwind"
 
 Usage
 =====
 
-Overview of how to use crispy-tailwind
+There are a number of ways you can use ``crispy-tailwind``. The simplest way
+is to use the ``|crispy`` filter. This will add an opinionated `Tailwind` style
+to your form. If you require more control you can use the ``crispy`` tags and
+utilise the full power of the ``crispy-forms`` through it's ``FormHelper`` and
+``Layout`` capabilities.
 
-Use `|crispy` filter
---------------------
+`|crispy` filter
+----------------
 
-Content
+The crispy filter is the simpler way to add `Tailwind` style to your form. It
+avoids the complexity of ``FormHelper`` and it comes with an opinionated form
+style.
 
-Use `{% crispy %}` tags
-------------------------
+1. Load the ``tailwind_filters`` in your template::
+
+    {% load tailwind_filters %}
+
+2. Apply the ``|crispy`` filter to your form::
+
+    {{ form|crispy }}
+
+Here are two examples. The first shows the default rendering, the second shows
+rendering of server side errors:
+
+.. image:: img/crispy_form.png
+   :width: 49%
+.. image:: img/crispy_failing.png
+   :width: 49%
+
+`{% crispy %}` tags
+-------------------
 
 Content

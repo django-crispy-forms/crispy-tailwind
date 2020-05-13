@@ -11,13 +11,14 @@ A Tailwind_ template pack for the wonderful django-crispy-forms_.
 How to install
 --------------
 
-Install via PIP::
+Install via pip. ::
 
     pip install crispy-tailwind
 
-You will need to update your project's settings file to add  crispy_forms
-and crispy_tailwind to your projects `INSTALLED_APPS`. Also set `tailwind`
-as and allowed template pack and as the default template pack for your project::
+You will need to update your project's settings file to add ``crispy_forms``
+and ``crispy_tailwind`` to your projects ``INSTALLED_APPS``. Also set
+``tailwind`` as and allowed template pack and as the default template pack
+for your project::
 
     INSTALLED_APPS = (
         ...
@@ -29,8 +30,6 @@ as and allowed template pack and as the default template pack for your project::
     CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
     CRISPY_TEMPLATE_PACK = "tailwind"
-
-
 
 How to use
 ----------
