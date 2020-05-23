@@ -8,6 +8,7 @@ import re
 class CSSContainer:
     def __init__(self, css_styles):
         default_items = [
+            # widgets
             "text",
             "number",
             "email",
@@ -31,6 +32,8 @@ class CSSContainer:
             "splitdatetime",
             "splithiddendatetime",
             "selectdate",
+            # other items
+            "error_border",
         ]
 
         base = css_styles.get("base", "")

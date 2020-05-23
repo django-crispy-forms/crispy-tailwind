@@ -2,6 +2,7 @@
 # Changes to core form are highlighted. These are to add additional input classes
 # to meet requirements of Tailwind
 
+import re
 
 from django import forms, template
 from django.conf import settings
@@ -108,6 +109,7 @@ class CrispyTailwindFieldNode(template.Node):
         "appearance-none rounded-lg py-2 focus:outline-none mr-2",
         "splithiddendatetime": "",
         "selectdate": "",
+        "error_border": "border-red-500",
     }
 
     default_container = CSSContainer(default_styles)
@@ -163,6 +165,9 @@ class CrispyTailwindFieldNode(template.Node):
                 if css_container:
                     css = " " + css_container.get_input_class(field)
                     css_class += css
+                if field.errors:
+                    error_border_class = css_container.error_border
+                    css_class = re.sub(r"border-\S+", error_border_class, css_class)
 
             widget.attrs["class"] = css_class
 
