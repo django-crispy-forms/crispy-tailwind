@@ -25,3 +25,8 @@ class SampleForm(forms.Form):
             raise forms.ValidationError("Passwords dont match")
 
         return self.cleaned_data
+
+
+class SampleForm2(forms.Form):
+
+    name = forms.CharField(required=True)

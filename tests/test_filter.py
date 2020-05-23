@@ -1,7 +1,7 @@
 from django.template import Context, Template
 from django.test import SimpleTestCase
 
-from .forms import SampleForm
+from .forms import SampleForm, SampleForm2
 
 
 class CrispyFilterTests(SimpleTestCase):
@@ -94,3 +94,22 @@ class CrispyFilterTests(SimpleTestCase):
             </div> </div></div></div>
             """,
         )
+
+    def test_error_borders(self):
+        template = Template(
+            """
+            {% load tailwind_filters %}
+            {{ form|crispy }}
+            """
+        )
+        form = SampleForm2()
+        c = Context({"form": form})
+        html = template.render(c)
+        assert "border-red-500" not in html
+        assert "border-gray-300" in html
+
+        form = SampleForm2({"name": ""})
+        c = Context({"form": form})
+        html = template.render(c)
+        assert "border-red-500" in html
+        assert "border-gray-300" not in html
