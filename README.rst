@@ -8,6 +8,11 @@ Crispy-Tailwind
 
 A Tailwind_ template pack for the wonderful django-crispy-forms_.
 
+Currently the template pack allows the use of the ``|crispy`` filter to style
+your form. Here is an example image.
+
+.. image:: https://django-crispy-forms.github.io/crispy-tailwind/_images/crispy_form.png
+
 How to install
 --------------
 
@@ -34,7 +39,21 @@ for your project::
 How to use
 ----------
 
-TODO
+This project is still in its early stages. Currently functionality allows
+the ``|crispy`` filter to be used to style your form. In your template:
+
+1. Load the filter ``{% load tailwind_filters %}``
+2. Apply the crispy filter ``{{ form|crispy }}``
+
+Documentation
+-------------
+
+The documentation for this project is available here:
+https://django-crispy-forms.github.io/crispy-tailwind/index.html
+
+
+
+
 
 
 
