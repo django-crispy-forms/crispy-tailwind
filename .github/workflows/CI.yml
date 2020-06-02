@@ -35,9 +35,5 @@ jobs:
         coverage xml
         ls -R
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: true
+      run: |
+        curl -s -X html https://codecov.io/bash 
