@@ -5,7 +5,7 @@
 {% else %}
     {# Opening Div and Label first #}
 
-    <{% if tag %}{{ tag }}{% else %}div{% endif %} id="div_{{ field.auto_id }}" class="{% if wrapper_class %} {{ wrapper_class }}{% endif %}{% if field_class %} {{ field_class }}{% else %} mb-3{% endif %}">
+    <{% if tag %}{{ tag }}{% else %}div{% endif %} id="div_{{ field.auto_id }}" class="{% if wrapper_class %}{{ wrapper_class }} {% endif %}{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}">
     {% if field.label and form_show_labels %}
         <label for="{{ field.id_for_label }}" class="{% if label_class %}{{ label_class }}{% else %}block text-gray-700 text-sm font-bold mb-2 {% endif %}">
             {{ field.label|safe }}{% if field.field.required %}<span class="asteriskField">*</span>{% endif %}
@@ -14,16 +14,16 @@
 
     {# if field has a special template then use this #}
     {% if field|is_select %}
-        <div class="{% if field_class %} {{ field_class }}{% else %} mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+        <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
         {% include 'tailwind/layout/select.html' %}
     {% elif field|is_radioselect %}
-        <div class="{% if field_class %} {{ field_class }}{% else %} mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+        <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
         {% include 'tailwind/layout/radioselect.html' %}
     {% elif field|is_checkboxselectmultiple %}
 
-        <div class="{% if field_class %} {{ field_class }}{% else %} mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+        <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
         {% include 'tailwind/layout/checkboxselectmultiple.html' %}
     {% else %}
 
