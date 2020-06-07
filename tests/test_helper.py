@@ -79,10 +79,7 @@ class CrispyHelperTests(SimpleTestCase):
     def test_crispy_layout(self):
         form = SampleForm
         form.helper = FormHelper()
-        form.helper.layout = Layout(
-            'is_company',
-            'first_name'
-        )
+        form.helper.layout = Layout("is_company", "first_name")
         html = render_crispy_form(form)
         expected_html = """
 <form  method="post" > <div id="div_id_is_company" class=""> <label for="id_is_company" class="">
