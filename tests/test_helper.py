@@ -2,7 +2,7 @@ from django.template import Context, Template
 from django.test import SimpleTestCase
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout
+from crispy_forms.layout import Column, Field, Layout
 from crispy_forms.utils import render_crispy_form
 
 from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm
@@ -87,4 +87,22 @@ class CrispyHelperTests(SimpleTestCase):
         </label> <input type="checkbox" name="is_company" class="checkboxinput " id="id_is_company"> </div> <div id="div_id_first_name" class="mb-3"> <label for="id_first_name" class="block font-bold mb-2 text-gray-700 text-sm">
             first name<span class="asteriskField">*</span> </label> <input type="text" name="first_name" maxlength="5" class="textinput textInput inputtext rounded-lg leading-normal border text-gray-700 w-full block border-gray-300 appearance-none bg-white focus:outline-none px-4 py-2" required id="id_first_name"> </div> </form>
             """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_col(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.layout = Layout(
+            Column(Field("first_name", wrapper_class="px-2"), Field("last_name", wrapper_class="px-2"),)
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+        <form  method="post" > <div 
+     class="flex flex-row" > <div id="div_id_first_name" class="px-2 mb-3"> 
+     <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2">
+            first name<span class="asteriskField">*</span> </label> 
+    <input type="text" name="first_name" maxlength="5" class="textinput textInput inputtext focus:outline-none block rounded-lg appearance-none leading-normal border-gray-300 bg-white border w-full py-2 text-gray-700 px-4" required id="id_first_name"> </div> <div id="div_id_last_name" class="px-2 mb-3"> <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2">
+            last name<span class="asteriskField">*</span> </label> 
+    <input type="text" name="last_name" maxlength="5" class="textinput textInput inputtext focus:outline-none block rounded-lg appearance-none leading-normal border-gray-300 bg-white border w-full py-2 text-gray-700 px-4" required id="id_last_name"> </div> </div> </form>
+    """
         self.assertHTMLEqual(html, expected_html)
