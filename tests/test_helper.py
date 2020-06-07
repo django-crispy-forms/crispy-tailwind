@@ -2,7 +2,7 @@ from django.template import Context, Template
 from django.test import SimpleTestCase
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Column, Field
+from crispy_forms.layout import Column, Field, Layout
 from crispy_forms.utils import render_crispy_form
 
 from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm
@@ -93,10 +93,7 @@ class CrispyHelperTests(SimpleTestCase):
         form = SampleForm()
         form.helper = FormHelper()
         form.helper.layout = Layout(
-            Column(
-                Field('first_name', wrapper_class='px-2'),
-                Field('last_name', wrapper_class='px-2'),
-            )
+            Column(Field("first_name", wrapper_class="px-2"), Field("last_name", wrapper_class="px-2"),)
         )
         html = render_crispy_form(form)
         expected_html = """
