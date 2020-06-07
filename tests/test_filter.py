@@ -1,7 +1,7 @@
 from django.template import Context, Template
 from django.test import SimpleTestCase
 
-from .forms import SampleForm, SampleForm2
+from .forms import CharFieldForm, SampleForm
 
 
 class CrispyFilterTests(SimpleTestCase):
@@ -102,13 +102,13 @@ class CrispyFilterTests(SimpleTestCase):
             {{ form|crispy }}
             """
         )
-        form = SampleForm2()
+        form = CharFieldForm()
         c = Context({"form": form})
         html = template.render(c)
         assert "border-red-500" not in html
         assert "border-gray-300" in html
 
-        form = SampleForm2({"name": ""})
+        form = CharFieldForm({"name": ""})
         c = Context({"form": form})
         html = template.render(c)
         assert "border-red-500" in html
