@@ -27,6 +27,27 @@ class SampleForm(forms.Form):
         return self.cleaned_data
 
 
-class SampleForm2(forms.Form):
+class CharFieldForm(forms.Form):
 
     name = forms.CharField(required=True)
+
+
+class PasswordFieldForm(forms.Form):
+
+    password = forms.CharField(widget=forms.PasswordInput)
+
+
+class RadioForm(forms.Form):
+    choices = [
+        ("blue", "Blue"),
+        ("green", "Green"),
+    ]
+    radio = forms.ChoiceField(widget=forms.RadioSelect, choices=choices)
+
+
+class CheckboxMultiple(forms.Form):
+    choices = [
+        ("blue", "Blue"),
+        ("green", "Green"),
+    ]
+    radio = forms.ChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices)
