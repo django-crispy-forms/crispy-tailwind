@@ -60,8 +60,21 @@ rendering of server side errors:
 `{% crispy %}` tags
 -------------------
 
-Content
+Using the `{% crispy %}` tag allows you to use the core crispy-form_
+functionality.
 
+1. Load the crispy tag ``{% load crispy_forms_tags %}``
+2. Add ``FormHelper`` to your form and use crispy-forms to configure your form.
+2. Use the crispy tag ``{% crispy form %}`` in your template.
+
+This will render a form with the same opinionated style as the `|crispy`
+filter.
+
+The classes are largely held in a ``CSSContainer`` class, this can be
+changed to meet your needs. Docs and functionality for this area continue to be
+developed.
+
+.. _crispy-form: https://django-crispy-forms.readthedocs.io/en/latest/index.html
 
 Crispy-addon
 ============
