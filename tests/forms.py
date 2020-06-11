@@ -50,4 +50,4 @@ class CheckboxMultiple(forms.Form):
         ("blue", "Blue"),
         ("green", "Green"),
     ]
-    radio = forms.ChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices)
+    checkbox = forms.ChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices)

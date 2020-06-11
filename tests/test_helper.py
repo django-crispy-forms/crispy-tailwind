@@ -76,18 +76,18 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
-                <div id="div_id_radio" class="mb-3">
-                    <label for="" class="block font-bold mb-2 text-gray-700 text-sm"> Radio<span class="asteriskField">*</span> </label>
+                <div id="div_id_checkbox" class="mb-3">
+                    <label for="" class="block font-bold mb-2 text-gray-700 text-sm"> Checkbox<span class="asteriskField">*</span> </label>
                     <div class="mb-3">
                         <div class="mr-3">
-                            <label class="block text-gray-700" for="id_radio_1">
-                                <input type="checkbox" class="" name="radio" id="id_radio_1" value="blue" />
+                            <label class="block text-gray-700" for="id_checkbox_1">
+                                <input type="checkbox" class="" name="checkbox" id="id_checkbox_1" value="blue" />
                                 Blue
                             </label>
                         </div>
                         <div class="mr-3">
-                            <label class="block text-gray-700" for="id_radio_2">
-                                <input type="checkbox" class="" name="radio" id="id_radio_2" value="green" />
+                            <label class="block text-gray-700" for="id_checkbox_2">
+                                <input type="checkbox" class="" name="checkbox" id="id_checkbox_2" value="green" />
                                 Green
                             </label>
                         </div>
@@ -189,22 +189,22 @@ class CrispyHelperTests(SimpleTestCase):
     def test_inline_checkbox(self):
         form = CheckboxMultiple()
         form.helper = FormHelper()
-        form.helper.layout = Layout(InlineCheckboxes("radio"))
+        form.helper.layout = Layout(InlineCheckboxes("checkbox"))
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
-                <div id="div_id_radio" class="mb-3">
-                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
-                    <div id="div_id_radio" class="flex flex-row">
+                <div id="div_id_checkbox" class="mb-3">
+                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Checkbox<span class="asteriskField">*</span> </label>
+                    <div id="div_id_checkbox" class="flex flex-row">
                         <div class="mr-3">
-                            <label class="block text-gray-700" for="id_radio_1">
-                                <input type="checkbox" class="" name="radio" id="id_radio_1" value="blue" />
+                            <label class="block text-gray-700" for="id_checkbox_1">
+                                <input type="checkbox" class="" name="checkbox" id="id_checkbox_1" value="blue" />
                                 Blue
                             </label>
                         </div>
                         <div class="mr-3">
-                            <label class="block text-gray-700" for="id_radio_2">
-                                <input type="checkbox" class="" name="radio" id="id_radio_2" value="green" />
+                            <label class="block text-gray-700" for="id_checkbox_2">
+                                <input type="checkbox" class="" name="checkbox" id="id_checkbox_2" value="green" />
                                 Green
                             </label>
                         </div>
