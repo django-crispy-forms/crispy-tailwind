@@ -197,8 +197,8 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
-                <div id="div_id_radio" class="mb-3">
-                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                <div id="div_id_radio" class=" mb-3">
+                    <label for="" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
                         <div class="mr-3">
                             <label class="block text-gray-700" for="id_radio_1">
