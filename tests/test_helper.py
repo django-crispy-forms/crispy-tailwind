@@ -1,6 +1,7 @@
 from django.template import Context, Template
 from django.test import SimpleTestCase
 
+from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Column, Field, Layout
 from crispy_forms.utils import render_crispy_form
@@ -155,6 +156,62 @@ class CrispyHelperTests(SimpleTestCase):
                             required
                             id="id_last_name"
                         />
+                    </div>
+                </div>
+            </form>
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_inline_radio(self):
+        form = RadioForm()
+        form.helper = FormHelper()
+        form.helper.layout = Layout(
+            InlineRadios('radio')
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+            <form method="post">
+                <div id="div_id_radio" class="mb-3">
+                    <label for="id_radio_0" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                    <div id="div_id_radio" class="flex flex-row">
+                        <label for="id_radio_1" class="block text-gray-700 mr-3">
+                            <input type="radio" class="" name="radio" id="id_radio_1" value="blue" />
+                            Blue
+                        </label>
+                        <label for="id_radio_2" class="block text-gray-700 mr-3">
+                            <input type="radio" class="" name="radio" id="id_radio_2" value="green" />
+                            Green
+                        </label>
+                    </div>
+                </div>
+            </form>
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_inline_checkbox(self):
+        form = CheckboxMultiple()
+        form.helper = FormHelper()
+        form.helper.layout = Layout(
+            InlineCheckboxes('radio')
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+            <form method="post">
+                <div id="div_id_radio" class="mb-3">
+                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                    <div id="div_id_radio" class="flex flex-row">
+                        <div class="mr-3">
+                            <label class="block text-gray-700" for="id_radio_1">
+                                <input type="checkbox" class="" name="radio" id="id_radio_1" value="blue" />
+                                Blue
+                            </label>
+                        </div>
+                        <div class="mr-3">
+                            <label class="block text-gray-700" for="id_radio_2">
+                                <input type="checkbox" class="" name="radio" id="id_radio_2" value="green" />
+                                Green
+                            </label>
+                        </div>
                     </div>
                 </div>
             </form>
