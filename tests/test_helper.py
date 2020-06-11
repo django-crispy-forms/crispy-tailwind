@@ -165,9 +165,7 @@ class CrispyHelperTests(SimpleTestCase):
     def test_inline_radio(self):
         form = RadioForm()
         form.helper = FormHelper()
-        form.helper.layout = Layout(
-            InlineRadios('radio')
-        )
+        form.helper.layout = Layout(InlineRadios("radio"))
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
@@ -191,9 +189,7 @@ class CrispyHelperTests(SimpleTestCase):
     def test_inline_checkbox(self):
         form = CheckboxMultiple()
         form.helper = FormHelper()
-        form.helper.layout = Layout(
-            InlineCheckboxes('radio')
-        )
+        form.helper.layout = Layout(InlineCheckboxes("radio"))
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
