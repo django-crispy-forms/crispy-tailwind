@@ -172,7 +172,7 @@ class CrispyHelperTests(SimpleTestCase):
         expected_html = """
             <form method="post">
                 <div id="div_id_radio" class="mb-3">
-                    <label for="id_radio_0" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                    <label for="id_radio_0" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
                         <label for="id_radio_1" class="block text-gray-700 mr-3">
                             <input type="radio" class="" name="radio" id="id_radio_1" value="blue" />
@@ -197,7 +197,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <form method="post">
-                <div id="div_id_radio" class=" mb-3">
+                <div id="div_id_radio" class="mb-3">
                     <label for="" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
                         <div class="mr-3">
