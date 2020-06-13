@@ -6,32 +6,57 @@ This template pack renders Django widgets with the Tailwind CSS framework. This
 page shows examples of how these widgets look when rendered with the default
 styling. For these objects we have given an opinion on how they should look.
 
-Default Style
-=============
+If you are using the ``|crispy`` filter the form will be styles using the
+default layout. If you wish to customise the form you can use ``{% crispy %}``
+tags and use ``FormHelper`` to control the layout of your form.
 
-Image here
+Wherever possible layout objects are used from ``crispy-forms`` itself. Where
+these can not be used Tailwind versions are included within this template pack.
+This means that the layout objects may be found within one of three files.
 
-Text Input
-----------
+- ``crispy_forms.layout`` (``Layout`` and other standard objects)
+- ``crispy_forms.bootstrap`` (Some bootstrap objects work out of the box, so we
+  will use these)
+- ``crispy_tailwind.layout`` (Customised versions for Tailwind are found here)
 
-Image here
+Knowledge for crispy-forms ``Layout`` class is assumed. Please see
+https://django-crispy-forms.readthedocs.io/en/latest/layouts.html for further
+information.
 
-Text Area
----------
+crispy_forms.layout
+===================
 
-Image here
+Content to be added
 
-Select
-------
+crisp_forms.bootstrap
+=====================
 
-Image here
+Content to be added
 
-Radio
------
+crispy_tailwind.layout
+======================
 
-Image here
+The following layout objects can be imported from ``crispy_tailwind.layout``.
 
-Checkbox
---------
+Buttons
+-------
 
-Image here
+The three Buttons (``Button``, ``Reset`` and ``Submit``) from ``crispy-forms``
+have been customised for the Tailwind template pack. Using an example form
+layout of the following will render the image below::
+
+  form.helper.layout = Layout(
+      ButtonHolder(Button("button", "Button"), Submit("submit", "Submit",), Reset("cancel", "Cancel"))
+  )
+
+.. image:: img/Buttons.png
+   :height: 35px
+
+The three buttons have default classes applied to them. The buttons can all be
+customised by adding css_classes to these layout objects. The following layout
+renders a single customised ``Submit`` button::
+
+  form.helper.layout = Layout(Submit("submit", "Submit", css_class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"))
+
+.. image:: img/custom_button.png
+   :height: 35px
