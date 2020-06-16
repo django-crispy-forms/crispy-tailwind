@@ -50,9 +50,9 @@ class CrispyHelperTests(SimpleTestCase):
     def test_radio(self):
         form = RadioForm()
         form.helper = FormHelper()
+        form.helper.form_tag = False
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div id="div_id_radio" class="mb-3">
                     <label for="id_radio_0" class="block font-bold mb-2 text-gray-700 text-sm"> Radio<span class="asteriskField">*</span> </label>
                     <div class="mb-3">
@@ -66,16 +66,15 @@ class CrispyHelperTests(SimpleTestCase):
                         </label>
                     </div>
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
 
     def test_multiple_checkbox(self):
         form = CheckboxMultiple()
         form.helper = FormHelper()
+        form.helper.form_tag = False
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div id="div_id_checkbox" class="mb-3">
                     <label for="" class="block font-bold mb-2 text-gray-700 text-sm"> Checkbox<span class="asteriskField">*</span> </label>
                     <div class="mb-3">
@@ -93,7 +92,6 @@ class CrispyHelperTests(SimpleTestCase):
                         </div>
                     </div>
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
 
@@ -101,9 +99,9 @@ class CrispyHelperTests(SimpleTestCase):
         form = SampleForm
         form.helper = FormHelper()
         form.helper.layout = Layout("is_company", "first_name")
+        form.helper.form_tag = False
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div id="div_id_is_company" class="mb-3">
                     <label for="id_is_company" class="block font-bold mb-2 text-gray-700 text-sm">
                         company
@@ -121,19 +119,18 @@ class CrispyHelperTests(SimpleTestCase):
                         id="id_first_name"
                     />
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
 
     def test_col(self):
         form = SampleForm()
         form.helper = FormHelper()
+        form.helper.form_tag = False
         form.helper.layout = Layout(
             Column(Field("first_name", wrapper_class="px-2"), Field("last_name", wrapper_class="px-2"),)
         )
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div class="flex flex-row">
                     <div id="div_id_first_name" class="px-2 mb-3">
                         <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
@@ -158,17 +155,16 @@ class CrispyHelperTests(SimpleTestCase):
                         />
                     </div>
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
 
     def test_inline_radio(self):
         form = RadioForm()
         form.helper = FormHelper()
+        form.helper.form_tag = False
         form.helper.layout = Layout(InlineRadios("radio"))
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div id="div_id_radio" class="mb-3">
                     <label for="id_radio_0" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
@@ -182,17 +178,16 @@ class CrispyHelperTests(SimpleTestCase):
                         </label>
                     </div>
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
 
     def test_inline_checkbox(self):
         form = CheckboxMultiple()
         form.helper = FormHelper()
+        form.helper.form_tag = False
         form.helper.layout = Layout(InlineCheckboxes("checkbox"))
         html = render_crispy_form(form)
         expected_html = """
-            <form method="post">
                 <div id="div_id_checkbox" class="mb-3">
                     <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Checkbox<span class="asteriskField">*</span> </label>
                     <div id="div_id_checkbox" class="flex flex-row">
@@ -210,6 +205,5 @@ class CrispyHelperTests(SimpleTestCase):
                         </div>
                     </div>
                 </div>
-            </form>
             """
         self.assertHTMLEqual(html, expected_html)
