@@ -4,7 +4,7 @@ from django.test import SimpleTestCase
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Column, Field, Layout
+from crispy_forms.layout import Column, Field, Layout, Row
 from crispy_forms.utils import render_crispy_form
 
 from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm
@@ -123,39 +123,55 @@ class CrispyHelperTests(SimpleTestCase):
             """
         self.assertHTMLEqual(html, expected_html)
 
-    def test_col(self):
+    def test_col_row(self):
         form = SampleForm()
         form.helper = FormHelper()
         form.helper.form_tag = False
         form.helper.layout = Layout(
-            Column(Field("first_name", wrapper_class="px-2"), Field("last_name", wrapper_class="px-2"),)
+            Row(Column(Field("first_name"), Field("last_name"), css_class="px-2"), Column("email", css_class="px-2"),)
         )
         html = render_crispy_form(form)
         expected_html = """
-                <div class="flex flex-row">
-                    <div id="div_id_first_name" class="px-2 mb-3">
+            <div class="flex flex-row">
+                <div class="px-2">
+                    <div id="div_id_first_name" class="mb-3">
                         <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
                         <input
                             type="text"
                             name="first_name"
                             maxlength="5"
-                            class="textinput textInput inputtext focus:outline-none block rounded-lg appearance-none leading-normal border-gray-300 bg-white border w-full py-2 text-gray-700 px-4"
+                            class="textinput textInput inputtext border w-full bg-white appearance-none block focus:outline-none leading-normal py-2 border-gray-300 text-gray-700 rounded-lg px-4"
                             required
                             id="id_first_name"
                         />
                     </div>
-                    <div id="div_id_last_name" class="px-2 mb-3">
+                    <div id="div_id_last_name" class="mb-3">
                         <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2"> last name<span class="asteriskField">*</span> </label>
                         <input
                             type="text"
                             name="last_name"
                             maxlength="5"
-                            class="textinput textInput inputtext focus:outline-none block rounded-lg appearance-none leading-normal border-gray-300 bg-white border w-full py-2 text-gray-700 px-4"
+                            class="textinput textInput inputtext border w-full bg-white appearance-none block focus:outline-none leading-normal py-2 border-gray-300 text-gray-700 rounded-lg px-4"
                             required
                             id="id_last_name"
                         />
                     </div>
                 </div>
+                <div class="px-2">
+                    <div id="div_id_email" class="mb-3">
+                        <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                        <input
+                            type="text"
+                            name="email"
+                            maxlength="30"
+                            class="textinput textInput inputtext border w-full bg-white appearance-none block focus:outline-none leading-normal py-2 border-gray-300 text-gray-700 rounded-lg px-4"
+                            required
+                            id="id_email"
+                        />
+                        <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                    </div>
+                </div>
+            </div>
             """
         self.assertHTMLEqual(html, expected_html)
 
