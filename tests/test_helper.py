@@ -1,6 +1,6 @@
+from django.forms.models import formset_factory
 from django.template import Context, Template
 from django.test import SimpleTestCase
-from django.forms.models import formset_factory
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
@@ -214,9 +214,7 @@ class CrispyHelperTests(SimpleTestCase):
         formset = SampleFormSet()
         formset.helper = FormHelper()
         formset.helper.form_tag = False
-        formset.helper.layout = Layout(
-            'email'
-        )
+        formset.helper.layout = Layout("email")
         html = render_crispy_form(formset)
         expected_html = """
             <div>
