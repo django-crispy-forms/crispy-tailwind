@@ -6,13 +6,14 @@ This template pack renders Django widgets with the Tailwind CSS framework. This
 page shows examples of how these widgets look when rendered with the default
 styling. For these objects we have given an opinion on how they should look.
 
-If you are using the ``|crispy`` filter the form will be styles using the
+If you are using the ``|crispy`` filter the form will be styled using the
 default layout. If you wish to customise the form you can use ``{% crispy %}``
-tags and use ``FormHelper`` to control the layout of your form.
+tags and ``FormHelper`` to control the layout of your form.
 
-Wherever possible layout objects are used from ``crispy-forms`` itself. Where
-these can not be used Tailwind versions are included within this template pack.
-This means that the layout objects may be found within one of three files.
+Wherever possible layout objects are used from ``crispy-forms`` itself (either
+core or bootstrap). Where these can not be used Tailwind versions are included
+within this template pack. This means that the layout objects may be found
+within one of three files.
 
 - ``crispy_forms.layout`` (``Layout`` and other standard objects)
 - ``crispy_forms.bootstrap`` (Some bootstrap objects work out of the box, so we
@@ -42,8 +43,8 @@ Buttons
 -------
 
 The three Buttons (``Button``, ``Reset`` and ``Submit``) from ``crispy-forms``
-have been customised for the Tailwind template pack. Using an example form
-layout of the following will render the image below::
+have been customised for the Tailwind template pack. Below is an example form
+layout with an image showing how it is rendered::
 
   form.helper.layout = Layout(
       ButtonHolder(Button("button", "Button"), Submit("submit", "Submit",), Reset("cancel", "Cancel"))
