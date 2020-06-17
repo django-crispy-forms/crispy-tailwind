@@ -1,5 +1,6 @@
 from django.template import Context, Template
 from django.test import SimpleTestCase
+from django.forms.models import formset_factory
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
@@ -205,5 +206,44 @@ class CrispyHelperTests(SimpleTestCase):
                         </div>
                     </div>
                 </div>
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_formset(self):
+        SampleFormSet = formset_factory(SampleForm, extra=2)
+        formset = SampleFormSet()
+        formset.helper = FormHelper()
+        formset.helper.form_tag = False
+        formset.helper.layout = Layout(
+            'email'
+        )
+        html = render_crispy_form(formset)
+        expected_html = """
+            <div>
+                <input type="hidden" name="form-TOTAL_FORMS" value="2" id="id_form-TOTAL_FORMS" /> <input type="hidden" name="form-INITIAL_FORMS" value="0" id="id_form-INITIAL_FORMS" />
+                <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS" /> <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS" />
+            </div>
+            <div id="div_id_form-0-email" class="mb-3">
+                <label for="id_form-0-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                <input
+                    type="text"
+                    name="form-0-email"
+                    maxlength="30"
+                    class="textinput textInput inputtext border appearance-none block rounded-lg border-gray-300 px-4 py-2 text-gray-700 w-full leading-normal bg-white focus:outline-none"
+                    id="id_form-0-email"
+                />
+                <small id="hint_id_form-0-email" class="text-gray-600">Insert your email</small>
+            </div>
+            <div id="div_id_form-1-email" class="mb-3">
+                <label for="id_form-1-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                <input
+                    type="text"
+                    name="form-1-email"
+                    maxlength="30"
+                    class="textinput textInput inputtext border appearance-none block rounded-lg border-gray-300 px-4 py-2 text-gray-700 w-full leading-normal bg-white focus:outline-none"
+                    id="id_form-1-email"
+                />
+                <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
+            </div>
             """
         self.assertHTMLEqual(html, expected_html)
