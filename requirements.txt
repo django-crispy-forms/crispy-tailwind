@@ -13,6 +13,7 @@ isort
 flake8
 django-coverage-plugin
 codecov
+pre-commit
 
 
 # docs
