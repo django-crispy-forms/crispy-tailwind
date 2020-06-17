@@ -86,12 +86,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Layout Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#default-style">Default Style</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#text-input">Text Input</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#text-area">Text Area</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#select">Select</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radio">Radio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#checkbox">Checkbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crispy-forms-layout">crispy_forms.layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crisp-forms-bootstrap">crisp_forms.bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crispy-tailwind-layout">crispy_tailwind.layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#buttons">Buttons</a></li>
 </ul>
 </li>
 </ul>
@@ -167,28 +165,51 @@
 <p>This template pack renders Django widgets with the Tailwind CSS framework. This
 page shows examples of how these widgets look when rendered with the default
 styling. For these objects we have given an opinion on how they should look.</p>
-<div class="section" id="default-style">
-<h2>Default Style<a class="headerlink" href="#default-style" title="Permalink to this headline">¶</a></h2>
-<p>Image here</p>
-<div class="section" id="text-input">
-<h3>Text Input<a class="headerlink" href="#text-input" title="Permalink to this headline">¶</a></h3>
-<p>Image here</p>
+<p>If you are using the <code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter the form will be styled using the
+default layout. If you wish to customise the form you can use <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">%}</span></code>
+tags and <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> to control the layout of your form.</p>
+<p>Wherever possible layout objects are used from <code class="docutils literal notranslate"><span class="pre">crispy-forms</span></code> itself (either
+core or bootstrap). Where these can not be used Tailwind versions are included
+within this template pack. This means that the layout objects may be found
+within one of three files.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">crispy_forms.layout</span></code> (<code class="docutils literal notranslate"><span class="pre">Layout</span></code> and other standard objects)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crispy_forms.bootstrap</span></code> (Some bootstrap objects work out of the box, so we
+will use these)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crispy_tailwind.layout</span></code> (Customised versions for Tailwind are found here)</p></li>
+</ul>
+<p>Knowledge for crispy-forms <code class="docutils literal notranslate"><span class="pre">Layout</span></code> class is assumed. Please see
+<a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html">https://django-crispy-forms.readthedocs.io/en/latest/layouts.html</a> for further
+information.</p>
+<div class="section" id="crispy-forms-layout">
+<h2>crispy_forms.layout<a class="headerlink" href="#crispy-forms-layout" title="Permalink to this headline">¶</a></h2>
+<p>Content to be added</p>
 </div>
-<div class="section" id="text-area">
-<h3>Text Area<a class="headerlink" href="#text-area" title="Permalink to this headline">¶</a></h3>
-<p>Image here</p>
+<div class="section" id="crisp-forms-bootstrap">
+<h2>crisp_forms.bootstrap<a class="headerlink" href="#crisp-forms-bootstrap" title="Permalink to this headline">¶</a></h2>
+<p>Content to be added</p>
 </div>
-<div class="section" id="select">
-<h3>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
-<p>Image here</p>
+<div class="section" id="crispy-tailwind-layout">
+<h2>crispy_tailwind.layout<a class="headerlink" href="#crispy-tailwind-layout" title="Permalink to this headline">¶</a></h2>
+<p>The following layout objects can be imported from <code class="docutils literal notranslate"><span class="pre">crispy_tailwind.layout</span></code>.</p>
+<div class="section" id="buttons">
+<h3>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h3>
+<p>The three Buttons (<code class="docutils literal notranslate"><span class="pre">Button</span></code>, <code class="docutils literal notranslate"><span class="pre">Reset</span></code> and <code class="docutils literal notranslate"><span class="pre">Submit</span></code>) from <code class="docutils literal notranslate"><span class="pre">crispy-forms</span></code>
+have been customised for the Tailwind template pack. Below is an example form
+layout with an image showing how it is rendered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+    <span class="n">ButtonHolder</span><span class="p">(</span><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;Button&quot;</span><span class="p">),</span> <span class="n">Submit</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="s2">&quot;Submit&quot;</span><span class="p">,),</span> <span class="n">Reset</span><span class="p">(</span><span class="s2">&quot;cancel&quot;</span><span class="p">,</span> <span class="s2">&quot;Cancel&quot;</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="radio">
-<h3>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h3>
-<p>Image here</p>
+<a class="reference internal image-reference" href="img/Buttons.png"><img alt="img/Buttons.png" src="img/Buttons.png" style="height: 35px;" /></a>
+<p>The three buttons have default classes applied to them. The buttons can all be
+customised by adding css_classes to these layout objects. The following layout
+renders a single customised <code class="docutils literal notranslate"><span class="pre">Submit</span></code> button:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">Submit</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="s2">&quot;Submit&quot;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded&quot;</span><span class="p">))</span>
+</pre></div>
 </div>
-<div class="section" id="checkbox">
-<h3>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h3>
-<p>Image here</p>
+<a class="reference internal image-reference" href="img/custom_button.png"><img alt="img/custom_button.png" src="img/custom_button.png" style="height: 35px;" /></a>
 </div>
 </div>
 </div>
