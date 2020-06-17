@@ -61,3 +61,25 @@ renders a single customised ``Submit`` button::
 
 .. image:: img/custom_button.png
    :height: 35px
+
+Alert
+-----
+
+Renders an alert message box::
+
+        form.helper.layout = Layout(
+            Alert(content="<strong>Warning!</strong> Here's a test message.")
+        )
+
+.. image:: img/alert.png
+  :height: 50px
+
+`Alert`s `css_class` argument can be used to change the default classes on the
+wrapping `<div>`, this allows simple changes to the alert style (e.g. colour).
+
+In addition the variety of alerts possible with Tailwind is wide and but may
+require a different HTML layout. In this case you may find is useful to over
+ride the `alert.html` template. See the crispy-forms docs on how to
+`over ride templates`_ for more information.
+
+.. _over ride templates: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates

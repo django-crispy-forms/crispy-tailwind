@@ -1,4 +1,5 @@
 from crispy_forms.layout import BaseInput
+from crispy_forms.bootstrap import Alert
 
 
 class Submit(BaseInput):
@@ -56,3 +57,7 @@ class Button(BaseInput):
         else:
             self.field_classes = css_class
         super().__init__(*args, **kwargs)
+
+
+class Alert(Alert):
+    css_class = ""
