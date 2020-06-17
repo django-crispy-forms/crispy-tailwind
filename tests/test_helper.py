@@ -6,6 +6,7 @@ from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Column, Field, Layout, Row
 from crispy_forms.utils import render_crispy_form
+from crispy_tailwind.layout import Button, Reset, Submit
 
 from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm
 
@@ -259,5 +260,31 @@ class CrispyHelperTests(SimpleTestCase):
                 />
                 <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
             </div>
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_buttons(self):
+        form = CharFieldForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(Button("button", "Button"), Submit("submit", "Submit",), Reset("cancel", "Cancel"))
+        html = render_crispy_form(form)
+        expected_html = """
+            <input type="button" name="button" value="Button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="button-id-button" />
+            <input type="submit" name="submit" value="Submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="submit-id-submit" />
+            <input type="reset" name="cancel" value="Cancel" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="reset-id-cancel" />
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+        form.helper.layout = Layout(
+            Submit(
+                "submit",
+                "Submit",
+                css_class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
+            )
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+            <input type="submit" name="submit" value="Submit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" id="submit-id-submit" />
             """
         self.assertHTMLEqual(html, expected_html)
