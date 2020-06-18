@@ -1,10 +1,10 @@
 from django.template import Template
 from django.test import SimpleTestCase
 
-from crispy_tailwind.layout import Alert
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 from crispy_forms.utils import render_crispy_form
+from crispy_tailwind.layout import Alert
 
 from .forms import SampleForm
 
@@ -23,9 +23,7 @@ class CrispyHelperTests(SimpleTestCase):
         form = SampleForm
         form.helper = FormHelper()
         form.helper.form_tag = False
-        form.helper.layout = Layout(
-            Alert(content="<strong>Warning!</strong> Here's a test message.")
-        )
+        form.helper.layout = Layout(Alert(content="<strong>Warning!</strong> Here's a test message."))
         html = render_crispy_form(form)
         expected_html = """
           <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">

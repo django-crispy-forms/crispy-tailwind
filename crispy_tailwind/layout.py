@@ -1,5 +1,5 @@
-from crispy_forms.layout import BaseInput
 from crispy_forms.bootstrap import Alert
+from crispy_forms.layout import BaseInput
 
 
 class Submit(BaseInput):
