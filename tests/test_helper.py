@@ -1,5 +1,5 @@
 from django.forms.models import formset_factory
-from django.template import Context, Template
+from django.template import Template
 from django.test import SimpleTestCase
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
