@@ -90,6 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#crisp-forms-bootstrap">crisp_forms.bootstrap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#crispy-tailwind-layout">crispy_tailwind.layout</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#buttons">Buttons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alert">Alert</a></li>
 </ul>
 </li>
 </ul>
@@ -210,6 +211,24 @@ renders a single customised <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="img/custom_button.png"><img alt="img/custom_button.png" src="img/custom_button.png" style="height: 35px;" /></a>
+</div>
+<div class="section" id="alert">
+<h3>Alert<a class="headerlink" href="#alert" title="Permalink to this headline">¶</a></h3>
+<p>Renders an alert message box:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+    <span class="n">Alert</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">&quot;&lt;strong&gt;Warning!&lt;/strong&gt; Here&#39;s a test message.&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="img/alert.png"><img alt="img/alert.png" src="img/alert.png" style="height: 50px;" /></a>
+<p><code class="docutils literal notranslate"><span class="pre">Alert``s</span> <span class="pre">``css_class</span></code> argument can be used to change the default classes on the
+wrapping <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, this allows simple changes to the alert style (e.g. colour).</p>
+<p>By default alerts have a close button. To disable, set <code class="docutils literal notranslate"><span class="pre">dismiss</span></code> to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>In addition the variety of alerts possible with Tailwind is wide and but may
+require a different HTML layout. In this case you may find is useful to over
+ride the <code class="docutils literal notranslate"><span class="pre">alert.html</span></code> template. See the crispy-forms docs on how to
+<a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates">over ride templates</a> for more information.</p>
 </div>
 </div>
 </div>
