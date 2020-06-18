@@ -74,12 +74,15 @@ Renders an alert message box::
 .. image:: img/alert.png
   :height: 50px
 
-`Alert`s `css_class` argument can be used to change the default classes on the
-wrapping `<div>`, this allows simple changes to the alert style (e.g. colour).
+``Alert``s ``css_class`` argument can be used to change the default classes on the
+wrapping ``<div>``, this allows simple changes to the alert style (e.g. colour).
+
+By default alerts have a close button. To disable, set ``dismiss`` to
+``false``.
 
 In addition the variety of alerts possible with Tailwind is wide and but may
 require a different HTML layout. In this case you may find is useful to over
-ride the `alert.html` template. See the crispy-forms docs on how to
+ride the ``alert.html`` template. See the crispy-forms docs on how to
 `over ride templates`_ for more information.
 
 .. _over ride templates: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates

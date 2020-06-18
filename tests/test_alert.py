@@ -40,6 +40,19 @@ class CrispyHelperTests(SimpleTestCase):
         """
         self.assertHTMLEqual(html, expected_html)
 
+    def test_dismiss_false(self):
+        form = SampleForm
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(Alert(dismiss=False, content="<strong>Warning!</strong> Here's a test message."))
+        html = render_crispy_form(form)
+        expected_html = """
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <div class="block sm:inline"><strong>Warning!</strong> Here's a test message.</div>
+        </div>
+        """
+        self.assertHTMLEqual(html, expected_html)
+
     def test_custom_alert(self):
         form = SampleForm
         form.helper = FormHelper()
