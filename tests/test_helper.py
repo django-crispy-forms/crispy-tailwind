@@ -35,6 +35,21 @@ class CrispyHelperTests(SimpleTestCase):
             """
         self.assertHTMLEqual(html, expected_html)
 
+    def test_failing_CharField(self):
+        form = CharFieldForm(data={"name": ""})
+        form.helper = FormHelper()
+        html = render_crispy_form(form)
+        expected_html = """
+            <form method="post">
+                <div id="div_id_name" class="mb-3">
+                    <label for="id_name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                    <input type="text" name="name" class="textinput textInput inputtext focus:outline-none w-full bg-white border-red-500 px-4 block rounded-lg text-gray-700 appearance-none py-2 leading-normal border" required id="id_name" />
+                    <p id="error_1_id_name" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
+                </div>
+            </form>
+            """
+        self.assertHTMLEqual(html, expected_html)
+
     def test_password(self):
         form = PasswordFieldForm()
         form.helper = FormHelper()
