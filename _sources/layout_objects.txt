@@ -74,8 +74,9 @@ Renders an alert message box::
 .. image:: img/alert.png
   :height: 50px
 
-``Alert``s ``css_class`` argument can be used to change the default classes on the
-wrapping ``<div>``, this allows simple changes to the alert style (e.g. colour).
+The ``css_class`` argument can be used to change the default classes on the
+wrapping ``<div>``, this allows simple changes to the alert style (e.g. colour)
+.
 
 By default alerts have a close button. To disable, set ``dismiss`` to
 ``false``.
