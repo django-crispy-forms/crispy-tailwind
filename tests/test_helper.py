@@ -278,7 +278,7 @@ class CrispyHelperTests(SimpleTestCase):
             """
         self.assertHTMLEqual(html, expected_html)
 
-    def test_formset(self):
+    def test_formset_with_form_tag(self):
         SampleFormSet = formset_factory(SampleForm, extra=2)
         formset = SampleFormSet()
         formset.helper = FormHelper()
