@@ -8,7 +8,7 @@ from crispy_forms.layout import Column, Field, Layout, Row
 from crispy_forms.utils import render_crispy_form
 from crispy_tailwind.layout import Button, Reset, Submit
 
-from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm
+from .forms import CharFieldForm, CheckboxMultiple, PasswordFieldForm, RadioForm, SampleForm, ShortCharFieldForm
 
 template = Template(
     """
@@ -276,6 +276,71 @@ class CrispyHelperTests(SimpleTestCase):
                 <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
             </div>
             """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_formset_with_errors(self):
+        SampleFormSet = formset_factory(ShortCharFieldForm, extra=1, max_num=2, validate_max=True)
+        data = {
+            'name-0-name': 'test',
+            'name-INITIAL_FORMS': '0',
+            'name-MIN_NUM_FORMS': '0',
+            'name-MAX_NUM_FORMS': '0',
+            'name-TOTAL_FORMS': '3'
+        }
+        formset = SampleFormSet(data=data, prefix='name')
+        formset.helper = FormHelper()
+        formset.helper.formset_error_title = "Non Form Errors"
+        formset.helper.form_tag = False
+        formset.helper.layout = Layout("email")
+        html = render_crispy_form(formset)
+        expected_html = """
+            <div>
+                <input type="hidden" name="name-TOTAL_FORMS" value="3" id="id_name-TOTAL_FORMS" /> <input type="hidden" name="name-INITIAL_FORMS" value="0" id="id_name-INITIAL_FORMS" />
+                <input type="hidden" name="name-MIN_NUM_FORMS" value="0" id="id_name-MIN_NUM_FORMS" /> <input type="hidden" name="name-MAX_NUM_FORMS" value="0" id="id_name-MAX_NUM_FORMS" />
+            </div>
+            <div class="alert mb-4">
+                <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                    Non Form Errors
+                </div>
+                <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                    <ul>
+                        <li>Please submit 2 or fewer forms.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="div_id_name-0-name" class="mb-3">
+                <label for="id_name-0-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <input
+                    type="text"
+                    name="name-0-name"
+                    value="test"
+                    maxlength="3"
+                    class="textinput textInput inputtext leading-normal bg-white w-full focus:outline-none text-gray-700 py-2 appearance-none rounded-lg px-4 block border border-red-500"
+                    id="id_name-0-name"
+                />
+                <p id="error_1_id_name-0-name" class="text-red-500 text-xs italic"><strong>Ensure this value has at most 3 characters (it has 4).</strong></p>
+            </div>
+            <div id="div_id_name-1-name" class="mb-3">
+                <label for="id_name-1-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <input
+                    type="text"
+                    name="name-1-name"
+                    maxlength="3"
+                    class="textinput textInput inputtext leading-normal bg-white w-full focus:outline-none text-gray-700 py-2 appearance-none rounded-lg px-4 block border border-gray-300"
+                    id="id_name-1-name"
+                />
+            </div>
+            <div id="div_id_name-2-name" class="mb-3">
+                <label for="id_name-2-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <input
+                    type="text"
+                    name="name-2-name"
+                    maxlength="3"
+                    class="textinput textInput inputtext leading-normal bg-white w-full focus:outline-none text-gray-700 py-2 appearance-none rounded-lg px-4 block border border-gray-300"
+                    id="id_name-2-name"
+                />
+            </div>
+             """
         self.assertHTMLEqual(html, expected_html)
 
     def test_formset_with_form_tag(self):
