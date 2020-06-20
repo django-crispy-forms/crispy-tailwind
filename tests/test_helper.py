@@ -281,13 +281,13 @@ class CrispyHelperTests(SimpleTestCase):
     def test_formset_with_errors(self):
         SampleFormSet = formset_factory(ShortCharFieldForm, extra=1, max_num=2, validate_max=True)
         data = {
-            'name-0-name': 'test',
-            'name-INITIAL_FORMS': '0',
-            'name-MIN_NUM_FORMS': '0',
-            'name-MAX_NUM_FORMS': '0',
-            'name-TOTAL_FORMS': '3'
+            "name-0-name": "test",
+            "name-INITIAL_FORMS": "0",
+            "name-MIN_NUM_FORMS": "0",
+            "name-MAX_NUM_FORMS": "0",
+            "name-TOTAL_FORMS": "3",
         }
-        formset = SampleFormSet(data=data, prefix='name')
+        formset = SampleFormSet(data=data, prefix="name")
         formset.helper = FormHelper()
         formset.helper.formset_error_title = "Non Form Errors"
         formset.helper.form_tag = False
