@@ -4,7 +4,7 @@ from django.test import SimpleTestCase
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Column, Field, Layout, Row
+from crispy_forms.layout import Column, Div, Field, Layout, Row
 from crispy_forms.utils import render_crispy_form
 from crispy_tailwind.layout import Button, Reset, Submit
 
@@ -340,5 +340,29 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <input type="submit" name="submit" value="Submit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" id="submit-id-submit" />
+            """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_div(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(Div("email", "name", css_class="test class"))
+        html = render_crispy_form(form)
+        expected_html = """
+            <div class="test class">
+                <div id="div_id_email" class="mb-3">
+                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <input
+                        type="text"
+                        name="email"
+                        maxlength="30"
+                        class="textinput textInput inputtext appearance-none border bg-white focus:outline-none py-2 w-full text-gray-700 border-gray-300 leading-normal block px-4 rounded-lg"
+                        required
+                        id="id_email"
+                    />
+                    <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                </div>
+            </div>
             """
         self.assertHTMLEqual(html, expected_html)
