@@ -27,6 +27,14 @@ information.
 crispy_forms.layout
 ===================
 
+Layout
+------
+
+The core Layout_ class which provides the ability to control the rendering of your form. This is the parent which will
+wrap individual layout objects.
+
+.. _Layout: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?highlight=layout#fundamentals
+
 Column
 ------
 
@@ -75,9 +83,6 @@ The Div_ layout object wraps fields in a `Div`. No classes are added by default.
 
 .. _Div: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?highlight=Div#layout.Div
 
-
-Layout
-------
 
 TBC
 ---
