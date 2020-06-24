@@ -33,7 +33,7 @@ Layout
 The core Layout_ class which provides the ability to control the rendering of your form. This is the parent which will
 wrap individual layout objects.
 
-.. _Layout: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?highlight=layout#fundamentals
+.. _Layout: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#fundamentals
 
 Column
 ------
@@ -44,7 +44,7 @@ required classes can be added::
 
   Column('form_field_1', 'form_field_2', css_class='additional classes',)
 
-.. _column: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?highlight=column#layout.Column
+.. _column: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Column
 
 Row
 ---
@@ -66,7 +66,7 @@ with an image showing how the form is rendered::
 .. image:: img/row_col.png
     :width: 50%
 
-.. _Row : https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?highlight=column#layout.Row
+.. _Row : https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Row
 
 Field
 -----
@@ -74,14 +74,14 @@ Field
 The Field_ layout object allows attributes to be easily added to a single
 field.
 
-.. _Field: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?highlight=Div#layout.Field
+.. _Field: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Field
 
 Div
 ---
 
 The Div_ layout object wraps fields in a `Div`. No classes are added by default.
 
-.. _Div: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?highlight=Div#layout.Div
+.. _Div: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Div
 
 
 TBC
