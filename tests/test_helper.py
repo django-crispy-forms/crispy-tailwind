@@ -398,7 +398,7 @@ class CrispyHelperTests(SimpleTestCase):
                     <label for="id_is_company" class="block text-gray-700 text-sm font-bold mb-2">
                         company
                     </label>
-                    <input type="checkbox" name="is_company" class="checkboxinput" id="id_is_company" />
+                    <input type="checkbox" name="is_company" class=" checkboxinput" id="id_is_company" />
                 </div>
                 <div id="div_id_email" class="mb-3">
                     <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
