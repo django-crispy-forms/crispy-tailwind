@@ -4,7 +4,7 @@ from django.test import SimpleTestCase
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Column, Div, Field, Layout, Row
+from crispy_forms.layout import HTML, Column, Div, Field, Layout, Row
 from crispy_forms.utils import render_crispy_form
 from crispy_tailwind.layout import Button, Reset, Submit
 
@@ -365,4 +365,13 @@ class CrispyHelperTests(SimpleTestCase):
                 </div>
             </div>
             """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_HTML(self):
+        form = CharFieldForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(HTML('<span class="mb-2">Test HTML Layout</span>'))
+        html = render_crispy_form(form)
+        expected_html = '<span class="mb-2">Test HTML Layout</span>'
         self.assertHTMLEqual(html, expected_html)
