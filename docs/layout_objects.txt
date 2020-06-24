@@ -100,9 +100,28 @@ Used to create a hidden_ input.
 
 .. _Hidden: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Hidden
 
+Fieldset
+--------
+
+Wraps fields in a ``<fieldset>``. The first parameter is the legend for the
+fieldset. By default the class for the legend is
+``block text-gray-700 font-bold mb-2``. Below is an example layout and the
+default rendering::
+
+  Fieldset("Text for the legend", "is_company", "email",)
+
+.. image:: img/fieldset.png
+    :width: 50%
+
+If you wish to customise the legend please over ride the template. See the
+`over riding layout objects templates`_ docs for guidance on how to do this.
+
+.. _`over riding layout objects templates`: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates
+.. _Fieldset: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Fieldset
+
 TBC
 ---
-Fieldset, Multifield, MultiWidgetField
+Multifield, MultiWidgetField
 
 crisp_forms.bootstrap
 =====================
