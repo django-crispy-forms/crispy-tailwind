@@ -83,10 +83,26 @@ The Div_ layout object wraps fields in a `Div`. No classes are added by default.
 
 .. _Div: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Div
 
+HTML
+----
+
+Used to render pure HTML code and behaves like a Django template. See the django-crispy-forms HTML_ docs for more
+information.
+
+The HTML_: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#universal-layout-objects
+
+.. _HTML:
+
+Hidden
+------
+
+Used to create a hidden_ input.
+
+.. _Hidden: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Hidden
 
 TBC
 ---
-Fieldset, HTML, Hidden, Multifield, MultiWidgetField
+Fieldset, Multifield, MultiWidgetField
 
 crisp_forms.bootstrap
 =====================
