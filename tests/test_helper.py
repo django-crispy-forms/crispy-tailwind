@@ -4,7 +4,7 @@ from django.test import SimpleTestCase
 
 from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import HTML, Column, Div, Field, Hidden, Layout, Row
+from crispy_forms.layout import HTML, Column, Div, Field, Fieldset, Hidden, Layout, Row
 from crispy_forms.utils import render_crispy_form
 from crispy_tailwind.layout import Button, Reset, Submit
 
@@ -383,4 +383,35 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.layout = Layout(Hidden("name", "value"))
         html = render_crispy_form(form)
         expected_html = '<input type="hidden" name="name" value="value"/>'
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_fieldset(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(Fieldset("Text for the legend", "is_company", "email",))
+        html = render_crispy_form(form)
+        expected_html = """
+            <fieldset>
+                <legend class="block text-gray-700 font-bold mb-2">Text for the legend</legend>
+                <div id="div_id_is_company" class="mb-3">
+                    <label for="id_is_company" class="block text-gray-700 text-sm font-bold mb-2">
+                        company
+                    </label>
+                    <input type="checkbox" name="is_company" class=" checkboxinput" id="id_is_company" />
+                </div>
+                <div id="div_id_email" class="mb-3">
+                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <input
+                        type="text"
+                        name="email"
+                        maxlength="30"
+                        class="textinput textInput inputtext text-gray-700 py-2 w-full px-4 block focus:outline-none leading-normal bg-white rounded-lg border border-gray-300 appearance-none"
+                        required
+                        id="id_email"
+                    />
+                    <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                </div>
+            </fieldset>
+            """
         self.assertHTMLEqual(html, expected_html)
