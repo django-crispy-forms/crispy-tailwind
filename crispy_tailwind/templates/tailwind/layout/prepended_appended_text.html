@@ -1,0 +1,49 @@
+{% load tailwind_field %}
+
+{% if field.is_hidden %}
+  {{ field }}
+{% else %}
+  <div id="div_{{ field.auto_id }}" class="{% if wrapper_class %}{{ wrapper_class }} {% endif %}{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}">
+
+    {% if field.label and form_show_labels %}
+      <label for="{{ field.id_for_label }}" class="{% if label_class %}{{ label_class }}{% else %}block text-gray-700 text-sm font-bold mb-2{% endif %}">
+        {{ field.label|safe }}{% if field.field.required %}<span class="asteriskField">*</span>{% endif %}
+      </label>
+    {% endif %}
+
+    <div class="{{ field_class }}">
+      <div class="flex">
+
+        {% if crispy_prepended_text and not crispy_appended_text %}
+          <span class="{% if field.errors %}border-red-500 border-r-0 {% else %}border-gray-300 {% endif %}border rounded-lg rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">{{ crispy_prepended_text|safe }}</span>
+          {% if field.errors %}
+            {% tailwind_field field "class" "border border-red-500 rounded-lg rounded-l-none px-4 py-2 w-full focus:outline-none text-gray-700 border-l-0 leading-normal" %}
+          {% else %}
+            {% tailwind_field field "class" "border border-gray-300 rounded-lg rounded-l-none px-4 py-2 w-full focus:outline-none text-gray-700 border-l-0 leading-normal" %}
+          {% endif %}
+
+        {% elif crispy_appended_text and not crispy_prepended_text %}
+          {% if field.errors %}
+            {% tailwind_field field "class" "border border-red-500 rounded-lg rounded-r-none px-4 py-2 w-full focus:outline-none text-gray-700 border-r-0 leading-normal" %}
+          {% else %}
+            {% tailwind_field field "class" "border border-gray-300 rounded-lg rounded-r-none px-4 py-2 w-full focus:outline-none text-gray-700 border-r-0 leading-normal" %}
+          {% endif %}
+          <span class="{% if field.errors %}border-red-500 border-l-0 {% else %}border-gray-300 {% endif %}border rounded-lg rounded-l-none px-3 bg-gray-200 text-gray-800 flex items-center">{{ crispy_appended_text|safe }}</span>
+
+        {% else %}
+          <span class="{% if field.errors %}border-red-500 border-r-0 {% else %}border-gray-300 {% endif %}border rounded-lg rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">{{ crispy_prepended_text|safe }}</span>
+          {% if field.errors %}
+            {% tailwind_field field "class" "border border-r-0 border-l-0 border-red-500 px-4 py-2 w-full focus:outline-none text-gray-700 border-r-0 leading-normal" %}
+          {% else %}
+            {% tailwind_field field "class" "border border-gray-300 px-4 py-2 w-full focus:outline-none text-gray-700 border-r-0 leading-normal" %}
+          {% endif %}
+          <span class="{% if field.errors %}border-red-500 border-l-0 {% else %}border-gray-300 {% endif %}border rounded-lg rounded-l-none px-3 bg-gray-200 text-gray-800 flex items-center">{{ crispy_appended_text|safe }}</span>
+
+        {% endif %}
+      </div>
+    </div>
+
+      {% include 'tailwind/layout/field_errors.html' %}
+      {% include 'tailwind/layout/help_text.html' %}
+  </div>
+{% endif %}

@@ -159,8 +159,8 @@ class CrispyTailwindFieldNode(template.Node):
             else:
                 css_class = class_name
 
-            # Added additional code for Tailwind
-            if template_pack == "tailwind":
+            # Added additional code for Tailwind if class has not been passed in via the tag in the template
+            if template_pack == "tailwind" and '"class"' not in attr.keys():
                 css_container = context.get("css_container", self.default_container)
                 if css_container:
                     css = " " + css_container.get_input_class(field)
@@ -176,6 +176,7 @@ class CrispyTailwindFieldNode(template.Node):
                 if field.field.widget.__class__.__name__ != "RadioSelect":
                     widget.attrs["required"] = "required"
 
+            # classes passed in via the template are added here
             for attribute_name, attribute in attr.items():
                 attribute_name = template.Variable(attribute_name).resolve(context)
 
