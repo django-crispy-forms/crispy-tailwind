@@ -32,6 +32,10 @@ class CharFieldForm(forms.Form):
     name = forms.CharField(required=True)
 
 
+class ShortCharFieldForm(forms.Form):
+    name = forms.CharField(required=True, max_length=3)
+
+
 class PasswordFieldForm(forms.Form):
 
     password = forms.CharField(widget=forms.PasswordInput)

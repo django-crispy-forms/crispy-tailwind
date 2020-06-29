@@ -1,8 +1,14 @@
 {% if formset.non_form_errors %}
-    <div class="alert alert-block alert-danger">
-        {% if formset_error_title %}<h4 class="alert-heading">{{ formset_error_title }}</h4>{% endif %}
-        <ul class="m-0">
-            {{ formset.non_form_errors|unordered_list }}
-        </ul>
+    <div class="alert mb-4">
+        {% if formset_error_title %}
+            <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                {{ formset_error_title }}
+            </div>
+        {% endif %}
+        <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+            <ul>
+                {{ formset.non_form_errors|unordered_list }}
+            </ul>
+        </div>
     </div>
 {% endif %}

@@ -1,0 +1,17 @@
+==============
+Example Images
+==============
+
+Here are some example images of how forms are rendered using the Tailwind
+template Pack
+
+Formsets
+========
+
+A formset with ``non_form_errors`` and a field error. See the
+"test_formset_with_errors" test for configuration of the ``FormHelper`` and
+``Layout`` the rendered this form.
+
+.. image:: img/formset_failing.png
+    :width: 50%
+
