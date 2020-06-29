@@ -43,16 +43,7 @@
       </div>
     </div>
 
-    {% if error_text_inline %}
       {% include 'tailwind/layout/field_errors.html' %}
-    {% else %}
-      {% include 'tailwind/layout/field_errors_block.html' %}
-    {% endif %}
-
-    {% if not help_text_inline %}
       {% include 'tailwind/layout/help_text.html' %}
-    {% endif %}
-
-
   </div>
 {% endif %}
