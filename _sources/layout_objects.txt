@@ -32,7 +32,36 @@ Content to be added
 crisp_forms.bootstrap
 =====================
 
-Content to be added
+The following objects can be imported from ``crispy_forms.boostrap``.
+
+
+Prepended and Appended
+----------------------
+
+The three layout objects which allow for prepended and appended inputs are:
+
+- ``PrependedText``. First argument is the field name, the second is the
+  prepended text.
+- ``AppendedText``. First argument is the field name, the second is the
+  appended text.
+- ``PrependedAppendedText``. A combined prepended and appended text. The first
+  parameter is the name of the field, then second is the prepended text and
+  thirdly the appended text.
+
+The image below shows examples of how these are rendered with the template
+provided with ``crispy-tailwind``. If you wish to customise these then you
+will need to `over ride templates`_.
+
+.. image:: img/prepended.png
+    :width: 50%
+
+See the ``crispy-forms`` Prepended_ docs for more information on how to use
+these fields.
+
+Note: the active argument does not have any impact on the ``crispy-tailwind``
+template pack.
+
+.. _Prepended: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#bootstrap-layout-objects
 
 crispy_tailwind.layout
 ======================

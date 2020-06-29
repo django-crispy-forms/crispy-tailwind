@@ -87,7 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Layout Objects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#crispy-forms-layout">crispy_forms.layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#crisp-forms-bootstrap">crisp_forms.bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crisp-forms-bootstrap">crisp_forms.bootstrap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prepended-and-appended">Prepended and Appended</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#crispy-tailwind-layout">crispy_tailwind.layout</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#buttons">Buttons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#alert">Alert</a></li>
@@ -188,7 +191,28 @@ information.</p>
 </div>
 <div class="section" id="crisp-forms-bootstrap">
 <h2>crisp_forms.bootstrap<a class="headerlink" href="#crisp-forms-bootstrap" title="Permalink to this headline">¶</a></h2>
-<p>Content to be added</p>
+<p>The following objects can be imported from <code class="docutils literal notranslate"><span class="pre">crispy_forms.boostrap</span></code>.</p>
+<div class="section" id="prepended-and-appended">
+<h3>Prepended and Appended<a class="headerlink" href="#prepended-and-appended" title="Permalink to this headline">¶</a></h3>
+<p>The three layout objects which allow for prepended and appended inputs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PrependedText</span></code>. First argument is the field name, the second is the
+prepended text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AppendedText</span></code>. First argument is the field name, the second is the
+appended text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PrependedAppendedText</span></code>. A combined prepended and appended text. The first
+parameter is the name of the field, then second is the prepended text and
+thirdly the appended text.</p></li>
+</ul>
+<p>The image below shows examples of how these are rendered with the template
+provided with <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>. If you wish to customise these then you
+will need to <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates">over ride templates</a>.</p>
+<a class="reference internal image-reference" href="_images/prepended.png"><img alt="_images/prepended.png" src="_images/prepended.png" style="width: 50%;" /></a>
+<p>See the <code class="docutils literal notranslate"><span class="pre">crispy-forms</span></code> <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#bootstrap-layout-objects">Prepended</a> docs for more information on how to use
+these fields.</p>
+<p>Note: the active argument does not have any impact on the <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>
+template pack.</p>
+</div>
 </div>
 <div class="section" id="crispy-tailwind-layout">
 <h2>crispy_tailwind.layout<a class="headerlink" href="#crispy-tailwind-layout" title="Permalink to this headline">¶</a></h2>
