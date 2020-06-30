@@ -91,6 +91,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#crispy-tags"><cite>{% crispy %}</cite> tags</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#crispy-addon">Crispy-addon</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="layout_objects.html">Layout Objects</a></li>
@@ -218,6 +219,20 @@ rendering of server side errors:</p>
 <div class="section" id="crispy-tags">
 <h3><cite>{% crispy %}</cite> tags<a class="headerlink" href="#crispy-tags" title="Permalink to this headline">¶</a></h3>
 <p>Content</p>
+</div>
+</div>
+<div class="section" id="crispy-addon">
+<h2>Crispy-addon<a class="headerlink" href="#crispy-addon" title="Permalink to this headline">¶</a></h2>
+<p>There is a template tag called <code class="docutils literal notranslate"><span class="pre">crispy-addon</span></code>. It can be used to render a
+single field (including label) with preappended and appended text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">tailwind_field</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">crispy_addon</span> <span class="n">form</span><span class="o">.</span><span class="n">my_field</span> <span class="n">prepend</span><span class="o">=</span><span class="s2">&quot;$&quot;</span> <span class="n">append</span><span class="o">=</span><span class="s2">&quot;.00&quot;</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You can also prepend or append like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">crispy_addon</span> <span class="n">form</span><span class="o">.</span><span class="n">my_field</span> <span class="n">prepend</span><span class="o">=</span><span class="s2">&quot;$&quot;</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">crispy_addon</span> <span class="n">form</span><span class="o">.</span><span class="n">my_field</span> <span class="n">append</span><span class="o">=</span><span class="s2">&quot;.00&quot;</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>
