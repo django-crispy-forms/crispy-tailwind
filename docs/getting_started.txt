@@ -61,3 +61,19 @@ rendering of server side errors:
 -------------------
 
 Content
+
+
+Crispy-addon
+============
+
+There is a template tag called ``crispy-addon``. It can be used to render a
+single field (including label) with preappended and appended text::
+
+        {% load tailwind_field %}
+        {% crispy_addon form.my_field prepend="$" append=".00" %}
+
+You can also prepend or append like so::
+
+        {% crispy_addon form.my_field prepend="$" %}
+        {% crispy_addon form.my_field append=".00" %}
+

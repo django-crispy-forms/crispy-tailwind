@@ -14,4 +14,3 @@ A formset with ``non_form_errors`` and a field error. See the
 
 .. image:: img/formset_failing.png
     :width: 50%
-
