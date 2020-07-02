@@ -1,7 +1,8 @@
+from django.forms.models import formset_factory
 from django.template import Context, Template
 from django.test import SimpleTestCase
 
-from .forms import CharFieldForm, SampleForm
+from .forms import CharFieldForm, SampleForm, ShortCharFieldForm
 
 
 class CrispyFilterTests(SimpleTestCase):
@@ -113,3 +114,45 @@ class CrispyFilterTests(SimpleTestCase):
         html = template.render(c)
         assert "border-red-500" in html
         assert "border-gray-300" not in html
+
+    def test_formset(self):
+        template = Template(
+            """
+            {% load tailwind_filters %}
+            {{ form|crispy }}
+            """
+        )
+        formset = formset_factory(ShortCharFieldForm, extra=2)
+        c = Context({"form": formset})
+        html = template.render(c)
+        expected_html = """     
+            <input type="hidden" name="form-TOTAL_FORMS" value="2" id="id_form-TOTAL_FORMS" /> <input type="hidden" name="form-INITIAL_FORMS" value="0" id="id_form-INITIAL_FORMS" />
+            <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS" /> <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS" />
+            
+            <div class="multiField">
+                <div id="div_id_form-0-name" class="mb-3">
+                    <label for="id_form-0-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                    <input
+                        type="text"
+                        name="form-0-name"
+                        maxlength="3"
+                        class="textinput textInput inputtext focus:outline-none block appearance-none px-4 border-gray-300 bg-white py-2 leading-normal text-gray-700 border rounded-lg w-full"
+                        id="id_form-0-name"
+                    />
+                </div>
+            </div>
+            
+            <div class="multiField">
+                <div id="div_id_form-1-name" class="mb-3">
+                    <label for="id_form-1-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                    <input
+                        type="text"
+                        name="form-1-name"
+                        maxlength="3"
+                        class="textinput textInput inputtext focus:outline-none block appearance-none px-4 border-gray-300 bg-white py-2 leading-normal text-gray-700 border rounded-lg w-full"
+                        id="id_form-1-name"
+                    />
+                </div>
+            </div>
+            """
+        self.assertHTMLEqual(html, expected_html)
