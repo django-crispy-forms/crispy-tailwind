@@ -26,7 +26,7 @@ jobs:
         black . --check
     - name: run isort
       run: |
-        isort -c
+        isort . --check --dif
     - name: run flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
