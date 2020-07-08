@@ -55,3 +55,11 @@ class CheckboxMultiple(forms.Form):
         ("green", "Green"),
     ]
     checkbox = forms.ChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices)
+
+
+class SelectForm(forms.Form):
+    tos_accepted = forms.ChoiceField(
+        label="terms of service",
+        widget=forms.Select(),
+        choices=(("accepted", "Accepted"), ("not_accepted", "Not accepted")),
+    )
