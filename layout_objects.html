@@ -86,7 +86,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Layout Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#crispy-forms-layout">crispy_forms.layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crispy-forms-layout">crispy_forms.layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#layout">Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#column">Column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#row">Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#field">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#div">Div</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#html">HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hidden">Hidden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fieldset">Fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tbc">TBC</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#crisp-forms-bootstrap">crisp_forms.bootstrap</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prepended-and-appended">Prepended and Appended</a></li>
 </ul>
@@ -188,7 +199,74 @@ will use these)</p></li>
 information.</p>
 <div class="section" id="crispy-forms-layout">
 <h2>crispy_forms.layout<a class="headerlink" href="#crispy-forms-layout" title="Permalink to this headline">¶</a></h2>
-<p>Content to be added</p>
+<div class="section" id="layout">
+<h3>Layout<a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h3>
+<p>The core <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#fundamentals">Layout</a> class which provides the ability to control the rendering of your form. This is the parent which will
+wrap individual layout objects.</p>
+</div>
+<div class="section" id="column">
+<h3>Column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Column">Column</a> layout object wraps fields in a <code class="docutils literal notranslate"><span class="pre">div</span></code> so it can be used as a
+column. The Tailwind template adds no css class to this wrapper by default. If
+required classes can be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;form_field_1&#39;</span><span class="p">,</span> <span class="s1">&#39;form_field_2&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s1">&#39;additional classes&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="row">
+<h3>Row<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Row">Row</a> layout object wraps fields in a <code class="docutils literal notranslate"><span class="pre">div</span></code> so it can be used as a
+row. The Tailwind template adds <code class="docutils literal notranslate"><span class="pre">flex</span> <span class="pre">flex-row</span></code> to this wrapper by default.
+If required this default can be replaced by custom css classes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Row</span><span class="p">(</span><span class="s1">&#39;form_field_1&#39;</span><span class="p">,</span> <span class="s1">&#39;form_field_2&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s1">&#39;additional classes&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>Row and Column layouts are typically used together. Here is an example layout
+with an image showing how the form is rendered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Row</span><span class="p">(</span>
+  <span class="n">Column</span><span class="p">(</span><span class="n">Field</span><span class="p">(</span><span class="s2">&quot;first_name&quot;</span><span class="p">),</span> <span class="n">Field</span><span class="p">(</span><span class="s2">&quot;last_name&quot;</span><span class="p">),</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;px-2&quot;</span><span class="p">),</span>
+  <span class="n">Column</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;px-2&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/row_col.png"><img alt="_images/row_col.png" src="_images/row_col.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="field">
+<h3>Field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Field">Field</a> layout object allows attributes to be easily added to a single
+field.</p>
+</div>
+<div class="section" id="div">
+<h3>Div<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Div">Div</a> layout object wraps fields in a <cite>Div</cite>. No classes are added by default.</p>
+</div>
+<div class="section" id="html">
+<h3>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<p>Used to render pure HTML code and behaves like a Django template. See the django-crispy-forms <a class="reference internal" href="#id6">HTML</a> docs for more
+information.</p>
+<p>The <a class="reference internal" href="#id6">HTML</a>: <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html">https://django-crispy-forms.readthedocs.io/en/latest/layouts.html</a>?#universal-layout-objects</p>
+</div>
+<div class="section" id="hidden">
+<span id="id6"></span><h3>Hidden<a class="headerlink" href="#hidden" title="Permalink to this headline">¶</a></h3>
+<p>Used to create a <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Hidden">hidden</a> input.</p>
+</div>
+<div class="section" id="fieldset">
+<h3>Fieldset<a class="headerlink" href="#fieldset" title="Permalink to this headline">¶</a></h3>
+<p>Wraps fields in a <code class="docutils literal notranslate"><span class="pre">&lt;fieldset&gt;</span></code>. The first parameter is the legend for the
+fieldset. By default the class for the legend is
+<code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">text-gray-700</span> <span class="pre">font-bold</span> <span class="pre">mb-2</span></code>. Below is an example layout and the
+default rendering:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;Text for the legend&quot;</span><span class="p">,</span> <span class="s2">&quot;is_company&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/fieldset.png"><img alt="_images/fieldset.png" src="_images/fieldset.png" style="width: 50%;" /></a>
+<p>If you wish to customise the legend please over ride the template. See the
+<a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates">over riding layout objects templates</a> docs for guidance on how to do this.</p>
+</div>
+<div class="section" id="tbc">
+<h3>TBC<a class="headerlink" href="#tbc" title="Permalink to this headline">¶</a></h3>
+<p>Multifield, MultiWidgetField</p>
+</div>
 </div>
 <div class="section" id="crisp-forms-bootstrap">
 <h2>crisp_forms.bootstrap<a class="headerlink" href="#crisp-forms-bootstrap" title="Permalink to this headline">¶</a></h2>
