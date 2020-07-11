@@ -218,7 +218,18 @@ rendering of server side errors:</p>
 </div>
 <div class="section" id="crispy-tags">
 <h3><cite>{% crispy %}</cite> tags<a class="headerlink" href="#crispy-tags" title="Permalink to this headline">¶</a></h3>
-<p>Content</p>
+<p>Using the <cite>{% crispy %}</cite> tag allows you to use the core <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/index.html">crispy-form</a>
+functionality.</p>
+<ol class="arabic simple">
+<li><p>Load the crispy tag <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">crispy_forms_tags</span> <span class="pre">%}</span></code></p></li>
+</ol>
+<p>2. Add <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> to your form and use crispy-forms to configure your form.
+2. Use the crispy tag <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">form</span> <span class="pre">%}</span></code> in your template.</p>
+<p>This will render a form with the same opinionated style as the <cite>|crispy</cite>
+filter.</p>
+<p>The classes are largely held in a <code class="docutils literal notranslate"><span class="pre">CSSContainer</span></code> class, this can be
+changed to meet your needs. Docs and functionality for this area continue to be
+developed.</p>
 </div>
 </div>
 <div class="section" id="crispy-addon">
