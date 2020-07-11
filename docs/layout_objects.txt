@@ -27,7 +27,101 @@ information.
 crispy_forms.layout
 ===================
 
-Content to be added
+Layout
+------
+
+The core Layout_ class which provides the ability to control the rendering of your form. This is the parent which will
+wrap individual layout objects.
+
+.. _Layout: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#fundamentals
+
+Column
+------
+
+The Column_ layout object wraps fields in a ``div`` so it can be used as a
+column. The Tailwind template adds no css class to this wrapper by default. If
+required classes can be added::
+
+  Column('form_field_1', 'form_field_2', css_class='additional classes',)
+
+.. _column: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Column
+
+Row
+---
+
+The Row_ layout object wraps fields in a ``div`` so it can be used as a
+row. The Tailwind template adds ``flex flex-row`` to this wrapper by default.
+If required this default can be replaced by custom css classes::
+
+  Row('form_field_1', 'form_field_2', css_class='additional classes',)
+
+Row and Column layouts are typically used together. Here is an example layout
+with an image showing how the form is rendered::
+
+  Row(
+    Column(Field("first_name"), Field("last_name"), css_class="px-2"),
+    Column("email", css_class="px-2"),
+  )
+
+.. image:: img/row_col.png
+    :width: 50%
+
+.. _Row : https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Row
+
+Field
+-----
+
+The Field_ layout object allows attributes to be easily added to a single
+field.
+
+.. _Field: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Field
+
+Div
+---
+
+The Div_ layout object wraps fields in a `Div`. No classes are added by default.
+
+.. _Div: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Div
+
+HTML
+----
+
+Used to render pure HTML code and behaves like a Django template. See the django-crispy-forms HTML_ docs for more
+information.
+
+The HTML_: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#universal-layout-objects
+
+.. _HTML:
+
+Hidden
+------
+
+Used to create a hidden_ input.
+
+.. _Hidden: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Hidden
+
+Fieldset
+--------
+
+Wraps fields in a ``<fieldset>``. The first parameter is the legend for the
+fieldset. By default the class for the legend is
+``block text-gray-700 font-bold mb-2``. Below is an example layout and the
+default rendering::
+
+  Fieldset("Text for the legend", "is_company", "email",)
+
+.. image:: img/fieldset.png
+    :width: 50%
+
+If you wish to customise the legend please over ride the template. See the
+`over riding layout objects templates`_ docs for guidance on how to do this.
+
+.. _`over riding layout objects templates`: https://django-crispy-forms.readthedocs.io/en/latest/layouts.html?#overriding-layout-objects-templates
+.. _Fieldset: https://django-crispy-forms.readthedocs.io/en/latest/api_layout.html?#layout.Fieldset
+
+TBC
+---
+Multifield, MultiWidgetField
 
 crisp_forms.bootstrap
 =====================
