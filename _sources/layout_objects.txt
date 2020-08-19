@@ -123,8 +123,8 @@ TBC
 ---
 Multifield, MultiWidgetField
 
-crisp_forms.bootstrap
-=====================
+crispy_forms.bootstrap
+======================
 
 The following objects can be imported from ``crispy_forms.boostrap``.
 
