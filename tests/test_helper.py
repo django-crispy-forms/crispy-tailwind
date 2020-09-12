@@ -152,7 +152,10 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper = FormHelper()
         form.helper.form_tag = False
         form.helper.layout = Layout(
-            Row(Column(Field("first_name"), Field("last_name"), css_class="px-2"), Column("email", css_class="px-2"),)
+            Row(
+                Column(Field("first_name"), Field("last_name"), css_class="px-2"),
+                Column("email", css_class="px-2"),
+            )
         )
         html = render_crispy_form(form)
         expected_html = """
@@ -394,7 +397,14 @@ class CrispyHelperTests(SimpleTestCase):
         form = CharFieldForm()
         form.helper = FormHelper()
         form.helper.form_tag = False
-        form.helper.layout = Layout(Button("button", "Button"), Submit("submit", "Submit",), Reset("cancel", "Cancel"))
+        form.helper.layout = Layout(
+            Button("button", "Button"),
+            Submit(
+                "submit",
+                "Submit",
+            ),
+            Reset("cancel", "Cancel"),
+        )
         html = render_crispy_form(form)
         expected_html = """
             <input type="button" name="button" value="Button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="button-id-button" />
@@ -462,7 +472,13 @@ class CrispyHelperTests(SimpleTestCase):
         form = SampleForm()
         form.helper = FormHelper()
         form.helper.form_tag = False
-        form.helper.layout = Layout(Fieldset("Text for the legend", "is_company", "email",))
+        form.helper.layout = Layout(
+            Fieldset(
+                "Text for the legend",
+                "is_company",
+                "email",
+            )
+        )
         html = render_crispy_form(form)
         expected_html = """
             <fieldset>
