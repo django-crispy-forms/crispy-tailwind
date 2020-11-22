@@ -9,10 +9,8 @@ A Tailwind_ template pack for the wonderful django-crispy-forms_.
 
 **WARNING**
 
-This project is still in it's early stages of development and has not yet
-been published to PyPI. If you would like to try out the package please
-install from github directly. Any contributions to the package would be
-very welcomed.
+This project is still in its early stages of development. Any contributions to
+the package would be very welcomed.
 
 Currently the template pack allows the use of the ``|crispy`` filter to style
 your form. Here is an example image.
