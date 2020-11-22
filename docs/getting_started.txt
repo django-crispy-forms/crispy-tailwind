@@ -89,4 +89,3 @@ You can also prepend or append like so::
 
         {% crispy_addon form.my_field prepend="$" %}
         {% crispy_addon form.my_field append=".00" %}
-

@@ -4,10 +4,10 @@
 
 * Support for Formsets
 * Prepended and Appended inputs
-* Customisable buttons  
+* Customisable buttons
 * Much improved test coverage
 * Improved documentation. Docs now include details on how to use the majority
-  of the core layout objects, crispy filter and add-on 
+  of the core layout objects, crispy filter and add-on
 
 See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/2?closed=1)
 for full change log.
@@ -18,6 +18,6 @@ for full change log.
 * Opinionated forms can be rendered with crispy filter
 * Limited set of layout objects are also available for crispy tags, also with
   opinionated rendering.
-  
-See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/1) 
+
+See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/1)
 for full change log
