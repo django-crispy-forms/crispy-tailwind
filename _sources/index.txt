@@ -6,7 +6,10 @@
 Welcome to crispy-tailwind's documentation!
 ===========================================
 
-This is a Tailwind template pack for django-crispy-forms (insert link)
+This is a Tailwind template pack for django-crispy-forms_.
+
+.. _django-crispy-forms: https://django-crispy-forms.readthedocs.io/en/latest/index.html
+
 
 .. toctree::
    :maxdepth: 2
