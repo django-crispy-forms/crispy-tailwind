@@ -199,7 +199,7 @@ class CrispyHelperTests(SimpleTestCase):
                 <div class=""><input type="submit" name="submit" value="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="submit-id-submit" /></div>
             </div>
         </div>
-    
+
         """
         self.assertHTMLEqual(html, expected_html)
 

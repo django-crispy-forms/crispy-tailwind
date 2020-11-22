@@ -35,19 +35,19 @@ class CrispyFilterTests(SimpleTestCase):
             <small id="hint_id_email" class="text-gray-600">Insert your email</small> </div>
 
             <div id="div_id_password1" class="mb-3">
-            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2">password<span 
+            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2">password<span
             class="asteriskField">*</span>
             </label>
-            <input type="password" name="password1" maxlength="30" 
+            <input type="password" name="password1" maxlength="30"
             class="passwordinput w-full rounded-lg """
             """border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 block """
-            """leading-normal" required id="id_password1"> 
+            """leading-normal" required id="id_password1">
             </div>
 
             <div id="div_id_password2" class="mb-3">
             <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2">
             re-enter password<span class="asteriskField">*</span> </label>
-            <input type="password" name="password2" maxlength="30" 
+            <input type="password" name="password2" maxlength="30"
             class="passwordinput w-full rounded-lg """
             """border appearance-none py-2 border-gray-300 bg-white text-gray-700 focus:outline-none px-4 block """
             """leading-normal"
@@ -72,7 +72,7 @@ class CrispyFilterTests(SimpleTestCase):
             <div id="div_id_datetime_field" class="mb-3">
             <label for="id_datetime_field_0" class="block text-gray-700 text-sm font-bold mb-2">
             date time<span class="asteriskField">*</span> </label>
-            <input type="text" name="datetime_field_0" 
+            <input type="text" name="datetime_field_0"
             class="dateinput rounded-lg focus:outline border appearance-none py-2 mr-2 border-gray-300 bg-white """
             """text-gray-700 focus:outline-none px-4 leading-normal" required id="id_datetime_field_0">
             <input type="text" name="datetime_field_1" class="timeinput rounded-lg focus:outline border """
@@ -125,10 +125,10 @@ class CrispyFilterTests(SimpleTestCase):
         formset = formset_factory(ShortCharFieldForm, extra=2)
         c = Context({"form": formset})
         html = template.render(c)
-        expected_html = """     
+        expected_html = """
             <input type="hidden" name="form-TOTAL_FORMS" value="2" id="id_form-TOTAL_FORMS" /> <input type="hidden" name="form-INITIAL_FORMS" value="0" id="id_form-INITIAL_FORMS" />
             <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS" /> <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS" />
-            
+
             <div class="multiField">
                 <div id="div_id_form-0-name" class="mb-3">
                     <label for="id_form-0-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
@@ -141,7 +141,7 @@ class CrispyFilterTests(SimpleTestCase):
                     />
                 </div>
             </div>
-            
+
             <div class="multiField">
                 <div id="div_id_form-1-name" class="mb-3">
                     <label for="id_form-1-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
