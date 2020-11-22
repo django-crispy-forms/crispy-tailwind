@@ -4,11 +4,11 @@ repos:
     hooks:
       - id: black
         language_version: python3.6
-  - repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21-2
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.6.4
     hooks:
       - id: isort
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.9
+    rev: 3.8.4
     hooks:
       - id: flake8
