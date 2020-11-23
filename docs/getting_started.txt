@@ -10,8 +10,8 @@ Install via pip. ::
     pip install crispy-tailwind
 
 You will need to update your project's settings file to add ``crispy_forms``
-and ``crispy_tailwind`` to your project's ``INSTALLED_APPS``. Also set
-``tailwind`` as and allowed template pack and as the default template pack for
+and ``crispy_tailwind`` to your project's ``INSTALLED_APPS`` setting. Also set
+``tailwind`` as an allowed template pack and as the default template pack for
 your project::
 
     INSTALLED_APPS = (
@@ -28,18 +28,18 @@ your project::
 Usage
 =====
 
-There are a number of ways you can use ``crispy-tailwind``. The simplest way
-is to use the ``|crispy`` filter. This will add an opinionated `Tailwind` style
-to your form. If you require more control you can use the ``crispy`` tags and
-utilise the full power of the ``crispy-forms`` through it's ``FormHelper`` and
-``Layout`` capabilities.
+There are a number of ways you can use ``crispy-tailwind``. The method
+requiring the least amount of effort involves using the ``|crispy`` filter.
+This will add an opinionated `Tailwind` style to your form. If you require more
+control, you can use the ``crispy`` tags and utilise the full power of the
+``crispy-forms`` through its ``FormHelper`` and ``Layout`` capabilities.
 
-`|crispy` filter
-----------------
+``|crispy`` filter
+------------------
 
-The crispy filter is the simpler way to add `Tailwind` style to your form. It
-avoids the complexity of ``FormHelper`` and it comes with an opinionated form
-style.
+The ``|crispy`` filter is the method requiring the least amount of effort to
+add `Tailwind` style to your form. It avoids the complexity of ``FormHelper``,
+and it comes with an opinionated form style.
 
 1. Load the ``tailwind_filters`` in your template::
 
@@ -49,29 +49,29 @@ style.
 
     {{ form|crispy }}
 
-Here are two examples. The first shows the default rendering, the second shows
-rendering of server side errors:
+Here are two examples. The first shows the default rendering. The second shows
+rendering of server-side errors:
 
 .. image:: img/crispy_form.png
    :width: 49%
 .. image:: img/crispy_failing.png
    :width: 49%
 
-`{% crispy %}` tags
--------------------
+``{% crispy %}`` tags
+---------------------
 
-Using the `{% crispy %}` tag allows you to use the core crispy-form_
+Using the ``{% crispy %}`` tag allows you to use the core crispy-form_
 functionality.
 
-1. Load the crispy tag ``{% load crispy_forms_tags %}``
+1. Load the crispy tag: ``{% load crispy_forms_tags %}``
 2. Add ``FormHelper`` to your form and use crispy-forms to configure your form.
-2. Use the crispy tag ``{% crispy form %}`` in your template.
+3. Use the crispy tag ``{% crispy form %}`` in your template.
 
-This will render a form with the same opinionated style as the `|crispy`
+This will render a form with the same opinionated style as the ``|crispy``
 filter.
 
-The classes are largely held in a ``CSSContainer`` class, this can be
-changed to meet your needs. Docs and functionality for this area continue to be
+The classes are largely held in a ``CSSContainer`` class. This can be changed
+to meet your needs. Docs and functionality for this area continue to be
 developed.
 
 .. _crispy-form: https://django-crispy-forms.readthedocs.io/en/latest/index.html
@@ -80,12 +80,12 @@ Crispy-addon
 ============
 
 There is a template tag called ``crispy-addon``. It can be used to render a
-single field (including label) with preappended and appended text::
+single field (including label) with prepended and appended text::
 
-        {% load tailwind_field %}
-        {% crispy_addon form.my_field prepend="$" append=".00" %}
+    {% load tailwind_field %}
+    {% crispy_addon form.my_field prepend="$" append=".00" %}
 
 You can also prepend or append like so::
 
-        {% crispy_addon form.my_field prepend="$" %}
-        {% crispy_addon form.my_field append=".00" %}
+    {% crispy_addon form.my_field prepend="$" %}
+    {% crispy_addon form.my_field append=".00" %}
