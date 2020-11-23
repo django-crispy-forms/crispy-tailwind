@@ -87,8 +87,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#crispy-filter"><cite>|crispy</cite> filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#crispy-tags"><cite>{% crispy %}</cite> tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crispy-filter"><code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crispy-tags"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">%}</span></code> tags</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#crispy-addon">Crispy-addon</a></li>
@@ -171,8 +171,8 @@
 </pre></div>
 </div>
 <p>You will need to update your project’s settings file to add <code class="docutils literal notranslate"><span class="pre">crispy_forms</span></code>
-and <code class="docutils literal notranslate"><span class="pre">crispy_tailwind</span></code> to your project’s <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code>. Also set
-<code class="docutils literal notranslate"><span class="pre">tailwind</span></code> as and allowed template pack and as the default template pack for
+and <code class="docutils literal notranslate"><span class="pre">crispy_tailwind</span></code> to your project’s <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> setting. Also set
+<code class="docutils literal notranslate"><span class="pre">tailwind</span></code> as an allowed template pack and as the default template pack for
 your project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
     <span class="o">...</span>
@@ -189,16 +189,16 @@ your project:</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>There are a number of ways you can use <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>. The simplest way
-is to use the <code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter. This will add an opinionated <cite>Tailwind</cite> style
-to your form. If you require more control you can use the <code class="docutils literal notranslate"><span class="pre">crispy</span></code> tags and
-utilise the full power of the <code class="docutils literal notranslate"><span class="pre">crispy-forms</span></code> through it’s <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> and
-<code class="docutils literal notranslate"><span class="pre">Layout</span></code> capabilities.</p>
+<p>There are a number of ways you can use <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>. The method
+requiring the least amount of effort involves using the <code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter.
+This will add an opinionated <cite>Tailwind</cite> style to your form. If you require more
+control, you can use the <code class="docutils literal notranslate"><span class="pre">crispy</span></code> tags and utilise the full power of the
+<code class="docutils literal notranslate"><span class="pre">crispy-forms</span></code> through its <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> and <code class="docutils literal notranslate"><span class="pre">Layout</span></code> capabilities.</p>
 <div class="section" id="crispy-filter">
-<h3><cite>|crispy</cite> filter<a class="headerlink" href="#crispy-filter" title="Permalink to this headline">¶</a></h3>
-<p>The crispy filter is the simpler way to add <cite>Tailwind</cite> style to your form. It
-avoids the complexity of <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> and it comes with an opinionated form
-style.</p>
+<h3><code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter<a class="headerlink" href="#crispy-filter" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">|crispy</span></code> filter is the method requiring the least amount of effort to
+add <cite>Tailwind</cite> style to your form. It avoids the complexity of <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code>,
+and it comes with an opinionated form style.</p>
 <ol class="arabic">
 <li><p>Load the <code class="docutils literal notranslate"><span class="pre">tailwind_filters</span></code> in your template:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">tailwind_filters</span> <span class="o">%</span><span class="p">}</span>
@@ -211,31 +211,31 @@ style.</p>
 </div>
 </li>
 </ol>
-<p>Here are two examples. The first shows the default rendering, the second shows
-rendering of server side errors:</p>
+<p>Here are two examples. The first shows the default rendering. The second shows
+rendering of server-side errors:</p>
 <a class="reference internal image-reference" href="_images/crispy_form.png"><img alt="_images/crispy_form.png" src="_images/crispy_form.png" style="width: 49%;" /></a>
 <a class="reference internal image-reference" href="_images/crispy_failing.png"><img alt="_images/crispy_failing.png" src="_images/crispy_failing.png" style="width: 49%;" /></a>
 </div>
 <div class="section" id="crispy-tags">
-<h3><cite>{% crispy %}</cite> tags<a class="headerlink" href="#crispy-tags" title="Permalink to this headline">¶</a></h3>
-<p>Using the <cite>{% crispy %}</cite> tag allows you to use the core <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/index.html">crispy-form</a>
+<h3><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">%}</span></code> tags<a class="headerlink" href="#crispy-tags" title="Permalink to this headline">¶</a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">%}</span></code> tag allows you to use the core <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/index.html">crispy-form</a>
 functionality.</p>
 <ol class="arabic simple">
-<li><p>Load the crispy tag <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">crispy_forms_tags</span> <span class="pre">%}</span></code></p></li>
+<li><p>Load the crispy tag: <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">crispy_forms_tags</span> <span class="pre">%}</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> to your form and use crispy-forms to configure your form.</p></li>
+<li><p>Use the crispy tag <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">form</span> <span class="pre">%}</span></code> in your template.</p></li>
 </ol>
-<p>2. Add <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> to your form and use crispy-forms to configure your form.
-2. Use the crispy tag <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">form</span> <span class="pre">%}</span></code> in your template.</p>
-<p>This will render a form with the same opinionated style as the <cite>|crispy</cite>
+<p>This will render a form with the same opinionated style as the <code class="docutils literal notranslate"><span class="pre">|crispy</span></code>
 filter.</p>
-<p>The classes are largely held in a <code class="docutils literal notranslate"><span class="pre">CSSContainer</span></code> class, this can be
-changed to meet your needs. Docs and functionality for this area continue to be
+<p>The classes are largely held in a <code class="docutils literal notranslate"><span class="pre">CSSContainer</span></code> class. This can be changed
+to meet your needs. Docs and functionality for this area continue to be
 developed.</p>
 </div>
 </div>
 <div class="section" id="crispy-addon">
 <h2>Crispy-addon<a class="headerlink" href="#crispy-addon" title="Permalink to this headline">¶</a></h2>
 <p>There is a template tag called <code class="docutils literal notranslate"><span class="pre">crispy-addon</span></code>. It can be used to render a
-single field (including label) with preappended and appended text:</p>
+single field (including label) with prepended and appended text:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">tailwind_field</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">crispy_addon</span> <span class="n">form</span><span class="o">.</span><span class="n">my_field</span> <span class="n">prepend</span><span class="o">=</span><span class="s2">&quot;$&quot;</span> <span class="n">append</span><span class="o">=</span><span class="s2">&quot;.00&quot;</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
