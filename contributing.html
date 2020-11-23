@@ -170,12 +170,19 @@ from <code class="docutils literal notranslate"><span class="pre">requirements.t
 </pre></div>
 </div>
 </li>
+<li><p>After making documentation changes, build the HTML and review the rendered
+output via <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> in your browser.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">html</span>
+<span class="n">cd</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span> <span class="o">&amp;&amp;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
+</pre></div>
+</div>
+</li>
 <li><p>You may find the <code class="docutils literal notranslate"><span class="pre">crispy-test-project</span></code> helpful to see the rendered output
 of the package.</p></li>
 </ol>
 <blockquote>
 <div><ul>
-<li><p>Clone the <cite>tailwind</cite> branch of that project.</p></li>
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">tailwind</span></code> branch of that project.</p></li>
 <li><p>Install the dependencies.</p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">crispy-tailwind</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">crispy</span><span class="o">-</span><span class="n">tailwind</span>

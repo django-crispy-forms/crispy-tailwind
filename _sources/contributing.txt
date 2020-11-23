@@ -18,10 +18,16 @@ Here are some notes on how to get setup with a development environment.
 
     pytest --ds=tests.test_settings
 
-5. You may find the ``crispy-test-project`` helpful to see the rendered output
+5. After making documentation changes, build the HTML and review the rendered
+   output via http://localhost:8000 in your browser. ::
+
+    cd docs && make html
+    cd _build/html && python -m http.server
+
+6. You may find the ``crispy-test-project`` helpful to see the rendered output
    of the package.
 
-  - Clone the `tailwind` branch of that project.
+  - Clone the ``tailwind`` branch of that project.
   - Install the dependencies.
   - Install ``crispy-tailwind``. ::
 
