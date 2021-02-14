@@ -1,5 +1,13 @@
 # CHANGELOG for crispy-tailwind
 
+## 0.3 (2021-02-14)
+* Fixed non form errors (#77)
+* Various documentation improvements
+* Python 3.9 (#60) and Django 3.1 (#56) support
+
+See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/3?closed=1)
+for full change log.
+
 ## 0.2 (2020-07-11)
 
 * Support for Formsets
