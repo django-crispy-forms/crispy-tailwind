@@ -522,30 +522,30 @@ class CrispyHelperTests(SimpleTestCase):
                     <li>Passwords dont match</li>
                 </ul>
             </div>
-            <div id="div_id_password1" class="mb-3">
-                <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2"> password<span class="asteriskField">*</span> </label>
-                <input
-                    type="password"
-                    name="password1"
-                    maxlength="30"
-                    class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
-                    required
-                    id="id_password1"
-                />
-                <p id="error_1_id_password1" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
-            </div>
-            <div id="div_id_password2" class="mb-3">
-                <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2"> re-enter password<span class="asteriskField">*</span> </label>
-                <input
-                    type="password"
-                    name="password2"
-                    maxlength="30"
-                    class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
-                    required
-                    id="id_password2"
-                />
-                <p id="error_1_id_password2" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
-            </div>
+        </div>
+        <div id="div_id_password1" class="mb-3">
+            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2"> password<span class="asteriskField">*</span> </label>
+            <input
+                type="password"
+                name="password1"
+                maxlength="30"
+                class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
+                required
+                id="id_password1"
+            />
+            <p id="error_1_id_password1" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
+        </div>
+        <div id="div_id_password2" class="mb-3">
+            <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2"> re-enter password<span class="asteriskField">*</span> </label>
+            <input
+                type="password"
+                name="password2"
+                maxlength="30"
+                class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
+                required
+                id="id_password2"
+            />
+            <p id="error_1_id_password2" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
         </div>
         """
         self.assertHTMLEqual(html, expected_html)
