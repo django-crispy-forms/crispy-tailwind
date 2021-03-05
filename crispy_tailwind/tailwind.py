@@ -32,6 +32,7 @@ class CSSContainer:
             "splitdatetime",
             "splithiddendatetime",
             "selectdate",
+            "recaptchav2checkbox",
             # other items
             "error_border",
         ]

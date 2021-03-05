@@ -109,6 +109,7 @@ class CrispyTailwindFieldNode(template.Node):
         "appearance-none rounded-lg py-2 focus:outline-none mr-2",
         "splithiddendatetime": "",
         "selectdate": "",
+        "recaptchav2checkbox": "",
         "error_border": "border-red-500",
     }
 
