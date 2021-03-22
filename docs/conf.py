@@ -22,7 +22,7 @@ copyright = "2020, David Smith"
 author = "David Smith"
 
 # The full version, including alpha/beta/rc tags
-release = "0.3"
+release = "0.4"
 
 
 # -- General configuration ---------------------------------------------------
