@@ -102,7 +102,6 @@ class CrispyTailwindFieldNode(template.Node):
         "select": "",
         "nullbooleanselect": "",
         "selectmultiple": "",
-        "radioselect": "",
         "checkboxselectmultiple": "",
         "multi": "",
         "splitdatetime": "text-gray-700 bg-white focus:outline border border-gray-300 leading-normal px-4 "
