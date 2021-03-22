@@ -51,6 +51,6 @@ setup(
     packages=find_packages(exclude=["docs"]),
     include_package_data=True,
     python_requires=">=3.5",
-    install_requires=["django-crispy-forms>=1.9.0"],
+    install_requires=["django-crispy-forms>=1.11.2"],
     zip_safe=False,
 )
