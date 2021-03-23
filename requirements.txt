@@ -1,6 +1,6 @@
 # dependencies
-Django~=3.0.5
-django-crispy-forms~=1.9.0
+django>=3.1.6
+django-crispy-forms~=1.11.0
 
 # dev
 pytest

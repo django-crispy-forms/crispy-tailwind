@@ -1,5 +1,12 @@
 # CHANGELOG for crispy-tailwind
 
+## 0.4 (2021-03-22)
+* Fixed compatibility with django-crispy-forms 1.11.2 (#86)
+* Fixed field names when using formsets (#84)
+
+See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/4?closed=1)
+for full change log.
+
 ## 0.3 (2021-02-14)
 * Fixed non form errors (#77)
 * Various documentation improvements
