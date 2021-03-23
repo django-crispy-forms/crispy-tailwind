@@ -9,13 +9,13 @@ from crispy_forms.utils import render_crispy_form
 from crispy_tailwind.layout import Button, Reset, Submit
 
 from .forms import (
+    AgeRangeSelectForm,
     CharFieldForm,
     CheckboxMultiple,
     PasswordFieldForm,
     RadioForm,
     SampleForm,
     SelectForm,
-    AgeRangeSelectForm,
     ShortCharFieldForm,
 )
 
