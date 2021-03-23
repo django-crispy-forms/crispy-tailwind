@@ -4,7 +4,7 @@
 <div class="relative">
 <select class="{% if field.errors %}border border-red-500 {% endif %}bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {{ field.field.widget.attrs|flatatt }}>
     {% for value, label in field.field.choices %}
-        {% include "tailwind/layout/select_option.html" with value=value label=label %}
+        {% include "tailwind/layout/select_option.html" with value=value|stringformat:'s' label=label %}
     {% endfor %}
 </select>
 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">

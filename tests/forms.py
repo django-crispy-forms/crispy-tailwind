@@ -63,3 +63,11 @@ class SelectForm(forms.Form):
         widget=forms.Select(),
         choices=(("accepted", "Accepted"), ("not_accepted", "Not accepted")),
     )
+
+
+class AgeRangeSelectForm(forms.Form):
+    age_range = forms.ChoiceField(
+        label="age range",
+        widget=forms.Select(),
+        choices=((0, "18-24"), (1, "25-44"), (2, "45+")),
+    )

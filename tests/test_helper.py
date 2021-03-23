@@ -15,6 +15,7 @@ from .forms import (
     RadioForm,
     SampleForm,
     SelectForm,
+    AgeRangeSelectForm,
     ShortCharFieldForm,
 )
 
@@ -563,6 +564,30 @@ class CrispyHelperTests(SimpleTestCase):
                     <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="tos_accepted">
                         <option value="accepted" selected>Accepted</option>
                         <option value="not_accepted">Not accepted</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_select_option_preserved_on_bound_forms(self):
+        form = AgeRangeSelectForm(data={"age_range": 1})
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        html = render_crispy_form(form)
+        expected_html = """
+        <div id="div_id_age_range" class="mb-3">
+            <label for="id_age_range" class="block text-gray-700 text-sm font-bold mb-2"> age range<span class="asteriskField">*</span> </label>
+            <div class="mb-3">
+                <div class="relative">
+                    <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="age_range">
+                        <option value="0">18-24</option>
+                        <option value="1" selected>25-44</option>
+                        <option value="2">45+</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
