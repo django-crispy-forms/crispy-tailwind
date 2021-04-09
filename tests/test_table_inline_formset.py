@@ -1,3 +1,4 @@
+import django
 from django.forms import formset_factory
 from django.test import SimpleTestCase
 
@@ -217,6 +218,8 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper = FormHelper()
         formset.helper.add_input(Submit("submit", "submit"))
         formset.helper.template = "tailwind/table_inline_formset.html"
+        if django.VERSION < (3, 2):
+            formset.non_form_errors = ["Please submit at most 2 forms."]
         html = render_crispy_form(formset)
         expected_html = """
         <form method="post">
@@ -224,7 +227,7 @@ class CrispyHelperTests(SimpleTestCase):
             <div class="alert mb-4">
                 <div class="border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
                     <ul>
-                        <li>Please submit 2 or fewer forms.</li>
+                        <li>Please submit at most 2 forms.</li>
                     </ul>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import django
 from django.forms.models import formset_factory
 from django.template import Template
 from django.test import SimpleTestCase
@@ -303,6 +304,8 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper.formset_error_title = "Non Form Errors"
         formset.helper.form_tag = False
         formset.helper.layout = Layout("email")
+        if django.VERSION < (3, 2):
+            formset.non_form_errors = ["Please submit at most 2 forms."]
         html = render_crispy_form(formset)
         expected_html = """
             <div>
@@ -315,7 +318,7 @@ class CrispyHelperTests(SimpleTestCase):
                 </div>
                 <div class="border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
                     <ul>
-                        <li>Please submit 2 or fewer forms.</li>
+                        <li>Please submit at most 2 forms.</li>
                     </ul>
                 </div>
             </div>
