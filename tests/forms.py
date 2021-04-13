@@ -63,3 +63,12 @@ class SelectForm(forms.Form):
         widget=forms.Select(),
         choices=(("accepted", "Accepted"), ("not_accepted", "Not accepted")),
     )
+
+
+class CustomTextWidget(forms.TextInput):
+    pass
+
+
+class CustomTextWidgetForm(forms.Form):
+    first_name = forms.CharField(widget=CustomTextWidget())
+    last_name = forms.CharField(widget=CustomTextWidget(attrs={"class": "custom-css"}))

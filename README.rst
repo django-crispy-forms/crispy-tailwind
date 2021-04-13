@@ -64,11 +64,27 @@ Documentation
 The documentation for this project is available here:
 https://django-crispy-forms.github.io/crispy-tailwind/index.html
 
+FAQs
+----
 
+What about custom widgets?
+==========================
 
+The template pack includes default styles for widgets included in Django 
+itself. `Styling of widget instances`_ can be done by using the ``widget.attrs``
+argument when creating the widget.
 
+For example the following form will render 
+``<input type="text" name="name" class="customtextwidget custom-css" required id="id_name">``::
 
+    class CustomTextWidget(forms.TextInput):
+        pass
 
+    class CustomTextWidgetForm(forms.Form):
+        name = forms.CharField(
+            widget=CustomTextWidget(attrs={"class": "custom-css"})
+        )
 
+.. _`Styling of widget instances` : https://docs.djangoproject.com/en/dev/ref/forms/widgets/#styling-widget-instances
 .. _Tailwind CSS: https://tailwindcss.com/
 .. _django-crispy-forms: https://github.com/django-crispy-forms/django-crispy-forms

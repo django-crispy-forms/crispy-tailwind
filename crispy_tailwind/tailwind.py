@@ -69,4 +69,4 @@ class CSSContainer:
 
     def get_input_class(self, field):
         widget_name = re.sub(r"widget$|input$", "", field.field.widget.__class__.__name__.lower())
-        return getattr(self, widget_name)
+        return getattr(self, widget_name, "")
