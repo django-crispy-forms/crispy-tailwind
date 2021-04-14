@@ -1,5 +1,13 @@
 # CHANGELOG for crispy-tailwind
 
+## 0.5 (2021-04-21)
+* Added support for custom widgets (#92)
+* Confirmed support for Django 3.2 (#91)
+* Dropped support for Django 3.1 (#91)
+
+See [Release Notes](https://github.com/django-crispy-forms/crispy-tailwind/milestone/5?closed=1)
+for full change log.
+
 ## 0.4 (2021-03-22)
 * Fixed compatibility with django-crispy-forms 1.11.2 (#86)
 * Fixed field names when using formsets (#84)
