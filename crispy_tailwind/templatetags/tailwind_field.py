@@ -188,9 +188,9 @@ class CrispyTailwindFieldNode(template.Node):
 
 
 @register.tag(name="tailwind_field")
-def crispy_field(parser, token):
+def tailwind_field(parser, token):
     """
-    {% crispy_field field attrs %}
+    {% tailwind_field field attrs %}
     """
     token = token.split_contents()
     field = token.pop(1)

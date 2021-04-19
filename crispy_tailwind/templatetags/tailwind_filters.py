@@ -98,7 +98,7 @@ def as_crispy_field(field, template_pack=TEMPLATE_PACK, label_class="", field_cl
 
     or::
 
-        {{ form.field|as_crispy_field:"bootstrap" }}
+        {{ form.field|as_crispy_field:"tailwind" }}
     """
     if not isinstance(field, boundfield.BoundField) and settings.DEBUG:
         raise CrispyError("|as_crispy_field got passed an invalid or inexistent field")
