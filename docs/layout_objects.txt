@@ -132,12 +132,20 @@ Field With Buttons
 ------------------
 
 An oppinionated field with buttons template is provided with the template
-pack. If you wish to customise this layout object the you can
+pack. If you wish to customise this layout object you can
 `over ride templates`_.
 
 .. image:: img/field_with_buttons.png
     :width: 35%
 
+Inline Field
+------------
+
+An oppinionated inline field. If you wish to customise this layout object you 
+can `over ride templates`_.
+
+.. image:: img/inline_field.png
+    :width: 35%
 
 Prepended and Appended
 ----------------------

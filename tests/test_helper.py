@@ -3,7 +3,7 @@ from django.forms.models import formset_factory
 from django.template import Template
 from django.test import SimpleTestCase
 
-from crispy_forms.bootstrap import FieldWithButtons, InlineCheckboxes, InlineRadios, StrictButton
+from crispy_forms.bootstrap import FieldWithButtons, InlineCheckboxes, InlineField, InlineRadios, StrictButton
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import HTML, Column, Div, Field, Fieldset, Hidden, Layout, Row
 from crispy_forms.utils import render_crispy_form
@@ -595,5 +595,24 @@ class CrispyHelperTests(SimpleTestCase):
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="button-id-go" /></span>
             </div>
         </div>
+        """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_inline_field(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(
+            InlineField("first_name"),
+            InlineField("is_company"),
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+        <div id="div_id_first_name" class=""> <label for="id_first_name" class="sr-only requiredField"> first name </label>
+            <input type="text" name="first_name" maxlength="5"
+                class="textinput textInput inputtext rounded-lg appearance-none w-full block border-gray-300 py-2 bg-white text-gray-700 leading-normal focus:outline-none border px-4"
+                placeholder="first name" required id="id_first_name"> </div>
+        <div id="div_id_is_company" class=""> <label for="id_is_company" class=""> <input type="checkbox" name="is_company"
+                    class="checkboxinput " id="id_is_company"> company </label> </div>
         """
         self.assertHTMLEqual(html, expected_html)
