@@ -3,7 +3,7 @@ from django.forms.models import formset_factory
 from django.template import Template
 from django.test import SimpleTestCase
 
-from crispy_forms.bootstrap import FieldWithButtons, InlineCheckboxes, InlineField, InlineRadios, StrictButton
+from crispy_forms.bootstrap import FieldWithButtons, InlineCheckboxes, InlineField, InlineRadios
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import HTML, Column, Div, Field, Fieldset, Hidden, Layout, Row
 from crispy_forms.utils import render_crispy_form
@@ -581,7 +581,7 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper = FormHelper()
         form.helper.form_tag = False
         form.helper.layout = Layout(
-            FieldWithButtons('first_name', Button("Go!", "go")),
+            FieldWithButtons("first_name", Button("Go!", "go")),
         )
         html = render_crispy_form(form)
         expected_html = """
