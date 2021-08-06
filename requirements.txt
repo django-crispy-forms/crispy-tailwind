@@ -3,19 +3,19 @@ django>=3.1.6
 django-crispy-forms~=1.11.0
 
 # dev
-pytest
-pytest-django
-coverage
-twine
-wheel
-black
-isort
-flake8
-django-coverage-plugin
-codecov
-pre-commit
+pytest==6.2.4
+pytest-django==4.4.0
+coverage==5.5
+twine==3.4.2
+wheel==0.36.2
+black==21.7b0
+isort==5.9.3
+flake8==3.9.2
+django-coverage-plugin==2.0.0
+codecov==2.1.12
+pre-commit==2.13.0
 
 
 # docs
-sphinx
-sphinx-rtd-theme
+sphinx==4.1.2
+sphinx-rtd-theme==0.5.1
