@@ -18,4 +18,4 @@ pre-commit
 
 # docs
 sphinx
-sphinx-rtd-theme
+sphinx-rtd-theme==0.5.1 #latest is 0.5.2 but requires docutils < 0.16, 1.0.0 is coming https://sphinx-rtd-theme.readthedocs.io/en/latest/changelog.html#v0-5-2
