@@ -132,7 +132,7 @@ def flatatt_filter(attrs):
 @register.filter
 def widget_attrs(field):
     """
-    Runs the bounedfield.build_widget_attrs(...) function, 
+    Runs the bounedfield.build_widget_attrs(...) function,
     check if the widget allow multiple selection and returns the attributes.
     """
     id_ = field.field.widget.attrs.get("id") or field.auto_id
