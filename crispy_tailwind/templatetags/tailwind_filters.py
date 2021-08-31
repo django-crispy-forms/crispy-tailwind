@@ -127,3 +127,18 @@ def as_crispy_field(field, template_pack=TEMPLATE_PACK, label_class="", field_cl
 @register.filter(name="flatatt")
 def flatatt_filter(attrs):
     return mark_safe(flatatt(attrs))
+
+
+@register.filter
+def widget_attrs(field):
+    """
+    Runs the bounedfield.build_widget_attrs(...) function, 
+    check if the widget allow multiple selection and returns the attributes.
+    """
+    id_ = field.field.widget.attrs.get("id") or field.auto_id
+    attrs = {"id": id_} if id_ else {}
+    attrs = field.build_widget_attrs(attrs)
+    if hasattr(field.field.widget, "allow_multiple_selected"):
+        if "multiple" not in attrs and field.field.widget.allow_multiple_selected:
+            attrs["multiple"] = True
+    return mark_safe(flatatt(attrs))
