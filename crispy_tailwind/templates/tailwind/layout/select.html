@@ -1,15 +1,16 @@
 {% load crispy_forms_filters %}
+{% load tailwind_filters %}
 {% load l10n %}
 
 <div class="relative">
-    <select class="bg-white focus:outline-none border {% if field.errors %}border border-red-500 {% else %}border-gray-300 {% endif %}rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {% include "tailwind/layout/attrs.html" with widget=field.field.widget %} {% if field.field.widget.allow_multiple_selected %}multiple {% endif %} {% if field.field.required %}required {% endif %}>
-		{% for group, options, index in field|optgroups %}
-			{% if group %}<optgroup label="{{ group }}">{% endif %}
-			{% for option in options %}
-				{% include "tailwind/layout/select_option.html" %}
-			{% endfor %}
-			{% if group %}</optgroup>{% endif %}
-		{% endfor %}
+    <select class="bg-white focus:outline-none border {% if field.errors %}border-red-500 {% else %}border-gray-300 {% endif %}rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {{ field|widget_attrs }}>
+        {% for group, options, index in field|optgroups %}
+            {% if group %}<optgroup label="{{ group }}">{% endif %}
+            {% for option in options %}
+                {% include "tailwind/layout/select_option.html" %}
+            {% endfor %}
+            {% if group %}</optgroup>{% endif %}
+        {% endfor %}
     </select>
     {% if not field.field.widget.allow_multiple_selected %}
         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
