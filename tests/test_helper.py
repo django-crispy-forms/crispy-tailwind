@@ -563,7 +563,7 @@ class CrispyHelperTests(SimpleTestCase):
             <label for="id_tos_accepted" class="block text-gray-700 text-sm font-bold mb-2"> terms of service<span class="asteriskField">*</span> </label>
             <div class="mb-3">
                 <div class="relative">
-                    <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="tos_accepted">
+                    <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="tos_accepted" id="id_tos_accepted">
                         <option value="accepted" selected>Accepted</option>
                         <option value="not_accepted">Not accepted</option>
                     </select>

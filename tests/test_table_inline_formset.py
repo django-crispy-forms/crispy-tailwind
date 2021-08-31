@@ -106,7 +106,7 @@ class CrispyHelperTests(SimpleTestCase):
                     <td id="div_id_form-0-tos_accepted" class="border px-4 py-2">
                         <div class="border px-4 py-2">
                             <div class="relative">
-                                <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="form-0-tos_accepted">
+                                <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="form-0-tos_accepted" id="id_form-0-tos_accepted">
                                     <option value="accepted">Accepted</option>
                                     <option value="not_accepted">Not accepted</option>
                                 </select>
@@ -182,7 +182,7 @@ class CrispyHelperTests(SimpleTestCase):
                     <td id="div_id_form-1-tos_accepted" class="border px-4 py-2">
                         <div class="border px-4 py-2">
                             <div class="relative">
-                                <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="form-1-tos_accepted">
+                                <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="form-1-tos_accepted" id="id_form-1-tos_accepted">
                                     <option value="accepted">Accepted</option>
                                     <option value="not_accepted">Not accepted</option>
                                 </select>

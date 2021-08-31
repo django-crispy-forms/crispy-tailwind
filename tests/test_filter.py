@@ -85,7 +85,7 @@ class CrispyFilterTests(SimpleTestCase):
             <div class="mb-3">
             <div class="relative">
             <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full """
-            """appearance-none leading-normal text-gray-700" name="tos_accepted">
+            """appearance-none leading-normal text-gray-700" name="tos_accepted" id="id_tos_accepted">
             <option value="accepted">Accepted</option>
             <option value="not_accepted">Not accepted</option>
             </select><div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
