@@ -17,7 +17,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = template.render(Context({"form": SampleForm()}))
         expected_html = """
         <div id="div_id_last_name" class="mb-3">
-            <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2"> last name<span class="asteriskField">*</span> </label>
+            <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> last name<span class="asteriskField">*</span> </label>
             <div class="">
                 <div class="flex">
                     <span class="border-gray-300 border rounded-lg rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">$</span>

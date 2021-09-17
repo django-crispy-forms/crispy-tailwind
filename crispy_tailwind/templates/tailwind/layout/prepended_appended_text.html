@@ -6,7 +6,7 @@
   <div id="div_{{ field.auto_id }}" class="{% if wrapper_class %}{{ wrapper_class }} {% endif %}{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}">
 
     {% if field.label and form_show_labels %}
-      <label for="{{ field.id_for_label }}" class="{% if label_class %}{{ label_class }}{% else %}block text-gray-700 text-sm font-bold mb-2{% endif %}">
+      <label for="{{ field.id_for_label }}" class="{% if label_class %}{{ label_class }}{% else %}block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400{% endif %}">
         {{ field.label|safe }}{% if field.field.required %}<span class="asteriskField">*</span>{% endif %}
       </label>
     {% endif %}

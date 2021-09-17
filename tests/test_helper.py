@@ -51,7 +51,7 @@ class CrispyHelperTests(SimpleTestCase):
         expected_html = """
             <form method="post">
                 <div id="div_id_name" class="mb-3">
-                    <label for="id_name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                    <label for="id_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> Name<span class="asteriskField">*</span> </label>
                     <input type="text" name="name" class="textinput textInput inputtext focus:outline-none w-full bg-white border-red-500 px-4 block rounded-lg text-gray-700 appearance-none py-2 leading-normal border" required id="id_name" />
                     <p id="error_1_id_name" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
                 </div>
@@ -163,7 +163,7 @@ class CrispyHelperTests(SimpleTestCase):
             <div class="flex flex-row">
                 <div class="px-2">
                     <div id="div_id_first_name" class="mb-3">
-                        <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
+                        <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> first name<span class="asteriskField">*</span> </label>
                         <input
                             type="text"
                             name="first_name"
@@ -174,7 +174,7 @@ class CrispyHelperTests(SimpleTestCase):
                         />
                     </div>
                     <div id="div_id_last_name" class="mb-3">
-                        <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2"> last name<span class="asteriskField">*</span> </label>
+                        <label for="id_last_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> last name<span class="asteriskField">*</span> </label>
                         <input
                             type="text"
                             name="last_name"
@@ -187,7 +187,7 @@ class CrispyHelperTests(SimpleTestCase):
                 </div>
                 <div class="px-2">
                     <div id="div_id_email" class="mb-3">
-                        <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                        <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                         <input
                             type="text"
                             name="email"
@@ -196,7 +196,7 @@ class CrispyHelperTests(SimpleTestCase):
                             required
                             id="id_email"
                         />
-                        <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                        <small id="hint_id_email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
                 <div id="div_id_radio" class="mb-3">
-                    <label for="id_radio_0" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                    <label for="id_radio_0" class=" block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
                         <label for="id_radio_1" class="block text-gray-700 mr-3">
                             <input type="radio" class="" name="radio" id="id_radio_1" value="blue" />
@@ -234,7 +234,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
                 <div id="div_id_checkbox" class="mb-3">
-                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 requiredField"> Checkbox<span class="asteriskField">*</span> </label>
+                    <label for="" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400 requiredField"> Checkbox<span class="asteriskField">*</span> </label>
                     <div id="div_id_checkbox" class="flex flex-row">
                         <div class="mr-3">
                             <label class="block text-gray-700" for="id_checkbox_1">
@@ -266,7 +266,7 @@ class CrispyHelperTests(SimpleTestCase):
                 <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS" /> <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS" />
             </div>
             <div id="div_id_form-0-email" class="mb-3">
-                <label for="id_form-0-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                <label for="id_form-0-email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                 <input
                     type="text"
                     name="form-0-email"
@@ -274,10 +274,10 @@ class CrispyHelperTests(SimpleTestCase):
                     class="textinput textInput inputtext border appearance-none block rounded-lg border-gray-300 px-4 py-2 text-gray-700 w-full leading-normal bg-white focus:outline-none"
                     id="id_form-0-email"
                 />
-                <small id="hint_id_form-0-email" class="text-gray-600">Insert your email</small>
+                <small id="hint_id_form-0-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
             </div>
             <div id="div_id_form-1-email" class="mb-3">
-                <label for="id_form-1-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                <label for="id_form-1-email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                 <input
                     type="text"
                     name="form-1-email"
@@ -285,7 +285,7 @@ class CrispyHelperTests(SimpleTestCase):
                     class="textinput textInput inputtext border appearance-none block rounded-lg border-gray-300 px-4 py-2 text-gray-700 w-full leading-normal bg-white focus:outline-none"
                     id="id_form-1-email"
                 />
-                <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
+                <small id="hint_id_form-1-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
             </div>
             """
         self.assertHTMLEqual(html, expected_html)
@@ -323,7 +323,7 @@ class CrispyHelperTests(SimpleTestCase):
                 </div>
             </div>
             <div id="div_id_name-0-name" class="mb-3">
-                <label for="id_name-0-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <label for="id_name-0-name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> Name<span class="asteriskField">*</span> </label>
                 <input
                     type="text"
                     name="name-0-name"
@@ -335,7 +335,7 @@ class CrispyHelperTests(SimpleTestCase):
                 <p id="error_1_id_name-0-name" class="text-red-500 text-xs italic"><strong>Ensure this value has at most 3 characters (it has 4).</strong></p>
             </div>
             <div id="div_id_name-1-name" class="mb-3">
-                <label for="id_name-1-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <label for="id_name-1-name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> Name<span class="asteriskField">*</span> </label>
                 <input
                     type="text"
                     name="name-1-name"
@@ -345,7 +345,7 @@ class CrispyHelperTests(SimpleTestCase):
                 />
             </div>
             <div id="div_id_name-2-name" class="mb-3">
-                <label for="id_name-2-name" class="block text-gray-700 text-sm font-bold mb-2"> Name<span class="asteriskField">*</span> </label>
+                <label for="id_name-2-name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> Name<span class="asteriskField">*</span> </label>
                 <input
                     type="text"
                     name="name-2-name"
@@ -371,7 +371,7 @@ class CrispyHelperTests(SimpleTestCase):
                     <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS" /> <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS" />
                 </div>
                 <div id="div_id_form-0-email" class="mb-3">
-                    <label for="id_form-0-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <label for="id_form-0-email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                     <input
                         type="text"
                         name="form-0-email"
@@ -379,10 +379,10 @@ class CrispyHelperTests(SimpleTestCase):
                         class="textinput textInput inputtext border border-gray-300 py-2 px-4 block rounded-lg appearance-none w-full leading-normal bg-white text-gray-700 focus:outline-none"
                         id="id_form-0-email"
                     />
-                    <small id="hint_id_form-0-email" class="text-gray-600">Insert your email</small>
+                    <small id="hint_id_form-0-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                 </div>
                 <div id="div_id_form-1-email" class="mb-3">
-                    <label for="id_form-1-email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <label for="id_form-1-email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                     <input
                         type="text"
                         name="form-1-email"
@@ -390,7 +390,7 @@ class CrispyHelperTests(SimpleTestCase):
                         class="textinput textInput inputtext border border-gray-300 py-2 px-4 block rounded-lg appearance-none w-full leading-normal bg-white text-gray-700 focus:outline-none"
                         id="id_form-1-email"
                     />
-                    <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
+                    <small id="hint_id_form-1-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                 </div>
             </form>
             """
@@ -438,7 +438,7 @@ class CrispyHelperTests(SimpleTestCase):
         expected_html = """
             <div class="test class">
                 <div id="div_id_email" class="mb-3">
-                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                     <input
                         type="text"
                         name="email"
@@ -447,7 +447,7 @@ class CrispyHelperTests(SimpleTestCase):
                         required
                         id="id_email"
                     />
-                    <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                    <small id="hint_id_email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                 </div>
             </div>
             """
@@ -487,13 +487,13 @@ class CrispyHelperTests(SimpleTestCase):
             <fieldset>
                 <legend class="block text-gray-700 font-bold mb-2">Text for the legend</legend>
                 <div id="div_id_is_company" class="mb-3">
-                    <label for="id_is_company" class="block text-gray-700 text-sm font-bold mb-2">
+                    <label for="id_is_company" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400">
                         company
                     </label>
                     <input type="checkbox" name="is_company" class=" checkboxinput" id="id_is_company" />
                 </div>
                 <div id="div_id_email" class="mb-3">
-                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2"> email<span class="asteriskField">*</span> </label>
+                    <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> email<span class="asteriskField">*</span> </label>
                     <input
                         type="text"
                         name="email"
@@ -502,7 +502,7 @@ class CrispyHelperTests(SimpleTestCase):
                         required
                         id="id_email"
                     />
-                    <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                    <small id="hint_id_email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                 </div>
             </fieldset>
             """
@@ -527,7 +527,7 @@ class CrispyHelperTests(SimpleTestCase):
             </div>
         </div>
         <div id="div_id_password1" class="mb-3">
-            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2"> password<span class="asteriskField">*</span> </label>
+            <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> password<span class="asteriskField">*</span> </label>
             <input
                 type="password"
                 name="password1"
@@ -539,7 +539,7 @@ class CrispyHelperTests(SimpleTestCase):
             <p id="error_1_id_password1" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
         </div>
         <div id="div_id_password2" class="mb-3">
-            <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2"> re-enter password<span class="asteriskField">*</span> </label>
+            <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> re-enter password<span class="asteriskField">*</span> </label>
             <input
                 type="password"
                 name="password2"
@@ -560,7 +560,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
         <div id="div_id_tos_accepted" class="mb-3">
-            <label for="id_tos_accepted" class="block text-gray-700 text-sm font-bold mb-2"> terms of service<span class="asteriskField">*</span> </label>
+            <label for="id_tos_accepted" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> terms of service<span class="asteriskField">*</span> </label>
             <div class="mb-3">
                 <div class="relative">
                     <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="tos_accepted">

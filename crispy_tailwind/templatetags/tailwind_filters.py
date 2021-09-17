@@ -27,7 +27,7 @@ register = template.Library()
 
 @register.filter(name="crispy")
 def as_crispy_form(
-    form, template_pack=TEMPLATE_PACK, label_class="block text-gray-700 text-sm font-bold mb-2", field_class="mb-3"
+    form, template_pack=TEMPLATE_PACK, label_class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400", field_class="mb-3"
 ):
     """
     The original and still very useful way to generate a div elegant form/formset::
