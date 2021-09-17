@@ -1,7 +1,7 @@
 {% if field.help_text %}
     {% if help_text_inline %}
-        <p id="hint_{{ field.auto_id }}" class="text-gray-600">{{ field.help_text|safe }}</p>x
+        <p id="hint_{{ field.auto_id }}" class="text-gray-600 dark:text-gray-500">{{ field.help_text|safe }}</p>x
     {% else %}
-        <small id="hint_{{ field.auto_id }}" class="text-gray-600">{{ field.help_text|safe }}</small>
+        <small id="hint_{{ field.auto_id }}" class="text-gray-600 dark:text-gray-500">{{ field.help_text|safe }}</small>
     {% endif %}
 {% endif %}

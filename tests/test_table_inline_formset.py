@@ -51,7 +51,7 @@ class CrispyHelperTests(SimpleTestCase):
                             class="textinput textInput inputtext w-full border border-gray-300 focus:outline-none text-gray-700 px-4 bg-white leading-normal rounded-lg block py-2 appearance-none"
                             id="id_form-0-email"
                         />
-                        <small id="hint_id_form-0-email" class="text-gray-600">Insert your email</small>
+                        <small id="hint_id_form-0-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                     </td>
                     <td id="div_id_form-0-password1" class="border px-4 py-2">
                         <input
@@ -127,7 +127,7 @@ class CrispyHelperTests(SimpleTestCase):
                             class="textinput textInput inputtext w-full border border-gray-300 focus:outline-none text-gray-700 px-4 bg-white leading-normal rounded-lg block py-2 appearance-none"
                             id="id_form-1-email"
                         />
-                        <small id="hint_id_form-1-email" class="text-gray-600">Insert your email</small>
+                        <small id="hint_id_form-1-email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
                     </td>
                     <td id="div_id_form-1-password1" class="border px-4 py-2">
                         <input

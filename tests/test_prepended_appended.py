@@ -27,7 +27,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <div id="div_id_first_name" class="mb-3">
-                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
+                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> first name<span class="asteriskField">*</span> </label>
                 <div class="">
                     <div class="flex">
                         <span class="border rounded-lg border-gray-300 rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">@</span>
@@ -53,7 +53,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <div id="div_id_first_name" class="mb-3">
-                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
+                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> first name<span class="asteriskField">*</span> </label>
                 <div class="">
                     <div class="flex">
                         <span class="border rounded-lg border-gray-300 rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">http://www.</span>
@@ -79,7 +79,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <div id="div_id_first_name" class="mb-3">
-                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
+                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> first name<span class="asteriskField">*</span> </label>
                 <div class="">
                     <div class="flex">
                         <input
@@ -105,7 +105,7 @@ class CrispyHelperTests(SimpleTestCase):
         html = render_crispy_form(form)
         expected_html = """
             <div id="div_id_first_name" class="mb-3">
-                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2"> first name<span class="asteriskField">*</span> </label>
+                <label for="id_first_name" class="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"> first name<span class="asteriskField">*</span> </label>
                 <div class="">
                     <div class="flex">
                         <span class="border rounded-lg border-gray-300 rounded-r-none px-3 bg-gray-200 text-gray-800 flex items-center">www.</span>
@@ -165,7 +165,7 @@ class CrispyHelperTests(SimpleTestCase):
                         />
                     </div>
                 </div>
-                <small id="hint_id_email" class="text-gray-600">Insert your email</small>
+                <small id="hint_id_email" class="text-gray-600 dark:text-gray-500">Insert your email</small>
             </div>
             """
         self.assertHTMLEqual(html, expected_html)
