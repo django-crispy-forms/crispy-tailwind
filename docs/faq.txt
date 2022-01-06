@@ -1,0 +1,68 @@
+===
+FAQ
+===
+
+Missing form style
+===================
+
+For some people who enabled Tailwind ``purge`` option. They might meet this problem on the server or local.
+
+Because Tailwind CSS can not know which CSS classes are used by ``crispy-tailwind``, so they would not be include in the final css file, which caused form style missing.
+
+This problem might also happen if you use other 3-party package who manipulate Tailwind CSS.
+
+To solve the problem, let's first update ``tailwind.config.js``
+
+.. code-block:: javascript
+
+    const Path = require("path");
+    const pwd = process.env.PWD;
+    const pySitePackages = process.env.pySitePackages;
+
+    // We can add current project paths here
+    const projectPaths = [
+      Path.join(pwd, "../django_tailwind_app/templates/**/*.html"),
+      // add js file paths if you need
+    ];
+
+    // We can add 3-party python packages here
+    let pyPackagesPaths = []
+    if (pySitePackages){
+      pyPackagesPaths = [
+        Path.join(pySitePackages, "./crispy_tailwind/**/*.html"),
+        Path.join(pySitePackages, "./crispy_tailwind/**/*.py"),
+        Path.join(pySitePackages, "./crispy_tailwind/**/*.js"),
+      ];
+    }
+
+    const purgePaths = [...projectPaths, ...pyPackagesPaths];
+    console.log(``tailwindcss purge by scanning ${purgePaths}``);
+
+    module.exports = {
+      mode: 'jit',
+      purge: purgePaths,
+      darkMode: false, // or 'media' or 'class'
+      theme: {
+        extend: {},
+      },
+      variants: {
+        extend: {},
+      },
+      plugins: [
+        require('@tailwindcss/forms'),
+      ],
+    }
+
+If we set env ``pySitePackages`` when buillding Tailwind CSS, then it can find the ``crispy_tailwind`` source code
+
+.. code-block:: shell
+
+    (env)$ python3 -c "import sysconfig; print(sysconfig.get_path('purelib'))"
+    /Users/michaelyin/django_tailwind_project/env/lib/python3.9/site-packages
+
+    # set it to pySitePackages ENV variable
+    (env)$ export pySitePackages=$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib'))")
+    # check
+    (env)$ env | grep pySitePackages
+
+You can check this blog `Render Django Form with Tailwind CSS Style <https://www.accordbox.com/blog/render-django-form-with-tailwind-css-style/>`_ to learn more about this approach.
