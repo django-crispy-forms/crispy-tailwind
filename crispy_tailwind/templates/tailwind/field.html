@@ -17,14 +17,15 @@
         <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
         {% include 'tailwind/layout/select.html' %}
+    {% elif field|is_checkboxselectmultiple %}
+        <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+
+        {% include 'tailwind/layout/checkboxselectmultiple.html' %}
     {% elif field|is_radioselect %}
         <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
         {% include 'tailwind/layout/radioselect.html' %}
-    {% elif field|is_checkboxselectmultiple %}
 
-        <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-        {% include 'tailwind/layout/checkboxselectmultiple.html' %}
     {% else %}
 
         {# otherwise use django rendering with additional classes added #}
