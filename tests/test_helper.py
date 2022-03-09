@@ -3,7 +3,7 @@ from django.forms.models import formset_factory
 from django.template import Template
 from django.test import SimpleTestCase
 
-from crispy_forms.bootstrap import InlineCheckboxes, InlineRadios
+from crispy_forms.bootstrap import FieldWithButtons, InlineCheckboxes, InlineField, InlineRadios
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import HTML, Column, Div, Field, Fieldset, Hidden, Layout, Row
 from crispy_forms.utils import render_crispy_form
@@ -573,5 +573,46 @@ class CrispyHelperTests(SimpleTestCase):
                 </div>
             </div>
         </div>
+        """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_field_with_buttons(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(
+            FieldWithButtons("first_name", Button("Go!", "go")),
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+        <div class=""> <label for="id_first_name" class=" requiredField"> first name<span
+                    class="asteriskField">*</span> </label>
+            <div class="flex"> <input type="text" name="first_name" maxlength="5"
+                    class="textinput textInput inputtext border border-gray-300 rounded-lg rounded-r-none px-4 py-2 w-full focus:outline-none text-gray-700 border-r-0 leading-normal"
+                    required id="id_first_name"> <span
+                    class="border-gray-300 border rounded-lg rounded-l-none bg-gray-200 text-gray-800 flex items-center"><input
+                        type="button" name="Go!" value="go"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="button-id-go" /></span>
+            </div>
+        </div>
+        """
+        self.assertHTMLEqual(html, expected_html)
+
+    def test_inline_field(self):
+        form = SampleForm()
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = Layout(
+            InlineField("first_name"),
+            InlineField("is_company"),
+        )
+        html = render_crispy_form(form)
+        expected_html = """
+        <div id="div_id_first_name" class=""> <label for="id_first_name" class="sr-only requiredField"> first name </label>
+            <input type="text" name="first_name" maxlength="5"
+                class="textinput textInput inputtext rounded-lg appearance-none w-full block border-gray-300 py-2 bg-white text-gray-700 leading-normal focus:outline-none border px-4"
+                placeholder="first name" required id="id_first_name"> </div>
+        <div id="div_id_is_company" class=""> <label for="id_is_company" class=""> <input type="checkbox" name="is_company"
+                    class="checkboxinput " id="id_is_company"> company </label> </div>
         """
         self.assertHTMLEqual(html, expected_html)
