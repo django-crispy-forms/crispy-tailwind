@@ -1,5 +1,11 @@
 # CHANGELOG for crispy-tailwind
 
+## Next Release (tbc)
+* Added support for Python 3.10 (#116)
+* Added support for Django 4.0 (#116)
+* Dropped support for Django 2.2 (#116)
+* Dropped support for Python 3.6 (#116)
+
 ## 0.5 (2021-04-21)
 * Added support for custom widgets (#92)
 * Confirmed support for Django 3.2 (#91)
