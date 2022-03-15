@@ -78,9 +78,12 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper = FormHelper()
         form.helper.form_tag = False
         html = render_crispy_form(form)
-        expected_html = """
+        label_for = ""
+        if django.VERSION < (4, 0):
+            label_for = "id_radio_0"
+        expected_html = f"""
                 <div id="div_id_radio" class="mb-3">
-                    <label for="id_radio_0" class="block font-bold mb-2 text-gray-700 text-sm"> Radio<span class="asteriskField">*</span> </label>
+                    <label for="{label_for}" class="block font-bold mb-2 text-gray-700 text-sm"> Radio<span class="asteriskField">*</span> </label>
                     <div class="mb-3">
                         <label for="id_radio_1" class="block text-gray-700 mr-3">
                             <input type="radio" class="" name="radio" id="id_radio_1" value="blue" />
@@ -209,9 +212,12 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.layout = Layout(InlineRadios("radio"))
         html = render_crispy_form(form)
-        expected_html = """
+        label_for = ""
+        if django.VERSION < (4, 0):
+            label_for = "id_radio_0"
+        expected_html = f"""
                 <div id="div_id_radio" class="mb-3">
-                    <label for="id_radio_0" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
+                    <label for="{label_for}" class=" block text-gray-700 text-sm font-bold mb-2 requiredField"> Radio<span class="asteriskField">*</span> </label>
                     <div id="div_id_radio" class="flex flex-row">
                         <label for="id_radio_1" class="block text-gray-700 mr-3">
                             <input type="radio" class="" name="radio" id="id_radio_1" value="blue" />
