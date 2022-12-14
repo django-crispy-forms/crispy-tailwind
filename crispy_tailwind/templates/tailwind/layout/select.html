@@ -2,13 +2,13 @@
 {% load l10n %}
 
 <div class="relative">
-<select id= "{{ field.name }} class="{% if field.errors %}border border-red-500 {% endif %}bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {{ field.field.widget.attrs|flatatt }}>
+<select class="{% if field.errors %}border border-red-500 {% endif %}bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {{ field.field.widget.attrs|flatatt }}>
     {% for value, label in field.field.choices %}
         {% include "tailwind/layout/select_option.html" with value=value label=label %}
     {% endfor %}
-</select>
-<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
   </div>
+</select>
 </div>
 </div>
