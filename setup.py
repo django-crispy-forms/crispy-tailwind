@@ -34,7 +34,6 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: JavaScript",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
@@ -49,7 +48,7 @@ setup(
     license="MIT",
     packages=find_packages(exclude=["docs"]),
     include_package_data=True,
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     install_requires=["django-crispy-forms>=1.11.2", "django>=3.2"],
     zip_safe=False,
 )
