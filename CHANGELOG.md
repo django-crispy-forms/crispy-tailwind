@@ -6,6 +6,7 @@
 * Dropped support for Django 2.2 (#116)
 * Dropped support for Python 3.6 (#116)
 * Dropped support for Python 3.7 (#135)
+* Increased minimum supported django-crispy-forms version to 2.0 (#135)
 
 ## 0.5 (2021-04-21)
 * Added support for custom widgets (#92)
