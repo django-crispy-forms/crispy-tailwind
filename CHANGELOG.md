@@ -2,7 +2,7 @@
 
 ## Next Release (tbc)
 * Added support for Python 3.10 (#116)
-* Added support for Django 4.0 (#116)
+* Added support for Django 4.1 and 4.2 (#135)
 * Dropped support for Django 2.2 (#116)
 * Dropped support for Python 3.6 (#116)
 * Dropped support for Python 3.7 (#135)
