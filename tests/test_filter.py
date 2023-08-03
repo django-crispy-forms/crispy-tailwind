@@ -1,3 +1,6 @@
+import pytest
+
+from django import VERSION
 from django.forms.models import formset_factory
 from django.template import Context, Template
 from django.test import SimpleTestCase
@@ -8,6 +11,7 @@ from .forms import CharFieldForm, SampleForm, ShortCharFieldForm
 class CrispyFilterTests(SimpleTestCase):
     maxDiff = None
 
+    @pytest.mark.skipif(VERSION < (4, 1), reason="Different html output on Django 3.2 for labels on datetime fields.")
     def test_crispy_filter(self):
         template = Template(
             """
@@ -70,7 +74,7 @@ class CrispyFilterTests(SimpleTestCase):
             """</div>
 
             <div id="div_id_datetime_field" class="mb-3">
-            <label for="id_datetime_field_0" class="block text-gray-700 text-sm font-bold mb-2">
+            <label for="" class="block text-gray-700 text-sm font-bold mb-2">
             date time<span class="asteriskField">*</span> </label>
             <input type="text" name="datetime_field_0"
             class="dateinput rounded-lg focus:outline border appearance-none py-2 mr-2 border-gray-300 bg-white """
