@@ -70,11 +70,11 @@ FAQs
 What about custom widgets?
 ==========================
 
-The template pack includes default styles for widgets included in Django 
+The template pack includes default styles for widgets included in Django
 itself. `Styling of widget instances`_ can be done by using the ``widget.attrs``
 argument when creating the widget.
 
-For example the following form will render 
+For example the following form will render
 ``<input type="text" name="name" class="customtextwidget custom-css" required id="id_name">``::
 
     class CustomTextWidget(forms.TextInput):
