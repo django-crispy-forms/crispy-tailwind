@@ -50,6 +50,6 @@ setup(
     packages=find_packages(exclude=["docs"]),
     include_package_data=True,
     python_requires=">=3.8",
-    install_requires=["django-crispy-forms>=1.11.2", "django>=3.2"],
+    install_requires=["django-crispy-forms>=2.0", "django>=3.2"],
     zip_safe=False,
 )
