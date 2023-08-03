@@ -5,6 +5,7 @@
 * Added support for Django 4.0 (#116)
 * Dropped support for Django 2.2 (#116)
 * Dropped support for Python 3.6 (#116)
+* Dropped support for Python 3.7 (#135)
 
 ## 0.5 (2021-04-21)
 * Added support for custom widgets (#92)
