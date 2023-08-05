@@ -141,7 +141,7 @@ pack. If you wish to customise this layout object you can
 Inline Field
 ------------
 
-An oppinionated inline field. If you wish to customise this layout object you 
+An oppinionated inline field. If you wish to customise this layout object you
 can `over ride templates`_.
 
 .. image:: img/inline_field.png

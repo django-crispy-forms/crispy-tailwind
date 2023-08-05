@@ -28,7 +28,6 @@ class SampleForm(forms.Form):
 
 
 class CharFieldForm(forms.Form):
-
     name = forms.CharField(required=True)
 
 
@@ -37,7 +36,6 @@ class ShortCharFieldForm(forms.Form):
 
 
 class PasswordFieldForm(forms.Form):
-
     password = forms.CharField(widget=forms.PasswordInput)
 
 

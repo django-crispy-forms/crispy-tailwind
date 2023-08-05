@@ -1,6 +1,6 @@
 # dependencies
 django>=3.2
-django-crispy-forms~=1.11.0
+django-crispy-forms>=2.0
 
 # dev
 pytest
