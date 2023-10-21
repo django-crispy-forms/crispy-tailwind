@@ -31,6 +31,11 @@ dependencies = [
     "django>=4.2"
 ]
 
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-django",
+]
 
 [tool.setuptools.dynamic]
 version = {attr = "crispy_tailwind.__version__"}
@@ -59,3 +64,6 @@ exclude = '''
 
 )/
 '''
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE= "tests.test_settings"
