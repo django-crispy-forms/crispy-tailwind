@@ -1,3 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crispy-tailwind"
+description = "A tailwind package for Django Crispy Forms"
+readme = "README.rst"
+license = {text = "MIT"}
+authors = [{name = "David Smith", email = "smithdc@gmail.com"}]
+requires-python = ">=3.8"
+classifiers=[
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: JavaScript",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dynamic = ['version']
+dependencies = [
+    "django-crispy-forms>=2.0",
+    "django>=4.2"
+]
+
+
+[tool.setuptools.dynamic]
+version = {attr = "crispy_tailwind.__version__"}
+
+[project.urls]
+"Homepage" = "https://github.com/django-crispy-forms/crispy-tailwind"
+"Issues" = "https://github.com/django-crispy-forms/crispy-tailwind/issues"
+"Changelog" = "https://github.com/django-crispy-forms/crispy-tailwind/releases"
+
 [tool.black]
 line-length = 119
 target-version = ['py38']
