@@ -51,4 +51,6 @@ TEMPLATES = [
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
+USE_TZ = True
+
 CRISPY_TEMPLATE_PACK = "tailwind"
