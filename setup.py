@@ -28,8 +28,6 @@ setup(
         "Development Status :: 2 - Pre-Alpha",
         "Environment :: Web Environment",
         "Framework :: Django",
-        "Framework :: Django :: 3.2",
-        "Framework :: Django :: 4.1",
         "Framework :: Django :: 4.2",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
@@ -50,6 +48,6 @@ setup(
     packages=find_packages(exclude=["docs"]),
     include_package_data=True,
     python_requires=">=3.8",
-    install_requires=["django-crispy-forms>=2.0", "django>=3.2"],
+    install_requires=["django-crispy-forms>=2.0", "django>=4.2"],
     zip_safe=False,
 )
