@@ -1,3 +1,4 @@
+import django
 from django.forms.models import formset_factory
 from django.template import Context, Template
 from django.test import SimpleTestCase
@@ -20,7 +21,11 @@ class CrispyFilterTests(SimpleTestCase):
         form = SampleForm()
         c = Context({"form": form})
         html = template.render(c)
-        assert parse_html(html) == parse_expected("filter/crispy_filter.html")
+        if django.VERSION < (5, 0):
+            expected = "filter/crispy_filter_lt50.html"
+        else:
+            expected = "filter/crispy_filter.html"
+        assert parse_html(html) == parse_expected(expected)
 
     def test_error_borders(self):
         template = Template(
