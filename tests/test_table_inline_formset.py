@@ -1,3 +1,4 @@
+import django
 from django.forms import formset_factory
 from django.test import SimpleTestCase
 
@@ -18,7 +19,11 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper.form_tag = False
         formset.helper.add_input(Submit("submit", "submit"))
         formset.helper.template = "tailwind/table_inline_formset.html"
-        assert parse_form(formset) == parse_expected("table_inline_formset/table_inline_formset.html")
+        if django.VERSION < (5, 0):
+            expected = "table_inline_formset/table_inline_formset_lt50.html"
+        else:
+            expected = "table_inline_formset/table_inline_formset.html"
+        assert parse_form(formset) == parse_expected(expected)
 
     def test_failing_table_inline_formset(self):
         SampleFormSet = formset_factory(ShortCharFieldForm, extra=1, max_num=2, validate_max=True)
@@ -34,4 +39,8 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper = FormHelper()
         formset.helper.add_input(Submit("submit", "submit"))
         formset.helper.template = "tailwind/table_inline_formset.html"
-        assert parse_form(formset) == parse_expected("table_inline_formset/table_inline_formset_failing.html")
+        if django.VERSION < (5, 0):
+            expected = "table_inline_formset/table_inline_formset_failing_lt50.html"
+        else:
+            expected = "table_inline_formset/table_inline_formset_failing.html"
+        assert parse_form(formset) == parse_expected(expected)

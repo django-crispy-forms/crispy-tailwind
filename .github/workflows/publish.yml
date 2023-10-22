@@ -16,6 +16,8 @@ jobs:
         - '3.8'
         - '3.9'
         - '3.10'
+        - '3.11'
+        - '3.12'
 
     steps:
     - uses: actions/checkout@v4
@@ -37,7 +39,7 @@ jobs:
         ENV_PREFIX=$(tr -C -d "0-9" <<< "${{ matrix.python-version }}")
         TOXENV=$(tox --listenvs | grep "^py$ENV_PREFIX" | tr '\n' ',') tox
     - name: Run lint
-      if: ${{ matrix.python-version == '3.9' }}
+      if: ${{ matrix.python-version == '3.12' }}
       run: |
         tox -e lint
 
@@ -49,7 +51,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.9'
+        python-version: '3.12'
     - name: Install dependencies
       run: |
         pip install build twine

@@ -1,3 +1,4 @@
+import django
 from django.forms.models import formset_factory
 from django.template import Template
 from django.test import SimpleTestCase
@@ -38,7 +39,11 @@ class CrispyHelperTests(SimpleTestCase):
     def test_failing_CharField(self):
         form = CharFieldForm(data={"name": ""})
         form.helper = FormHelper()
-        assert parse_form(form) == parse_expected("helper/charfield_failing.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/charfield_failing_lt50.html"
+        else:
+            expected = "helper/charfield_failing.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_password(self):
         form = PasswordFieldForm()
@@ -74,7 +79,11 @@ class CrispyHelperTests(SimpleTestCase):
                 Column("email", css_class="px-2"),
             )
         )
-        assert parse_form(form) == parse_expected("helper/col_row.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/col_row_lt50.html"
+        else:
+            expected = "helper/col_row.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_inline_radio(self):
         form = RadioForm()
@@ -96,7 +105,11 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper = FormHelper()
         formset.helper.form_tag = False
         formset.helper.layout = Layout("email")
-        assert parse_form(formset) == parse_expected("helper/formset.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/formset_lt50.html"
+        else:
+            expected = "helper/formset.html"
+        assert parse_form(formset) == parse_expected(expected)
 
     def test_formset_with_errors(self):
         SampleFormSet = formset_factory(ShortCharFieldForm, extra=1, max_num=2, validate_max=True)
@@ -112,7 +125,11 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper.formset_error_title = "Non Form Errors"
         formset.helper.form_tag = False
         formset.helper.layout = Layout("email")
-        assert parse_form(formset) == parse_expected("helper/formset_errors.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/formset_errors_lt50.html"
+        else:
+            expected = "helper/formset_errors.html"
+        assert parse_form(formset) == parse_expected(expected)
 
     def test_formset_with_form_tag(self):
         SampleFormSet = formset_factory(SampleForm, extra=2)
@@ -120,7 +137,11 @@ class CrispyHelperTests(SimpleTestCase):
         formset.helper = FormHelper()
         formset.helper.form_tag = True
         formset.helper.layout = Layout("email")
-        assert parse_form(formset) == parse_expected("helper/formset_form_tag.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/formset_form_tag_lt50.html"
+        else:
+            expected = "helper/formset_form_tag.html"
+        assert parse_form(formset) == parse_expected(expected)
 
     def test_buttons(self):
         form = CharFieldForm()
@@ -150,7 +171,11 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper = FormHelper()
         form.helper.form_tag = False
         form.helper.layout = Layout(Div("email", "name", css_class="test class"))
-        assert parse_form(form) == parse_expected("helper/div.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/div_lt50.html"
+        else:
+            expected = "helper/div.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_HTML(self):
         form = CharFieldForm()
@@ -181,7 +206,11 @@ class CrispyHelperTests(SimpleTestCase):
                 "email",
             )
         )
-        assert parse_form(form) == parse_expected("helper/fieldset.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/fieldset_lt50.html"
+        else:
+            expected = "helper/fieldset.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_non_form_errors(self):
         form = SampleForm(data={})
@@ -189,7 +218,11 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.form_error_title = "Form Error Title"
         form.helper.layout = Layout("password1", "password2")
-        assert parse_form(form) == parse_expected("helper/non_form_errors.html")
+        if django.VERSION < (5, 0):
+            expected = "helper/non_form_errors_lt50.html"
+        else:
+            expected = "helper/non_form_errors.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_select(self):
         form = SelectForm(data={"tos_accepted": "accepted"})

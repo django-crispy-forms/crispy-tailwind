@@ -1,3 +1,4 @@
+import django
 from django.template import Template
 from django.test import SimpleTestCase
 
@@ -61,7 +62,11 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.form_show_labels = False
         form.helper.layout = Layout(PrependedText("email", "@"))
-        assert parse_form(form) == parse_expected("prepended/prepended_help.html")
+        if django.VERSION < (5, 0):
+            expected = "prepended/prepended_help_lt50.html"
+        else:
+            expected = "prepended/prepended_help.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_prepended_with_errors(self):
         form = CharFieldForm(data={"name": ""})
@@ -69,7 +74,11 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.form_show_labels = False
         form.helper.layout = Layout(PrependedText("name", "@"))
-        assert parse_form(form) == parse_expected("prepended/prepended_errors.html")
+        if django.VERSION < (5, 0):
+            expected = "prepended/prepended_errors_lt50.html"
+        else:
+            expected = "prepended/prepended_errors.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_appended_with_errors(self):
         form = CharFieldForm(data={"name": ""})
@@ -77,7 +86,11 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.form_show_labels = False
         form.helper.layout = Layout(AppendedText("name", "@"))
-        assert parse_form(form) == parse_expected("prepended/appended_errors.html")
+        if django.VERSION < (5, 0):
+            expected = "prepended/appended_errors_lt50.html"
+        else:
+            expected = "prepended/appended_errors.html"
+        assert parse_form(form) == parse_expected(expected)
 
     def test_prepended_and_appended_with_errors(self):
         form = CharFieldForm(data={"name": ""})
@@ -85,4 +98,8 @@ class CrispyHelperTests(SimpleTestCase):
         form.helper.form_tag = False
         form.helper.form_show_labels = False
         form.helper.layout = Layout(PrependedAppendedText("name", "@", ".com"))
-        assert parse_form(form) == parse_expected("prepended/prepended_appended_errors.html")
+        if django.VERSION < (5, 0):
+            expected = "prepended/prepended_appended_errors_lt50.html"
+        else:
+            expected = "prepended/prepended_appended_errors.html"
+        assert parse_form(form) == parse_expected(expected)
