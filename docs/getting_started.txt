@@ -25,6 +25,15 @@ your project::
 
     CRISPY_TEMPLATE_PACK = "tailwind"
 
+If you use `Tailwind CLI <https://tailwindcss.com/docs/installation>`_, you have to provide the path to your
+templates. Since this package contains templates which are within your Pythons `site-packages`, it's hard to tell
+Tailwind where these templates live.
+
+Thanks to Carlton Gibson's blog, you can implement (aka copy & paste) a Django management command and the corresponding
+Tailwind configuration:
+
+https://noumenal.es/notes/tailwind/django-integration/
+
 Usage
 =====
 
