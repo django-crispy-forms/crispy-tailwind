@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Started &mdash; crispy-tailwind 0.5 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -107,6 +109,12 @@ your project:</p>
 <span class="n">CRISPY_TEMPLATE_PACK</span> <span class="o">=</span> <span class="s2">&quot;tailwind&quot;</span>
 </pre></div>
 </div>
+<p>If you use <a class="reference external" href="https://tailwindcss.com/docs/installation">Tailwind CLI</a>, you have to provide the path to your
+templates. Since this package contains templates which are within your Pythons <cite>site-packages</cite>, it’s hard to tell
+Tailwind where these templates live.</p>
+<p>Thanks to Carlton Gibson’s blog, you can implement (aka copy &amp; paste) a Django management command and the corresponding
+Tailwind configuration:</p>
+<p><a class="reference external" href="https://noumenal.es/notes/tailwind/django-integration/">https://noumenal.es/notes/tailwind/django-integration/</a></p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
