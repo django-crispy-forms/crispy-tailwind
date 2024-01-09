@@ -1,6 +1,8 @@
 # CHANGELOG for crispy-tailwind
 
 ## Next Release (tbc)
+
+## 0.6 (2024-01-09)
 * Added support for Django 5.0 (#142)
 * Added support for Python 3.11 and 3.12 (#142)
 * Added support for Python 3.10 (#116)
