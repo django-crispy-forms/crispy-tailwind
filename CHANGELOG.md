@@ -1,12 +1,19 @@
 # CHANGELOG for crispy-tailwind
 
 ## Next Release (tbc)
+
+## 1.0 (2024-01-09)
+* Added support for Django 5.0 (#142)
+* Added support for Python 3.11 and 3.12 (#142)
 * Added support for Python 3.10 (#116)
-* Added support for Django 4.1 and 4.2 (#135)
+* Added support for Django 4.2 (#135)
 * Dropped support for Django 2.2 (#116)
+* Dropped support for Django 3.2, 4.0 and 4.1 (#138)
 * Dropped support for Python 3.6 (#116)
 * Dropped support for Python 3.7 (#135)
 * Increased minimum supported django-crispy-forms version to 2.0 (#135)
+* Added docs about Tailwind CLI template discovery management command (#144)
+* Fixed bug with select template and disabled property (#118)
 
 ## 0.5 (2021-04-21)
 * Added support for custom widgets (#92)

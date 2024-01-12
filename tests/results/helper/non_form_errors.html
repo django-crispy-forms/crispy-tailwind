@@ -1,0 +1,36 @@
+<div class="alert mb-4">
+    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        Form Error Title
+    </div>
+    <div class="border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+        <ul>
+            <li>Passwords dont match</li>
+        </ul>
+    </div>
+</div>
+<div id="div_id_password1" class="mb-3">
+    <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2"> password<span class="asteriskField">*</span> </label>
+    <input
+        type="password"
+        name="password1"
+        maxlength="30"
+        class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
+        required
+        id="id_password1"
+        aria-invalid="true"
+    />
+    <p id="error_1_id_password1" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
+</div>
+<div id="div_id_password2" class="mb-3">
+    <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2"> re-enter password<span class="asteriskField">*</span> </label>
+    <input
+        type="password"
+        name="password2"
+        maxlength="30"
+        class="passwordinput focus:outline-none rounded-lg border appearance-none text-gray-700 leading-normal block px-4 py-2 w-full bg-white border-red-500"
+        required
+        id="id_password2"
+        aria-invalid="true"
+    />
+    <p id="error_1_id_password2" class="text-red-500 text-xs italic"><strong>This field is required.</strong></p>
+</div>
