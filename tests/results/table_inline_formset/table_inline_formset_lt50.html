@@ -15,6 +15,9 @@
             <th for="id_form-0-last_name" class="px-4 py-2">last name<span class="asteriskField">*</span></th>
             <th for="id_form-0-datetime_field" class="px-4 py-2">date time<span class="asteriskField">*</span></th>
             <th for="id_form-0-tos_accepted" class="px-4 py-2">terms of service<span class="asteriskField">*</span></th>
+            <th for="id_form-0-select_multiple" class="px-4 py-2">Select multiple<span class="asteriskField">*</span></th>
+            <th for="id_form-0-select_required" class="px-4 py-2">Select required<span class="asteriskField">*</span></th>
+            <th for="id_form-0-grouped_select" class="px-4 py-2">Grouped select<span class="asteriskField">*</span></th>
         </tr>
     </thead>
     <tbody>
@@ -93,6 +96,85 @@
                     </div>
                 </div>
             </td>
+            <td class="border px-4 py-2" id="div_id_form-0-select_multiple">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            id="id_form-0-select_multiple" multiple name="form-0-select_multiple">
+                            <option value="1">
+                                one
+                            </option>
+                            <option value="2">
+                                two
+                            </option>
+                            <option value="3">
+                                three
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+            <td class="border px-4 py-2" id="div_id_form-0-select_required">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            id="id_form-0-select_required" name="form-0-select_required">
+                            <option value="">
+                                Select and option
+                            </option>
+                            <option value="1">
+                                one
+                            </option>
+                            <option selected value="2">
+                                two
+                            </option>
+                            <option value="3">
+                                three
+                            </option>
+                        </select>
+                        <div
+                            class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                            <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="border px-4 py-2" id="div_id_form-0-grouped_select">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            class="custom-class" id="id_form-0-grouped_select" name="form-0-grouped_select">
+                            <optgroup label="Group 1">
+                                <option value="1">
+                                    one
+                                </option>
+                                <option value="2">
+                                    two
+                                </option>
+                            </optgroup>
+                            <optgroup label="Group 2">
+                                <option value="3">
+                                    three
+                                </option>
+                                <option value="4">
+                                    four
+                                </option>
+                            </optgroup>
+                        </select>
+                        <div
+                            class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                            <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </td>
         </tr>
         <tr>
             <td id="div_id_form-1-is_company" class="border px-4 py-2"><input type="checkbox" name="form-1-is_company" class=" checkboxinput" id="id_form-1-is_company" /></td>
@@ -165,6 +247,85 @@
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="border px-4 py-2" id="div_id_form-1-select_multiple">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            id="id_form-1-select_multiple" multiple name="form-1-select_multiple">
+                            <option value="1">
+                                one
+                            </option>
+                            <option value="2">
+                                two
+                            </option>
+                            <option value="3">
+                                three
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+            <td class="border px-4 py-2" id="div_id_form-1-select_required">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            id="id_form-1-select_required" name="form-1-select_required">
+                            <option value="">
+                                Select and option
+                            </option>
+                            <option value="1">
+                                one
+                            </option>
+                            <option selected value="2">
+                                two
+                            </option>
+                            <option value="3">
+                                three
+                            </option>
+                        </select>
+                        <div
+                            class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                            <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="border px-4 py-2" id="div_id_form-1-grouped_select">
+                <div class="border px-4 py-2">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                            class="custom-class" id="id_form-1-grouped_select" name="form-1-grouped_select">
+                            <optgroup label="Group 1">
+                                <option value="1">
+                                    one
+                                </option>
+                                <option value="2">
+                                    two
+                                </option>
+                            </optgroup>
+                            <optgroup label="Group 2">
+                                <option value="3">
+                                    three
+                                </option>
+                                <option value="4">
+                                    four
+                                </option>
+                            </optgroup>
+                        </select>
+                        <div
+                            class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                            <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                            </svg>
                         </div>
                     </div>
                 </div>

@@ -16,6 +16,31 @@ class SampleForm(forms.Form):
         widget=forms.Select(),
         choices=(("accepted", "Accepted"), ("not_accepted", "Not accepted")),
     )
+    select_multiple = forms.MultipleChoiceField(choices=[("1", "one"), ("2", "two"), ("3", "three")])
+    select_required = forms.ChoiceField(
+        choices=[("", "Select and option"), ("1", "one"), ("2", "two"), ("3", "three")],
+        initial="2",
+    )
+    grouped_select = forms.TypedChoiceField(
+        choices=[
+            (
+                "Group 1",
+                [
+                    ("1", "one"),
+                    ("2", "two"),
+                ],
+            ),
+            (
+                "Group 2",
+                [
+                    ("3", "three"),
+                    ("4", "four"),
+                ],
+            ),
+        ],
+        coerce=str,
+        widget=forms.Select(attrs={"class": "custom-class"}),
+    )
 
     def clean(self):
         super().clean()
