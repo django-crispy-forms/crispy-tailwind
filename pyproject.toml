@@ -48,6 +48,12 @@ version = {attr = "crispy_tailwind.__version__"}
 "Issues" = "https://github.com/django-crispy-forms/crispy-tailwind/issues"
 "Changelog" = "https://github.com/django-crispy-forms/crispy-tailwind/releases"
 
+[tool.autopub]
+project-name = "Crispy-Tailwind"
+git-username = "botpub"
+git-email = "52496925+botpub@users.noreply.github.com"
+append-github-contributor = true
+
 [tool.black]
 line-length = 119
 target-version = ['py38']
