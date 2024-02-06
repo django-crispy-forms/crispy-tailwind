@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crispy-tailwind"
+version = "1.0.0"
 description = "Tailwind CSS for Django Crispy Forms"
 readme = "README.rst"
 license = {text = "MIT"}
@@ -28,7 +29,6 @@ classifiers=[
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dynamic = ['version']
 dependencies = [
     "django-crispy-forms>=2.0",
     "django>=4.2"
@@ -39,9 +39,6 @@ test = [
   "pytest",
   "pytest-django",
 ]
-
-[tool.setuptools.dynamic]
-version = {attr = "crispy_tailwind.__version__"}
 
 [project.urls]
 "Homepage" = "https://github.com/django-crispy-forms/crispy-tailwind"
