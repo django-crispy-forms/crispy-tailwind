@@ -127,3 +127,28 @@ def as_crispy_field(field, template_pack=TEMPLATE_PACK, label_class="", field_cl
 @register.filter(name="flatatt")
 def flatatt_filter(attrs):
     return mark_safe(flatatt(attrs))
+
+
+@register.filter
+def build_attrs(field):
+    """
+    Build HTML attributes for a form field, also checking for a
+    ``widget.allow_multiple_selected`` attribute  and adding ``multiple`` to the
+    attributes if it is set to ``True``.
+    """
+    attrs = field.field.widget.attrs
+    attrs.setdefault("id", field.auto_id)
+
+    field_built_widget_attrs = field.build_widget_attrs(attrs)
+    attrs.update(field_built_widget_attrs)
+
+    # Some custom widgets (e.g. Select2) may add additional attributes to the
+    # widget attrs dict. We need to add those to the attrs dict as well calling
+    # the widget's build_attrs method.
+
+    built_widget_attrs = field.field.widget.build_attrs(attrs)
+    attrs.update(built_widget_attrs)
+
+    if hasattr(field.field.widget, "allow_multiple_selected"):
+        attrs["multiple"] = attrs.get("multiple", field.field.widget.allow_multiple_selected)
+    return mark_safe(flatatt(attrs))
