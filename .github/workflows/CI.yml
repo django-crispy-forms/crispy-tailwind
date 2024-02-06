@@ -77,7 +77,7 @@ jobs:
       - name: Check release
         id: check_release
         run: |
-          python -m pip install autopub
+          python -m pip install autopub httpx==0.18.2
           python -m pip install https://github.com/scikit-build/github-release/archive/master.zip
           autopub check
 
