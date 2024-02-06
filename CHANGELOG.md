@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+1.0.1 - 2024-02-06
+------------------
+
+* Add build_attrs filter to tailwind_filters.py
+* Add attrs.html template for tailwind layout
+* Refactor select.html and select_option.html templates
+* Add id attribute to select elements
+* Fix ID attribute in select element
+* Add tests for select attributes
+
 1.0.0 - 2024-01-09
 ------------------
 
