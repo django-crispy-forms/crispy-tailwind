@@ -52,6 +52,7 @@ version = {attr = "crispy_tailwind.__version__"}
 project-name = "Crispy-Tailwind"
 git-username = "botpub"
 git-email = "52496925+botpub@users.noreply.github.com"
+version-strings = ["crispy_tailwind/__init__.py"]
 append-github-contributor = true
 
 [tool.black]
