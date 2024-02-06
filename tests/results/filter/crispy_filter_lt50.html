@@ -63,13 +63,108 @@
     <div class="mb-3">
         <div class="relative">
             <select class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full
-            appearance-none leading-normal text-gray-700" name="tos_accepted">
+            appearance-none leading-normal text-gray-700" name="tos_accepted" id="id_tos_accepted">
                 <option value="accepted">Accepted</option>
                 <option value="not_accepted">Not accepted</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3" id="div_id_select_multiple">
+    <label class="block font-bold mb-2 text-gray-700 text-sm" for="id_select_multiple">
+        Select multiple<span class="asteriskField">
+            *
+        </span>
+    </label>
+    <div class="mb-3">
+        <div class="relative">
+            <select
+                class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                id="id_select_multiple" multiple name="select_multiple" required>
+                <option value="1">
+                    one
+                </option>
+                <option value="2">
+                    two
+                </option>
+                <option value="3">
+                    three
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3" id="div_id_select_required">
+    <label class="block font-bold mb-2 text-gray-700 text-sm" for="id_select_required">
+        Select required<span class="asteriskField">
+            *
+        </span>
+    </label>
+    <div class="mb-3">
+        <div class="relative">
+            <select
+                class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                id="id_select_required" name="select_required" required>
+                <option value="">
+                    Select and option
+                </option>
+                <option value="1">
+                    one
+                </option>
+                <option selected value="2">
+                    two
+                </option>
+                <option value="3">
+                    three
+                </option>
+            </select>
+            <div class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3" id="div_id_grouped_select">
+    <label class="block font-bold mb-2 text-gray-700 text-sm" for="id_grouped_select">
+        Grouped select<span class="asteriskField">
+            *
+        </span>
+    </label>
+    <div class="mb-3">
+        <div class="relative">
+            <select
+                class="appearance-none bg-white block border border-gray-300 focus:outline-none leading-normal px-4 py-2 rounded-lg text-gray-700 w-full"
+                class="custom-class" id="id_grouped_select" name="grouped_select">
+                <optgroup label="Group 1">
+                    <option value="1">
+                        one
+                    </option>
+                    <option value="2">
+                        two
+                    </option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option value="3">
+                        three
+                    </option>
+                    <option value="4">
+                        four
+                    </option>
+                </optgroup>
+            </select>
+            <div class="absolute flex inset-y-0 items-center pointer-events-none px-2 right-0 text-gray-700">
+                <svg class="fill-current h-4 w-4" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
                 </svg>
             </div>
         </div>
