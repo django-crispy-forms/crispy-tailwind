@@ -1,0 +1,67 @@
+=============
+Custom Styles
+=============
+
+With Tailwind being a utility framework there is much more ability to customise
+your site than with many of the other CSS frameworks such as Bootstrap.
+
+While our opinionated Tailwind styles may get you so far you may wish to change these.
+
+The Tailwind template pack aims to help you customise your form in a DRY way. This
+template pack comes with a utility class called `CSSContainer` which can be attached to your
+form helper.
+
+------------
+CSSContainer
+------------
+
+`CSSContainer` is imported from `crispy_tailwind.tailwind`. This is a class which holds the
+CSS style for your form. Currently it holds the classes for the `<input>` tags within your form.
+The class expects a dict of Django widgets and class styles::
+
+    >>> from crispy_tailwind.tailwind import CSSContainer
+
+    >>> css = CSSContainer({
+        "text": "border border-gray-300",
+        "number": "border border-gray-300",
+        ...
+    })
+
+As there are many Django widgets, there is the option to pass in classes to a "base" key
+which will then be applied to all of the widgets::
+
+    >>> css = CSSContainer({
+        "base": "bg-white"
+    })
+    >>> css
+    {
+    'text': 'bg-white',
+    'number': 'bg-white',
+    'email': 'bg-white',
+    ...
+    }
+
+You can also update add and remove styles::
+
+    >>> css += {
+        "text": "text more styles",
+        "number": "number style"
+    }
+    >>> css
+    {
+    'text': 'bg-white text more styles',
+    'number': 'bg-white number style',
+    'email': 'bg-white',
+    ...
+    }
+    >>> css -= {
+    "text": "bg-white",
+    "number": "bg-white"
+    }
+    >>> css
+    {
+    'text': 'text more styles',
+    'number': 'number style',
+    'email': 'bg-white',
+    ...
+    }

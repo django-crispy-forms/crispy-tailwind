@@ -17,6 +17,7 @@ This is a Tailwind template pack for django-crispy-forms_.
 
    getting_started
    layout_objects
+   custom
    examples
    contributing
 
