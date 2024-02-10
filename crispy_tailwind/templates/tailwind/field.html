@@ -15,8 +15,8 @@
     {# if field has a special template then use this #}
     {% if field|is_select %}
         <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-
-        {% include 'tailwind/layout/select.html' %}
+            {% include 'tailwind/layout/select.html' %}
+        </div>
     {% elif field|is_checkboxselectmultiple %}
         <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
 
