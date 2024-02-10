@@ -23,11 +23,9 @@
         </div>
     {% elif field|is_radioselect %}
         <div class="{% if field_class %}{{ field_class }}{% else %}mb-3{% endif %}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-
-        {% include 'tailwind/layout/radioselect.html' %}
-
+            {% include 'tailwind/layout/radioselect.html' %}
+        </div>
     {% else %}
-
         {# otherwise use django rendering with additional classes added #}
         {% tailwind_field field %}
     {% endif %}
@@ -35,6 +33,5 @@
     {% include 'tailwind/layout/help_text_and_errors.html' %}
 
     </{% if tag %}{{ tag }}{% else %}div{% endif %}>
-
 
 {% endif %}
