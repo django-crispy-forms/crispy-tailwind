@@ -71,7 +71,9 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: [tests]
+    needs:
+      - linting
+      - tests
     runs-on: ubuntu-latest
     if: github.ref=='refs/heads/main' && github.event_name!='pull_request'
 
