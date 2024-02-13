@@ -103,7 +103,7 @@ default_styles = {
     "datetime": base_input,
     "time": base_input,
     "checkbox": "",
-    "select": "",
+    "select": "bg-white border-gray-300 focus:outline-none border rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700",
     "nullbooleanselect": "",
     "selectmultiple": "",
     "checkboxselectmultiple": "",
