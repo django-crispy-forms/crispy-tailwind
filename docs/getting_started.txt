@@ -111,6 +111,3 @@ To do so you need to configure the dict ``CRISPY_TAILWIND_STYLE`` in you setting
 }``
 
 This is currently only working for the input fields and the select field. More coming soon.
-
-
-
