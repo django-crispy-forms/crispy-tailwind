@@ -110,7 +110,7 @@ class CrispyTailwindFieldNode(template.Node):
         "error_border": "border-red-500",
     }
 
-    default_container = CSSContainer(default_styles)
+    default_container = CSSContainer({**default_styles, **getattr(settings, "CRISPY_TAILWIND_STYLE", {})})
 
     def __init__(self, field, attrs):
         self.field = field
