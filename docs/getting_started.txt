@@ -102,7 +102,7 @@ You can also prepend or append like so::
 Configuring default field_classes with CRISPY_TAILWIND_STYLE
 ============================================================
 
-Cou can configure/overwrite the default classes for the different fields in your settings.
+You can configure/overwrite the default classes for the different fields in your settings.
 To do so you need to configure the dict ``CRISPY_TAILWIND_STYLE`` in you settings like so:
 
 ``CRISPY_TAILWIND_STYLE = {
