@@ -75,42 +75,52 @@ def pairwise(iterable):
     a = iter(iterable)
     return zip(a, a)
 
+@register.filter
+def tailwind_field_class(field):
+    """
+    Returns field class from defaults.
+    """
+    return f" {tailwind_container.get_input_class(field)}"
+
+base_input = (
+    "bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full "
+    "appearance-none leading-normal text-gray-700"
+)
+
+default_styles = {
+    "text": base_input,
+    "number": base_input,
+    "radioselect": "",
+    "email": base_input,
+    "url": base_input,
+    "password": base_input,
+    "hidden": "",
+    "multiplehidden": "",
+    "file": "",
+    "clearablefile": "",
+    "textarea": base_input,
+    "date": base_input,
+    "datetime": base_input,
+    "time": base_input,
+    "checkbox": "",
+    "select": "",
+    "nullbooleanselect": "",
+    "selectmultiple": "",
+    "checkboxselectmultiple": "",
+    "multi": "",
+    "splitdatetime": "text-gray-700 bg-white focus:outline border border-gray-300 leading-normal px-4 "
+    "appearance-none rounded-lg py-2 focus:outline-none mr-2",
+    "splithiddendatetime": "",
+    "selectdate": "",
+    "error_border": "border-red-500",
+}
+
+tailwind_styles = {**default_styles, **getattr(settings, "CRISPY_TAILWIND_STYLE", {})}
+tailwind_container = CSSContainer(tailwind_styles)
 
 class CrispyTailwindFieldNode(template.Node):
-    base_input = (
-        "bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full "
-        "appearance-none leading-normal text-gray-700"
-    )
 
-    default_styles = {
-        "text": base_input,
-        "number": base_input,
-        "radioselect": "",
-        "email": base_input,
-        "url": base_input,
-        "password": base_input,
-        "hidden": "",
-        "multiplehidden": "",
-        "file": "",
-        "clearablefile": "",
-        "textarea": base_input,
-        "date": base_input,
-        "datetime": base_input,
-        "time": base_input,
-        "checkbox": "",
-        "select": "",
-        "nullbooleanselect": "",
-        "selectmultiple": "",
-        "checkboxselectmultiple": "",
-        "multi": "",
-        "splitdatetime": "text-gray-700 bg-white focus:outline border border-gray-300 leading-normal px-4 "
-        "appearance-none rounded-lg py-2 focus:outline-none mr-2",
-        "splithiddendatetime": "",
-        "selectdate": "",
-        "error_border": "border-red-500",
-    }
-
-    default_container = CSSContainer({**default_styles, **getattr(settings, "CRISPY_TAILWIND_STYLE", {})})
+    default_container = tailwind_container
 
     def __init__(self, field, attrs):
         self.field = field
