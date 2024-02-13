@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+1.0.2 - 2024-02-13
+------------------
+
+* Fixed stray closing divs in template files
+
+Contributed by [Ronny V.](https://github.com/GitRon) via [PR #160](https://github.com/django-crispy-forms/crispy-tailwind/pull/160/)
+
+
 1.0.1 - 2024-02-06
 ------------------
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crispy-tailwind"
-version = "1.0.1"
+version = "1.0.2"
 description = "Tailwind CSS for Django Crispy Forms"
 readme = "README.rst"
 license = {text = "MIT"}
