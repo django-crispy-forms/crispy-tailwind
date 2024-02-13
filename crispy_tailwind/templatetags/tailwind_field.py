@@ -75,12 +75,14 @@ def pairwise(iterable):
     a = iter(iterable)
     return zip(a, a)
 
+
 @register.filter
 def tailwind_field_class(field):
     """
     Returns field class from defaults.
     """
     return f" {tailwind_container.get_input_class(field)}"
+
 
 base_input = (
     "bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full "
@@ -118,8 +120,8 @@ default_styles = {
 tailwind_styles = {**default_styles, **getattr(settings, "CRISPY_TAILWIND_STYLE", {})}
 tailwind_container = CSSContainer(tailwind_styles)
 
-class CrispyTailwindFieldNode(template.Node):
 
+class CrispyTailwindFieldNode(template.Node):
     default_container = tailwind_container
 
     def __init__(self, field, attrs):
