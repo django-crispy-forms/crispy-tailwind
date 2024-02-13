@@ -1,9 +1,9 @@
 {% load crispy_forms_filters %}
-{% load tailwind_filters %}
+{% load tailwind_filters tailwind_field %}
 {% load l10n %}
 
 <div class="relative">
-    <select class="bg-white focus:outline-none border {% if field.errors %}border-red-500 {% else %}border-gray-300 {% endif %}rounded-lg py-2 px-4 block w-full appearance-none leading-normal text-gray-700" name="{{ field.html_name }}" {{ field|build_attrs }}>
+    <select class="{% if field.errors %}border-red-500{% endif %} {{ field|tailwind_field_class }}" name="{{ field.html_name }}" {{ field|build_attrs }}>
         {% for group, options, index in field|optgroups %}
             {% if group %}<optgroup label="{{ group }}">{% endif %}
             {% for option in options %}
