@@ -82,7 +82,3 @@ You can also update add and remove styles::
     'email': 'bg-white',
     ...
     }
-
-
-
-
