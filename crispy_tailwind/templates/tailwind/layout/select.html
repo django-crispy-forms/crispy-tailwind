@@ -3,7 +3,7 @@
 {% load l10n %}
 
 <div class="relative">
-    <select class="{% if field.errors %}border-red-500{% endif %} {{ field|tailwind_field_class }}" name="{{ field.html_name }}" {{ field|build_attrs }}>
+    <select class="{{ field|tailwind_field_class }}{% if field.errors %} border-red-500{% endif %}" name="{{ field.html_name }}" {{ field|build_attrs }}>
         {% for group, options, index in field|optgroups %}
             {% if group %}<optgroup label="{{ group }}">{% endif %}
             {% for option in options %}
