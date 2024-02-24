@@ -98,16 +98,3 @@ You can also prepend or append like so::
 
     {% crispy_addon form.my_field prepend="$" %}
     {% crispy_addon form.my_field append=".00" %}
-
-Configuring default field_classes with CRISPY_TAILWIND_STYLE
-============================================================
-
-You can configure/overwrite the default classes for the different fields in your settings.
-To do so you need to configure the dict ``CRISPY_TAILWIND_STYLE`` in you settings like so:
-
-``CRISPY_TAILWIND_STYLE = {
-    "text": "bg-gray-50 border border-gray-300",
-    "select": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
-}``
-
-This is currently only working for the input fields and the select field. More coming soon.
