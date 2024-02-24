@@ -2,7 +2,9 @@
 Custom Styles
 =============
 
-The first way is to override CRISPY_TAILWIND_STYLE in your settings. This will override the defaults for all forms. 
+There are currently two ways to customize the tailwind classes for your forms.
+
+The first one is to override CRISPY_TAILWIND_STYLE in your settings. This will override the defaults for all forms. 
 This is handy for when you want to easily configure classes for all your forms, as forms in a project usually have the same uniform styling.
 
 The second way is to configure ``CSSContainer`` on a specific form. This will only work for forms that use FormHelper.
@@ -27,6 +29,33 @@ Example:
 }``
 This is currently only working for the input fields and the select field. More coming soon.
 
+These are the fields you can override:
+CRISPY_TAILWIND_STYLE = {
+    "text": "",
+    "number": "",
+    "radioselect": "",
+    "email": "",
+    "url": "",
+    "password": "",
+    "hidden": "",
+    "multiplehidden": "",
+    "file": "",
+    "clearablefile": "",
+    "textarea": "",
+    "date": "",
+    "datetime": "",
+    "time": "",
+    "checkbox": "",
+    "select": "",
+    "nullbooleanselect": "",
+    "selectmultiple": "",
+    "checkboxselectmultiple": "",
+    "multi": "",
+    "splitdatetime": "",
+    "splithiddendatetime": "",
+    "selectdate": "",
+    "error_border": "",
+}
 
 ---------------
 2. CSSContainer
