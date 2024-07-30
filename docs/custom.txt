@@ -57,6 +57,7 @@ CRISPY_TAILWIND_STYLE = {
     "selectdate": "",
     "error_border": "",
 }
+
 ---------------
 2. CSSContainer
 ---------------
