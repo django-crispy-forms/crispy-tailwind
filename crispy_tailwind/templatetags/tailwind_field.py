@@ -117,6 +117,7 @@ default_styles = {
     "error_border": "border-red-500",
 }
 
+# Overwrite tailwind_styles values with the CRISPY_TAILWIND_STYLE values from settings
 tailwind_styles = {**default_styles, **getattr(settings, "CRISPY_TAILWIND_STYLE", {})}
 tailwind_container = CSSContainer(tailwind_styles)
 
