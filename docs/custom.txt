@@ -22,8 +22,7 @@ The documentation on CSSContainer is a bit under-developed, more documentation c
 1. Configuring custom tailwind classes in settings with CRISPY_TAILWIND_STYLE
 -----------------------------------------------------------------------------
 
-Example:
-``CRISPY_TAILWIND_STYLE = {
+Example:``CRISPY_TAILWIND_STYLE = {
     "text": "bg-gray-50 border border-gray-300",
     "select": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
 }``
@@ -56,7 +55,6 @@ CRISPY_TAILWIND_STYLE = {
     "selectdate": "",
     "error_border": "",
 }
-
 ---------------
 2. CSSContainer
 ---------------
