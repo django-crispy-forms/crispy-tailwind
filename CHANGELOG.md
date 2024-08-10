@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+Next Release - TBC
+------------------
+
+* Added support for Django 5.1.
+
+Contributed by [David S.](https://github.com/smithdc1) via [PR #167](https://github.com/django-crispy-forms/crispy-tailwind/pull/167/)
+
 1.0.3 - 2024-02-13
 ------------------
 
