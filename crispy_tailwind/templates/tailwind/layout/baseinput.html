@@ -2,7 +2,7 @@
     name="{% if input.name|wordcount > 1 %}{{ input.name|slugify }}{% else %}{{ input.name }}{% endif %}"
     value="{{ input.value }}"
     {% if input.input_type != "hidden" %}
-        class="{{ input.field_classes }}"
+        class="{{ input.field_classes }} bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
         id="{% if input.id %}{{ input.id }}{% else %}{{ input.input_type }}-id-{{ input.name|slugify }}{% endif %}"
     {% endif %}
     {{ input.flat_attrs|safe }}
