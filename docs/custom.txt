@@ -2,18 +2,69 @@
 Custom Styles
 =============
 
-With Tailwind being a utility framework there is much more ability to customise
-your site than with many of the other CSS frameworks such as Bootstrap.
+There are currently two ways to customize the tailwind classes for your forms.
 
-While our opinionated Tailwind styles may get you so far you may wish to change these.
+The first one is to override CRISPY_TAILWIND_STYLE in your settings. This will override the defaults for all forms. 
+This is handy for when you want to easily configure classes for all your forms, as forms in a project usually have the same uniform styling.
+
+The second way is to configure ``CSSContainer`` on a specific form. This will only work for forms that use FormHelper.
+This allows you to override a specific form, this is usefull for unique/complex forms.
+
+The idea is that you can easily configure all forms by overriding CRISPY_TAILWIND_STYLE in settings, and if you want to customize a specific form, you can use CSSContainer for that specific form.
 
 The Tailwind template pack aims to help you customise your form in a DRY way. This
 template pack comes with a utility class called `CSSContainer` which can be attached to your
 form helper.
 
-------------
-CSSContainer
-------------
+The documentation on CSSContainer is a bit under-developed, more documentation coming soon.
+
+-----------------------------------------------------------------------------
+1. Configuring custom tailwind classes in settings with CRISPY_TAILWIND_STYLE
+-----------------------------------------------------------------------------
+
+Example::
+
+    CRISPY_TAILWIND_STYLE = {
+        "text": "bg-gray-50 border border-gray-300",
+        "select": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+    }
+
+
+This is currently only working for the input fields and the select field. More coming soon.
+
+These are the fields you can override::
+
+    CRISPY_TAILWIND_STYLE = {
+        "text": "",
+        "number": "",
+        "radioselect": "",
+        "email": "",
+        "url": "",
+        "password": "",
+        "hidden": "",
+        "multiplehidden": "",
+        "file": "",
+        "clearablefile": "",
+        "textarea": "",
+        "date": "",
+        "datetime": "",
+        "time": "",
+        "checkbox": "",
+        "select": "",
+        "nullbooleanselect": "",
+        "selectmultiple": "",
+        "checkboxselectmultiple": "",
+        "multi": "",
+        "splitdatetime": "",
+        "splithiddendatetime": "",
+        "selectdate": "",
+        "error_border": "",
+    }
+
+
+---------------
+2. CSSContainer
+---------------
 
 `CSSContainer` is imported from `crispy_tailwind.tailwind`. This is a class which holds the
 CSS style for your form. Currently it holds the classes for the `<input>` tags within your form.
