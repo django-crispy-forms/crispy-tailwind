@@ -16,42 +16,42 @@ register = template.Library()
 
 @register.filter
 def is_checkbox(field):
-    return isinstance(field.field.widget, forms.CheckboxInput)
+    return field.field.widget.__class__.__name__ == forms.CheckboxInput.__class__.__name__
 
 
 @register.filter
 def is_password(field):
-    return isinstance(field.field.widget, forms.PasswordInput)
+    return field.field.widget.__class__.__name__ == forms.PasswordInput.__class__.__name__
 
 
 @register.filter
 def is_radioselect(field):
-    return isinstance(field.field.widget, forms.RadioSelect)
+    return field.field.widget.__class__.__name__ == forms.RadioSelect.__class__.__name__
 
 
 @register.filter
 def is_select(field):
-    return isinstance(field.field.widget, forms.Select)
+    return field.field.widget.__class__.__name__ == forms.Select.__class__.__name__
 
 
 @register.filter
 def is_checkboxselectmultiple(field):
-    return isinstance(field.field.widget, forms.CheckboxSelectMultiple)
+    return field.field.widget.__class__.__name__ == forms.CheckboxSelectMultiple.__class__.__name__
 
 
 @register.filter
 def is_file(field):
-    return isinstance(field.field.widget, forms.FileInput)
+    return field.field.widget.__class__.__name__ == forms.FileInput.__class__.__name__
 
 
 @register.filter
 def is_clearable_file(field):
-    return isinstance(field.field.widget, forms.ClearableFileInput)
+    return field.field.widget.__class__.__name__ == forms.ClearableFileInput.__class__.__name__
 
 
 @register.filter
 def is_multivalue(field):
-    return isinstance(field.field.widget, forms.MultiWidget)
+    return field.field.widget.__class__.__name__ == forms.MultiWidget.__class__.__name__
 
 
 @register.filter
