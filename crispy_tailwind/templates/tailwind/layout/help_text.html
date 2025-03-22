@@ -1,6 +1,6 @@
 {% if field.help_text %}
     {% if help_text_inline %}
-        <p {% if field.id_for_label %}id="{{ field.id_for_label }}_helptext" {% endif %}class="text-gray-600">{{ field.help_text|safe }}</p>x
+        <p {% if field.id_for_label %}id="{{ field.id_for_label }}_helptext" {% endif %}class="text-gray-600">{{ field.help_text|safe }}</p>
     {% else %}
         <small {% if field.id_for_label %}id="{{ field.id_for_label }}_helptext" {% endif %}class="text-gray-600">{{ field.help_text|safe }}</small>
     {% endif %}
