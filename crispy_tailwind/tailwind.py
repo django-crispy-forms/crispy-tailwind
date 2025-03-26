@@ -4,6 +4,8 @@
 
 import re
 
+from django.forms import Field, Widget, boundfield
+
 
 class CSSContainer:
     def __init__(self, css_styles):
@@ -67,6 +69,15 @@ class CSSContainer:
             setattr(self, field, new_classes)
         return self
 
-    def get_input_class(self, field):
-        widget_name = re.sub(r"widget$|input$", "", field.field.widget.__class__.__name__.lower())
+    def get_input_class(self, obj):
+        # Following check is used to keep backward compatibility with older versions
+        if isinstance(obj, boundfield.BoundField):
+            widget = obj.field.widget
+        elif isinstance(obj, Field):
+            widget = obj.widget
+        elif isinstance(obj, Widget):
+            widget = obj
+        else:
+            raise ValueError("Object must be a BoundField, Field or Widget")
+        widget_name = re.sub(r"widget$|input$", "", widget.__class__.__name__.lower())
         return getattr(self, widget_name, "")

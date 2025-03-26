@@ -4,11 +4,11 @@
 
 import re
 
+from crispy_forms.utils import TEMPLATE_PACK, get_template_pack
 from django import forms, template
 from django.conf import settings
 from django.template import Context, loader
 
-from crispy_forms.utils import TEMPLATE_PACK, get_template_pack
 from crispy_tailwind.tailwind import CSSContainer
 
 register = template.Library()
@@ -161,7 +161,7 @@ class CrispyTailwindFieldNode(template.Node):
             if template_pack == "tailwind" and '"class"' not in attr.keys():
                 css_container = context.get("css_container", self.default_container)
                 if css_container:
-                    css = " " + css_container.get_input_class(field)
+                    css = " " + css_container.get_input_class(widget)
                     css_class += css
                 if field.errors:
                     error_border_class = css_container.error_border
